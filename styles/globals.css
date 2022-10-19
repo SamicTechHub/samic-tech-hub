@@ -29,7 +29,7 @@ a {
   --grey2: rgba(210, 224, 222, 0.1);
   --grey3:  #f7f7f7;
   --secColor: #E6DC7F;
-  --black: #000;
+  --black: #041513;
 }
 
 /* Reusable Classes */
@@ -72,6 +72,10 @@ a {
 
   .secondaryBtn{
     padding: 1.3rem 1.2rem;
+  }
+
+  :root{
+    font-size: 55%;
   }
 }
 

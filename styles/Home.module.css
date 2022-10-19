@@ -220,6 +220,265 @@
   position: relative;
 }
 
+.aboutSection .aboutSectionImage .aboutStat{
+  background-color: var(--priColor);
+  padding: 3rem;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: var(--white);
+  grid-gap: 5rem;
+  bottom: 5rem;
+  left: -5rem;
+}
+
+.aboutSection .aboutSectionImage .aboutStat .statContainer{
+  max-width: 9rem;
+}
+
+
+.aboutSection .aboutSectionImage .aboutStat .statContainer h1{
+  font-size: 4rem;
+}
+
+.aboutSection .aboutSectionImage .aboutStat .statContainer p{
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+/* Our Program Section */
+.ourProgramSection{
+  margin: 3rem 7rem 7rem;
+  padding: 5rem 4rem;
+  border-top: 4px solid var(--priColor);
+  border-bottom: 4px solid var(--priColor);
+  border-left: 2px solid var(--priColor);
+  border-right: 2px solid var(--priColor);
+  border-radius: 1rem;
+  background-color: #FEFEFB;
+  overflow: hidden;
+  position: relative;
+}
+
+.ourProgramSection .description{
+  text-align: center;
+  max-width: 52.9rem;
+  margin: auto;
+}
+
+.ourProgramSection .description h2{
+  font-size: 4.8rem;
+  font-weight: 600;
+  line-height: 6rem;
+  margin-bottom: .6rem;
+}
+
+.ourProgramSection .description p{
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 3.2rem;
+  margin-bottom: .6rem;
+}
+
+.ourProgramSection .programs{
+  display: flex;
+  gap: 2.7rem;
+  justify-content: space-between;
+  margin-top: 7rem;
+}
+
+.ourProgramSection .programs .program{
+  padding: 5rem;
+  background: black;
+  border-radius: 1rem;
+  width: 40rem;
+  min-height: 43rem;
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
+  z-index: 3;
+}
+
+.ourProgramSection .programs .program:nth-child(1){
+  background: var(--priColor);
+  color: var(--white);
+}
+
+.ourProgramSection .programs .program:nth-child(2){
+  background: var(--secColor);
+  color: var(--white);
+}
+
+.ourProgramSection .programs .program:nth-child(3){
+  background: var(--white);
+  color: black !important;
+}
+
+.ourProgramSection .programs .program .svgContainer{
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  margin-bottom: 3rem;
+}
+
+.ourProgramSection .programs .program h3{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.ourProgramSection .programs .program p{
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  margin-top: 2.6rem;
+}
+
+.ourProgramSection .programs .program button{
+  padding: 1rem 0;
+  outline: none;
+  border: none;
+  background: none;
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+/* Take Lead Section */
+
+.takeLeadSection{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 7rem 8rem;
+  grid-gap: 4rem;
+}
+
+/* .takeLeadSection .takeLeadIntro{
+
+} */
+
+.takeLeadSection .takeLeadIntro h3{
+  font-size: 4.8rem;
+  font-weight: 600;
+  line-height: 6rem;
+}
+
+.takeLeadSection .takeLeadIntro p{
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 3.6rem;
+  margin-top: 2.4rem;
+  color: var(--grey);
+}
+
+.takeLeadSection .takeLeadItems{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+.takeLeadSection .takeLeadItems .takeLeadItem{
+  display: flex;
+  gap: 2rem;
+}
+
+.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemImage{
+  position: relative;
+  min-height: 6rem;
+  max-height: 6rem;
+  min-width: 6rem;
+  max-width: 6rem;
+  border-radius: 50%;
+}
+
+.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemTexts{
+  padding: 0 4rem 0 0 ;
+}
+
+.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemTexts h3{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemTexts p{
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  margin-bottom: 1.2rem;
+}
+
+
+/* Testimonial Section */
+.testimonialSection{
+  background: #F9FAFB;
+  padding: 5rem 3rem;
+}
+
+.testimonialSection .testimonialIntro{
+  text-align: center;
+}
+
+.testimonialSection .testimonialIntro h3{
+  font-size: 4rem;
+  font-weight: 600;
+  max-width: 66.2rem;
+  line-height: 4.5rem;
+  margin: auto;
+}
+
+.testimonialSection .testimonials{
+  display: flex;
+  gap: 3rem;
+  margin: 3rem 5rem;
+  justify-content: space-between;
+}
+
+.testimonialSection .testimonials .testimonial{
+  background: var(--white);
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 40rem;
+}
+
+.testimonialSection .testimonials .testimonial .testimonialImageContainer{
+  position: relative;
+  height: 15rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 15rem;
+}
+
+.testimonialSection .testimonials .testimonial h3{
+  margin-top: 3rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.testimonialSection .testimonials .testimonial p{
+  margin-top: 3rem;
+  font-size: 1.6rem;
+  color: var(--grey);
+  font-weight: 400;
+}
+
+.testimonialSection .testimonials .testimonial .testimonialUserDetails{
+  margin-top: 2rem;
+}
+
+.testimonialSection .testimonials .testimonial .testimonialUserDetails h5{
+  font-size: 1.2rem;
+}
+
+.testimonialSection .testimonials .testimonial .testimonialUserDetails p{
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Footer Section */
+
+
+
+
+
+
 
 
 /* Media Queries */
