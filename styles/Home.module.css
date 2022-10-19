@@ -125,7 +125,7 @@
 .heroSectionContainer .heroBanner {
   padding-top: 5rem;
   position: relative;
-  height: 80vh;
+  height: 60rem;
   width: 100%;
   /* padding-top: 20rem; */
 }
@@ -330,7 +330,7 @@
   }
 
   .heroSectionContainer .heroBanner{
-    height: 70vh;
+    height: 48rem;
   }
 
   .aboutSection .aboutSectionText .aboutDetails{
