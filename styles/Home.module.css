@@ -84,44 +84,6 @@
   gap: 1.6rem;
 }
 
-.heroSectionContainer .heroText .happyStudents{
-  margin-top: 2rem;
-  display: grid;
-  width: 30rem;
-  grid-template-columns: 2.8fr 4fr;
-  align-content: center;
-}
-
-.heroSectionContainer .heroText .happyStudents .studentImages{
-  display: flex;
-  position: relative;
-}
-
-.heroSectionContainer .heroText .happyStudents .studentImages .happyStudentImage{
-  width: 4rem;
-  height: 4rem;
-  border: 2px solid var(--black);
-  border-radius: 50%;
-  position: absolute;
-}
-
-.heroSectionContainer .heroText .happyStudents .studentImages .student1{
-  top: 50%;
-  translate: 0 -50%;
-}
-
-.heroSectionContainer .heroText .happyStudents .studentImages .student2{
-  top: 50%;
-  translate: 0 -50%;
-  left: 3rem;
-}
-
-.heroSectionContainer .heroText .happyStudents .studentImages .student3{
-  top: 50%;
-  translate: 0 -50%;
-  left: 6rem;
-}
-
 .heroSectionContainer .heroBanner {
   padding-top: 5rem;
   position: relative;
@@ -476,6 +438,138 @@
 
 
 
+/* About Page Styling */
+.aboutHeroSectionContainer{
+  /* padding: 15rem 0 2.5rem 11rem; */
+  padding-top: 15rem;
+  position: relative;
+  background-color: #12141D;
+  overflow: hidden;
+}
+
+.aboutHeroSectionContainer .aboutHeroText{
+  max-width: 85rem;
+  text-align: center;
+  margin-top: 5rem;
+  margin: auto;
+}
+
+.aboutHeroSectionContainer .aboutHeroText h1{
+  font-weight: 700;
+  font-size: 6.4rem;
+  color: var(--white);
+}
+
+.aboutHeroSectionContainer .aboutHeroText p{
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.aboutHeroSectionContainer .aboutHeroImages{
+  position: relative;
+}
+
+.aboutHeroSectionContainer .aboutHeroImages .worldImage{
+  position: relative;
+  width: 100%;
+  height: 53rem;
+}
+
+.aboutHeroSectionContainer .aboutHeroImages .userHeroImages{
+  display: flex;
+  position: absolute;
+  bottom: 10rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.aboutHeroSectionContainer .aboutHeroImages .userHeroImages2{
+  display: flex;
+  position: absolute;
+  bottom: 20rem;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.aboutHeroSectionContainer .aboutHeroImages .userHeroImages .userHeroImage{
+  position: relative;
+  height: 5rem;
+  width: 5rem;
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  background-color: green;
+  overflow: hidden;
+}
+
+.aboutHeroSectionContainer .aboutHeroImages .userHeroImages2 .userHeroImage{
+  position: relative;
+  height: 5rem;
+  width: 5rem;
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  background-color: green;
+  overflow: hidden;
+}
+
+.ourProgramSection .takeLeadSection{
+  padding: 2rem 1rem;
+}
+
+.ourProgramSection .takeLeadSection .takeLeadIntro h3{
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--priColor);
+  line-height: 4rem;
+}
+
+/* Our Mission Section */
+.ourMissionSection{
+  background-color: #FAFAFA;
+  padding: 8rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+}
+
+.ourMissionSection .ourMissionImage{
+  position: relative;
+  width: 55rem;
+  height: 41rem;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.ourMissionSection .ourMissionText{
+  max-width: 52rem;
+}
+
+.ourMissionSection .ourMissionText h1{
+  font-weight: 600;
+  font-size: 4.8rem;
+  line-height: 6rem; 
+  margin-bottom: 2rem;
+}
+
+.ourMissionSection .ourMissionText h6{
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  margin-bottom: 2rem;
+}
+
+.ourMissionSection .ourMissionText p{
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+
+
+
+
+
 
 
 
@@ -527,6 +621,10 @@
     height: 40rem;
     width: 40rem;
   }
+
+  .aboutHeroSectionContainer .aboutHeroImages .worldImage {
+    height: 45rem;
+  }
 }
 
 @media screen and (max-width: 1050px) {
@@ -569,6 +667,10 @@
     font-size: 1.2rem;
     line-height: 2.4rem;
   }
+
+  .aboutHeroSectionContainer .aboutHeroImages .worldImage {
+    height: 40rem;
+  }
 }
 
 @media screen and (max-width: 950px){
@@ -595,6 +697,59 @@
   .aboutSection .aboutSectionText .aboutDetails{
     width: 90%;
   }
+
+  .aboutSection .aboutSectionImage .aboutStat{
+    padding: 1.5rem;
+  }
+
+  .aboutSection .aboutSectionImage .aboutStat .statContainer{
+    max-width: 7rem;
+  }
+
+  .aboutSection .aboutSectionImage .aboutStat .statContainer h1{
+    font-size: 2.5rem;
+  }
+
+  .aboutSection .aboutSectionImage .aboutStat .statContainer p{
+    font-size: 1rem;
+  }
+
+  .ourProgramSection{
+    margin: 3rem 2rem 5rem;
+  }
+
+  .takeLeadSection{
+    padding: 4rem;
+  }
+
+  .testimonialSection{
+    padding: 3rem 1rem;
+  }
+
+  .testimonialSection .testimonials{
+    gap: 1.5rem;
+    margin: 2rem 3rem;
+  }
+
+  .aboutHeroSectionContainer .aboutHeroImages .worldImage {
+    height: 35rem;
+  }
+
+  .aboutHeroSectionContainer .aboutHeroImages .userHeroImages {
+    bottom: 5rem;
+  }
+
+  .aboutHeroSectionContainer .aboutHeroImages .userHeroImages2{
+    bottom: 10rem;
+  }
+    
+  .ourMissionSection .ourMissionText{
+    max-width: 45rem;
+  }
+
+  .ourMissionSection .ourMissionImage{
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 900px){
@@ -609,6 +764,10 @@
   .heroSectionContainer .heroBanner .circleOutline{
     left: 10rem;
   }
+
+  .aboutHeroSectionContainer .aboutHeroImages .worldImage {
+    height: 30rem;
+  }
 }
 
 @media screen and (max-width: 850px){
@@ -616,7 +775,295 @@
     width: 50vw;
     /* height: 100%; */
   }
+
+  .takeLeadSection{
+    grid-template-columns: 1fr;
+  }
+
+  .takeLeadIntro{
+    text-align: center;
+  }
+
+  .ourProgramSection .programs .program{
+    padding: 2rem;
+  }
+
+
+  .aboutHeroSectionContainer .aboutHeroText{
+    max-width: 80%;
+  }
+
+  .aboutHeroSectionContainer .aboutHeroText h1{
+    font-weight: 700;
+    font-size: 6rem;
+    color: var(--white);
+  }
+
+  .aboutHeroSectionContainer .aboutHeroText p{
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--white);
+  }
+
+  .ourMissionSection{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .ourMissionSection .ourMissionText{
+    max-width: 100%;
+  }
 }
+
+@media screen and (max-width: 750px){
+  .aboutSection .aboutSectionImage .aboutStat{
+    bottom: 2rem;
+  }
+
+  .testimonialSection .testimonials{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media screen and (max-width: 650px){
+  .aboutSection .aboutSectionImage .aboutStat{
+    display: none;
+  }
+
+  .heroSectionContainer{
+    grid-template-columns: 1fr;
+    padding: 11rem 2.5rem;
+    text-align: center;
+  }
+
+  .heroSectionContainer .heroText{
+    max-width: 50rem;
+    margin: auto;
+    margin-top: 3rem;
+  }
+
+  .heroSectionContainer .heroText h1{
+    font-weight: 700;
+    font-size: 6rem;
+    /* color: var(--white); */
+  }
+
+  .heroSectionContainer .heroText p{
+    font-weight: 400;
+    font-size: 2rem;
+  }
+
+  .heroSectionContainer .heroText .heroCTA{
+    justify-content: space-around;
+  }
+
+  .heroSectionContainer .heroBanner{
+    display: none;
+  }
+
+  .aboutSection{
+    grid-template-columns: 1fr;
+    margin: 5rem 3rem;
+  }
+
+  .aboutSection .aboutSectionText .aboutDetails h1{
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 7rem;
+  }
+
+  .aboutSection .aboutSectionText .aboutDetails p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 3rem;
+  }
+
+  .ourProgramSection .programs{
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .ourProgramSection .programs .program{
+    width: 24rem;
+  }
+
+  .headerContainer{
+    padding: 2.5rem 4rem;
+  }
+
+  .headerContainer .headerNav{
+    gap: 2.5rem;
+  }
+
+  .aboutHeroSectionContainer .aboutHeroImages .worldImage {
+    height: 30rem;
+  }
+
+  .aboutHeroSectionContainer .aboutHeroImages .userHeroImages {
+    bottom: 3rem;
+  }
+
+  .aboutHeroSectionContainer .aboutHeroImages .userHeroImages2 {
+    bottom: 7rem;
+  }
+
+  .aboutHeroSectionContainer .aboutHeroImages .userHeroImages .userHeroImage {
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid var(--white);
+  }
+
+  .aboutHeroSectionContainer .aboutHeroImages .userHeroImages2 .userHeroImage {
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid var(--white);
+  }
+
+
+  .aboutHeroSectionContainer .aboutHeroText h1{
+    font-size: 5rem;
+    line-height: 6.5rem;
+  }
+
+  .aboutHeroSectionContainer .aboutHeroText p{
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    color: var(--white);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .ourProgramSection .programs .program{
+    width: 100%;
+    min-height: 20rem;
+  }
+
+  .takeLeadSection .takeLeadItems{
+    grid-template-columns: 1fr;
+  }
+
+  .testimonialSection .testimonials {
+    display: flex;
+    overflow-x: scroll;
+    padding: 2rem 1rem;
+  }
+
+  .testimonialSection .testimonials .testimonial{
+    min-width: 30rem;
+  }
+
+  .heroSectionContainer .heroText h1 {
+    font-weight: 700;
+    font-size: 4.5rem;
+    /* color: var(--white); */
+  }
+
+  .heroSectionContainer .heroText p {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    /* color: var(--white); */
+  }
+
+  
+  .aboutHeroSectionContainer .aboutHeroImages .worldImage {
+    height: 25rem;
+  }
+
+  .aboutSection .aboutSectionText .aboutDetails h1{
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  .aboutSection .aboutSectionImage{
+    height: 60rem;
+  }
+
+  .ourMissionSection{
+    padding: 4rem;
+    margin-bottom: 6rem;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .aboutSection .aboutSectionImage{
+    height: 50rem;
+  }
+}
+
+
+@media screen and (max-width: 400px){
+  .headerContainer{
+    padding: 2rem;
+  }
+
+    
+  .aboutHeroSectionContainer .aboutHeroImages .worldImage {
+    height: 20rem;
+  }
+
+
+  .aboutHeroSectionContainer .aboutHeroImages .userHeroImages {
+    bottom: 2rem;
+  }
+
+  .aboutHeroSectionContainer .aboutHeroImages .userHeroImages2 {
+    bottom: 5rem;
+  }
+
+  
+  .aboutSection .aboutSectionImage{
+    height: 40rem;
+  }
+}
+
+@media screen and (max-width: 360px){
+  .headerContainer{
+    padding: 2rem;
+  }
+
+  .headerContainer .brandContainer .logoContainer{
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .headerContainer .brandContainer h3{
+    font-size: 1.5rem;
+  }
+
+  .headerContainer .headerNav .navLinks{
+    gap: 1rem;
+  }
+
+  .headerContainer .headerNav .navLinks .navLink a{
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .headerContainer .headerNav .navButton button{
+    padding: 1rem;
+  }
+
+  
+  .aboutHeroSectionContainer .aboutHeroImages .worldImage {
+    height: 20rem;
+  }
+
+  .aboutSection .aboutSectionImage{
+    height: 30rem;
+  }
+
+  .ourProgramSection .takeLeadSection{
+    padding: 2rem 0;
+  }
+
+  .ourProgramSection .takeLeadSection .takeLeadIntro h3{
+    font-size: 2rem;
+  }
+}
+
 
 
 

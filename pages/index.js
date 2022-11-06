@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import ProfileTestimonial from '../components/ProfileTestimonial'
+import Sidebar from '../components/Sidebar'
 import style from '../styles/Home.module.css'
 
 export default function Home() {
@@ -25,6 +26,9 @@ export default function Home() {
         <meta name="description" content="The Hub for great Developers" />
         <link rel="icon" href="/img/logoWBg.png" />
       </Head>
+
+      {/* Mobiile Sidebar */}
+      
       {/* Header Section */}
       <section className={ scrolled ? `${style.headerContainer} ${style.headerBackground}` : `${style.headerContainer}`}>
         <div className={style.brandContainer}>
@@ -46,14 +50,10 @@ export default function Home() {
                 <a>About</a>
               </Link>
             </div>
-            <div className={style.navLink}>
-              <Link href={"/services"}>
-                <a>Services</a>
-              </Link>
-            </div>
+
           </div>
           <div className={style.navButton}>
-            <button className='primaryBtn'>Contact Us</button>
+            <button className='primaryBtn'>Register</button>
           </div>
         </div>
       </section>
@@ -67,17 +67,7 @@ export default function Home() {
             <button className='primaryBtn'>Become the Next Talent  →</button>
             <button className='secondaryBtn'>Apply As A Mentor  →</button>
           </div>
-          <div className={style.happyStudents}>
-            <div className={style.studentImages}>
-              <div className={`${style.happyStudentImage} ${style.student1}`}></div>
-              <div className={`${style.happyStudentImage} ${style.student2}`}></div>
-              <div className={`${style.happyStudentImage} ${style.student3}`}></div>
-            </div>
-            <div className={style.happyStudentTexts}>
-              <h2>2,291</h2>
-              <p>Happy Students</p>
-            </div>
-          </div>
+
         </div>
         <div className={style.heroBanner}>
             <div className={style.pryCircle}></div>
@@ -285,6 +275,8 @@ export default function Home() {
       <section className={style.footerSection}>
         <Footer />
       </section>
+
+      {/* <Sidebar /> */}
     </>
   )
 }
