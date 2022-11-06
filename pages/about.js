@@ -32,7 +32,7 @@ function About() {
           <div className={style.logoContainer}>
             <Image src={"/img/logoGBg.png"} alt={"Samic Tech Hub"} layout={"fill"} />
           </div>
-          <h3 style={{color: "white"}}>Samic</h3>
+          <h3 style={ {color: scrolled ? "grey" : "white"}}>Samic</h3>
         </div>
 
         <div className={style.headerNav}>
