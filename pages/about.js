@@ -5,9 +5,11 @@ import { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import ProfileTestimonial from '../components/ProfileTestimonial'
 import style from '../styles/Home.module.css'
+import { useRouter } from 'next/router'
 
 function About() {
   const [scrolled, setScrolled] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     window.onscroll = function () {
@@ -50,7 +52,7 @@ function About() {
 
           </div>
           <div className={style.navButton}>
-            <button className='primaryBtn'>Register</button>
+            <button onClick={()=>router.push("/auth/register")} className='primaryBtn'>Register</button>
           </div>
         </div>
       </section>

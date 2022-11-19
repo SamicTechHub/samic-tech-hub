@@ -1,12 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import style from "../styles/component.module.css"
 
-function Sidebar() {
+function GetName() {
+  const [name, setName] = useState("")
+
+  const who = (name) => {
+    const dev = name ? name : null;
+    return dev
+  }
+
+  setName(who("Dev Femzy"))
+
   return (
-    <div className={style.sidebarContainer}>
-      sidebar
+    <div className={style.nameContainer}>
+      {name}
     </div>
   )
 }
 
-export default Sidebar
+export default GetName

@@ -30,33 +30,34 @@ export default function Home() {
       {/* Mobiile Sidebar */}
       
       {/* Header Section */}
-      <section className={ scrolled ? `${style.headerContainer} ${style.headerBackground}` : `${style.headerContainer}`}>
-        <div className={style.brandContainer}>
-          <div className={style.logoContainer}>
-            <Image src={"/img/logoGBg.png"} alt={"Samic Tech Hub"} layout={"fill"} />
-          </div>
-          <h3>Samic</h3>
-        </div>
 
-        <div className={style.headerNav}>
-          <div className={style.navLinks}>
-            <div className={style.navLink}>
-              <Link href={"/"}>
-                <a>Home</a>
-              </Link>
+        <section className={ scrolled ? `${style.headerContainer} ${style.headerBackground}` : `${style.headerContainer}`}>
+          <div className={style.brandContainer}>
+            <div className={style.logoContainer}>
+              <Image src={"/img/logoGBg.png"} alt={"Samic Tech Hub"} layout={"fill"} />
             </div>
-            <div className={style.navLink}>
-              <Link href={"/about"}>
-                <a>About</a>
-              </Link>
-            </div>
+            <h3>Samic</h3>
+          </div>
 
+          <div className={style.headerNav}>
+            <div className={style.navLinks}>
+              <div className={style.navLink}>
+                <Link href={"/"}>
+                  <a>Home</a>
+                </Link>
+              </div>
+              <div className={style.navLink}>
+                <Link href={"/about"}>
+                  <a>About</a>
+                </Link>
+              </div>
+
+            </div>
+            <div className={style.navButton}>
+              <button className='primaryBtn'>Register</button>
+            </div>
           </div>
-          <div className={style.navButton}>
-            <button className='primaryBtn'>Register</button>
-          </div>
-        </div>
-      </section>
+        </section>
 
       {/* Hero Section */}
       <section className={style.heroSectionContainer}>

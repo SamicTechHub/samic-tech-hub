@@ -567,6 +567,34 @@
 }
 
 
+/* Registration Section */
+.regSection{
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.regSection .regIllustration{
+  background-image: linear-gradient(to right, #12141D, var(--priColor));
+  min-height: 90vh;
+}
+
+.regSection .regFormContainer{
+  padding: 10rem 6rem 0;
+}
+
+.regSection .regFormContainer p{
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.regSection .regFormContainer h1{
+  font-size: 3.6rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+
+
 
 
 
@@ -768,6 +796,10 @@
   .aboutHeroSectionContainer .aboutHeroImages .worldImage {
     height: 30rem;
   }
+
+  .regSection{
+    grid-template-columns: 1fr 2fr;
+  }
 }
 
 @media screen and (max-width: 850px){
@@ -932,6 +964,10 @@
     line-height: 2.2rem;
     color: var(--white);
   }
+
+  .regSection{
+    grid-template-columns: .7fr 2fr;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -984,6 +1020,15 @@
   .ourMissionSection{
     padding: 4rem;
     margin-bottom: 6rem;
+  }
+
+  .regSection{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .regSection .regIllustration{
+    min-height: 10vh;
   }
 }
 

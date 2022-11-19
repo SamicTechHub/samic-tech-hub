@@ -101,11 +101,65 @@
     width: 90%;    
 }
 
+
+/* Input Styles */
+.inputGroup{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: 2rem 0;
+}
+
+.inputGroup label{
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: .6rem;
+}
+
+.inputGroup input{
+    padding: 1.5rem;
+    outline: none;
+    border: 1.9px solid var(--priColor);
+    border-radius: 3px;
+}
+
+.inputGroup select{
+    padding: 1.5rem;
+    outline: none;
+    border: 1.9px solid var(--priColor);
+    border-radius: 3px;
+}
+
+.inputGroup .submitBtn{
+    padding: 1.5rem;
+    color: white;
+    outline: none;
+    border: none;
+    background-color: var(--priColor);
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 900px) {
+    .inputGroup{
+        min-width: 90%;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .footerContainer .aboutNav{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 @media screen and (max-width: 550px) {
