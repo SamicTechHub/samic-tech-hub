@@ -6,9 +6,12 @@ import Footer from '../components/Footer'
 import ProfileTestimonial from '../components/ProfileTestimonial'
 import Sidebar from '../components/Sidebar'
 import style from '../styles/Home.module.css'
+import { useRouter } from 'next/router' 
+
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     window.onscroll = function () {
@@ -54,7 +57,7 @@ export default function Home() {
 
             </div>
             <div className={style.navButton}>
-              <button className='primaryBtn'>Register</button>
+              <button onClick={()=>router.push("/auth/register")} className='primaryBtn'>Register</button>
             </div>
           </div>
         </section>
