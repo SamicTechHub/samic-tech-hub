@@ -8,7 +8,7 @@ import TextInputField from "../../components/TextInputField"
 import {
     CaretLeftOutlined, CaretLeftFilled
 } from "@ant-design/icons"
-import SelectInput from '../../components/selectInput'
+import SelectInput from '../../components/SelectInput'
 import SubmitBtn from '../../components/SubmitBtn'
 
 function Register() {
