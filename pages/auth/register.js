@@ -10,8 +10,10 @@ import {
 } from "@ant-design/icons"
 import SelectInput from '../../components/SelectInput'
 import SubmitBtn from '../../components/SubmitBtn'
+import { useRouter } from 'next/router'
 
 function Register() {
+  const router = useRouter()
   return (
     <>
         <Head>
@@ -23,12 +25,12 @@ function Register() {
       
       {/* Header Section */}
 
-        <HeaderW />
+        <HeaderW navAction={"Sign In"} route={"/auth/login"}/>
 
         <section className={style.regSection}>
             <div className={style.regIllustration}></div>
             <div className={style.regFormContainer}>
-                <p> <CaretLeftOutlined /> Back</p>
+                <p onClick={()=>router.push("/")}> <CaretLeftOutlined /> Back</p>
 
                 <h1>Personal Information</h1>
                 <p>Let&apos;s get to Know you a little better</p>
@@ -38,7 +40,7 @@ function Register() {
                     <TextInputField inputLabel={"Email Address"} placeholder={"example@gmail.com"} type={"email"} />
                     <TextInputField inputLabel={"Phone Number"} placeholder={"+234 808 084 2145"} type={"email"} />
                     <SelectInput />
-                    <SubmitBtn />
+                    <SubmitBtn actionText={"Apply NOW"} />
                 </form>
             </div>
         </section>

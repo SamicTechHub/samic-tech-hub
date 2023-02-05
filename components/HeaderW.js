@@ -4,7 +4,10 @@ import Link from 'next/link'
 import style from "../styles/Home.module.css"
 import { useRouter } from 'next/router'
 
-function HeaderW() {
+function HeaderW({
+  navAction,
+  route
+}) {
     const [scrolled, setScrolled] = useState(false)
 
     const router = useRouter()
@@ -42,7 +45,7 @@ function HeaderW() {
 
           </div>
           <div className={style.navButton}>
-            <button onClick={()=>router.push("/auth/register")} className='primaryBtn'>Register</button>
+            <button onClick={()=>router.push(route)} className='primaryBtn'>{navAction}</button>
           </div>
         </div>
       </section>

@@ -1,18 +1,18 @@
 import React, {useState, useEffect} from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import style from "../../styles/Home.module.css"
+import style from "../../../styles/Home.module.css"
 import Image from 'next/image'
-import HeaderW from '../../components/HeaderW'
-import TextInputField from "../../components/TextInputField"
+import HeaderW from '../../../components/HeaderW'
+import TextInputField from "../../../components/TextInputField"
 import {
     CaretLeftOutlined, CaretLeftFilled
 } from "@ant-design/icons"
-import SelectInput from '../../components/SelectInput'
-import SubmitBtn from '../../components/SubmitBtn'
+import SelectInput from '../../../components/SelectInput'
+import SubmitBtn from '../../../components/SubmitBtn'
 import { useRouter } from 'next/router'
 
-function Login() {
+function AdminLogin() {
   const router = useRouter()
   return (
     <>
@@ -32,7 +32,7 @@ function Login() {
             <div className={style.regFormContainer}>
                 <p onClick={()=>router.push("/")}> <CaretLeftOutlined /> Back</p>
 
-                <h1>Welcome Back</h1>
+                <h1>Welcome Back Admin</h1>
                 <p>Sign in to continue your session . . .</p>
                 <form>
                     <TextInputField inputLabel={"Email Address"} placeholder={"example@gmail.com"} type={"email"} />
@@ -47,4 +47,4 @@ function Login() {
   )
 }
 
-export default Login
+export default AdminLogin
