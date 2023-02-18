@@ -52,7 +52,7 @@ function SideBar({
         <div className={style.side_user}>
           <div className={`${style.side_img} ${userImageWidth}`}>
             <Image
-              src={userObj?.userImageUrl || "/img/userImage.png"}
+              src={userObj?.userImageUrl || "/img/user3.png"}
               alt="avatar"
               layout={"fill"}
               objectFit={"cover"}
@@ -88,7 +88,7 @@ function SideBar({
                   }
                 >
                   <span>
-                    <DashboardFilled />
+                    <DashboardFilled className={style.sideBarLinkIcon}/>
                   </span>
                   <span className={`${style.sidebarLink} ${display}`}>
                     Dashboard
@@ -102,7 +102,7 @@ function SideBar({
                   className={active(["/user/profile"]) ? `${style.active}` : ""}
                 >
                   <span>
-                    <SettingFilled />
+                    <SettingFilled className={style.sideBarLinkIcon}/>
                   </span>
                   <span className={`${style.sidebarLink} ${display}`}>
                     Profile
@@ -114,7 +114,7 @@ function SideBar({
             <Link href={"/user/upgrade"}>
               <a className={active(["/user/upgrade"]) ? `${style.active}` : ""}>
                 <span>
-                  <PayCircleFilled />
+                  <PayCircleFilled className={style.sideBarLinkIcon}/>
                 </span>
                 <span className={`${style.sidebarLink} ${display}`}>
                   Payment
@@ -124,98 +124,13 @@ function SideBar({
           </li>
 
           </div>
-          <div className={style.sidebarHeadContainer}>
-            <h3 className={`${style.display} ${style.sidebarLink}`}>Forum</h3>
-               <li style={{marginTop: ".5rem"}}>
-              <Link href={"/user/forum"}>
-                <a className={active(["/user/forum","/user/forum/[slug]", "/user/forum/rooms", "/user/forum/rooms/[slug]", "/user/forum/rooms/topic/quiz/[slug]", "/user/forum/rooms/quiz/[slug]", "/user/forum/rooms/topic/article/[slug]", "/user/forum/rooms/article/[slug]",  "/user/forum/rooms/topic/question/[slug]", "/user/forum/rooms/question/[slug]", "/user/forum/rooms/topic/question/ask-question/[slug]", "/user/forum/discusstion/question/ask-question", "/user/forum/rooms/topic/record/[slug]",  "/user/forum/rooms/record/[slug]", "/user/forum/rooms/topic/task/[slug]",  "/user/forum/rooms/task/[slug]", "/user/forum/discussion/question/[slug]", "/user/forum/discussion/question/ask-question", "/user/forum/rooms/topic/[slug]", "/user/forum/rooms/question/edit-question/[slug]"]) ? `${style.active}` : ""}>
-                  <span>
-                    <ReadFilled />
-                  </span>
-                  <span className={`${style.sidebarLink} ${display}`}>
-                    Forums
-                  </span>
-                </a>
-              </Link>
-            </li>
-            <li style={{marginTop: ".5rem"}}>
-              <Link href={"/host/forum"}>
-                <a className={active(["/host/forum", "/host/forum/create", "/host/forum/[slug]", "/host/forum/create-room/[slug]", "/host/forum/room/[slug]", "/host/forum/room/create-topic/[slug]", "/user/forum/register/[slug]", "/host/forum/user/[slug]"]) ? `${style.active}` : ""}>
-                  <span>
-                    <EyeFilled />
-                  </span>
-                  <span className={`${style.sidebarLink} ${display}`}>
-                    Forum + + +
-                  </span>
-                </a>
-              </Link>
-            </li>
-       
 
-          </div>
 
-          <div className={style.sidebarHeadContainer}>
-            <h3 className={`${style.display} ${style.sidebarLink}`}>Practice</h3>
-
-          <li>
-            <Link href={"/host/quiz"}>
-              <a
-                className={
-                  active([
-                    "/host/quiz",
-                    "/host/quiz/create",
-                    "/host/quizzes",
-                    "/host/quiz/settings/[slug]",
-                    "/host/quiz/[slug]",
-                    "/host/quiz/statistics",
-                    "/host/quiz/statistics/[slug]",
-                    "/host/quiz/question/[slug]",
-                    "/host/quiz/question/create/[slug]",
-                  ])
-                    ? `${style.active}`
-                    : ""
-                }
-              >
-                <span>
-                  <QuestionCircleFilled />
-                </span>
-                <span className={`${style.sidebarLink} ${display}`}>Quiz Host</span>
-              </a>
-            </Link>
-          </li>
-
-          <li>
-            <Link href={"/user/records"}>
-              <a className={active(["/user/records"]) ? `${style.active}` : ""}>
-                <span>
-                  <ReadFilled />
-                </span>
-                <span className={`${style.sidebarLink} ${display}`}>
-                  Attempt Results
-                </span>
-              </a>
-            </Link>
-          </li>
-
-          <li>
-            <Link href={"/user/resources"}>
-              <a className={active(["/user/resources"]) ? `${style.active}` : ""}>
-                <span>
-                  <ReadFilled />
-                </span>
-                <span className={`${style.sidebarLink} ${display}`}>
-                  Resources
-                </span>
-              </a>
-            </Link>
-          </li>
-
-        </div>
           <li>
             <Link href={"/user/post"}>
               <a className={active(["/user/post"]) ? `${style.active}` : ""}>
                 <span>
-                  <BookFilled />
+                  <BookFilled className={style.sideBarLinkIcon} />
                 </span>
                 <span className={`${style.sidebarLink} ${display}`}>Blog</span>
               </a>
