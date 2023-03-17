@@ -11,9 +11,38 @@ import {
 import SelectInput from '../../../components/SelectInput'
 import SubmitBtn from '../../../components/SubmitBtn'
 import { useRouter } from 'next/router'
+import axios from 'axios'
+import { BASE_URL } from '../../../lib/constants'
+import { Toaster, toast } from 'sonner'
+import { clearUserInfo, login } from '../../../redux/slices/authSlice'
+import { useDispatch } from 'react-redux'
+
 
 function AdminLogin() {
+  const [formData, setFormData] = useState({
+    username: "", password: ""
+  })
+  const [clicked, setClicked] = useState(false)
   const router = useRouter()
+  const dispatch = useDispatch()
+  
+  const adminLogin = (e) => {
+    e.preventDefault()
+    setClicked(true)
+
+    axios
+      .post(`${BASE_URL}/api/user/adminlogin`, formData)
+      .then((response)=>{
+        setClicked(false)
+        toast.success(response.data?.message)
+        dispatch(login(response.data?.user))
+        router.push("/admin")
+      })
+      .catch((err)=>{
+        toast.error(err.response?.data?.message)
+        setClicked(false)
+      })
+  }
   return (
     <>
         <Head>
@@ -22,10 +51,12 @@ function AdminLogin() {
             <link rel="icon" href="/img/logoWBg.png" />
         </Head>
 
+        <Toaster richColors />
+
       
       {/* Header Section */}
 
-        <HeaderW navAction={"Register"} route={"/auth/register"} />
+        <HeaderW navAction={"Register"} route={"#"} />
 
         <section className={style.regSection}>
             <div className={style.regIllustration}></div>
@@ -35,9 +66,9 @@ function AdminLogin() {
                 <h1>Welcome Back Admin</h1>
                 <p>Sign in to continue your session . . .</p>
                 <form>
-                    <TextInputField inputLabel={"Email Address"} placeholder={"example@gmail.com"} type={"email"} />
-                    <TextInputField inputLabel={"Password"} placeholder={"• • • • • • • • • •"} type={"password"} />
-                    <SubmitBtn actionText={"Sign In"} />
+                    <TextInputField value={formData.username} onchange={(e)=>setFormData({...formData, username: e.target.value})} inputLabel={"Email Address"} placeholder={"example@gmail.com"} type={"email"} />
+                    <TextInputField value={formData.password} onchange={(e)=>setFormData({...formData, password: e.target.value})} inputLabel={"Password"} placeholder={"• • • • • • • • • •"} type={"password"} />
+                    <SubmitBtn actionText={"Sign In"} clicked={clicked} action={adminLogin} />
                 </form>
             </div>
         </section>

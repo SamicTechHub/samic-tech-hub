@@ -48,17 +48,8 @@ function DashboardHeader({userObj, toggleDisplay, isClicked}) {
         {isClicked ? <AlignLeftOutlined /> : <AlignRightOutlined />}
       </label>
     </div>
-
-        {/* <Button
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-        Dashboard
-      </Button> */}
-      k
+    
+      {userObj?.username}
       <div style={{cursor: "pointer"}} className={style.header_avatar} onClick={handleClick}>
         <Image
         src={userObj?.userImageUrl || "/img/user2.png"}

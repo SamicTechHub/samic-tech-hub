@@ -15,6 +15,9 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 import { BASE_URL } from '../../lib/constants'
 
+import { Toaster, toast } from 'sonner'
+
+
 function Register() {
   const [formData, setFormData] = useState({})
   const [clicked, setClicked] = useState(false)
@@ -27,22 +30,27 @@ function Register() {
 
 
   const optionsArray = [
-    "PHP", "JavaScript", "NodeJS", "ReactJS"
+    "PHP", "JavaScript", "Data Science"
   ]
+  const subStack = {
+    "PHP": ["laravel"],
+    "JavaScript": ["ReactJs", "NextJs", "NodeJs", ],
+    "Data Science": ["Python", "PowerBI", "Excel"]
+  }
 
   const registerUser = (e) => {
     e.preventDefault()
     setClicked(true)
 
-    console.log(formData)
     axios
       .post(`${BASE_URL}/api/user/signup`, formData)
       .then((response)=>{
-        console.log(response.data)
         setClicked(false)
+        setFormData({})
+        toast.success(response.data?.message)
       })
       .catch((err)=>{
-        console.log(err.response.data.message)
+        toast.error(err.response?.data?.message)
         setClicked(false)
       })
   }
@@ -57,8 +65,9 @@ function Register() {
 
       
       {/* Header Section */}
+        <Toaster richColors  />
 
-        <HeaderW navAction={"Sign In"} route={"/auth/login"}/>
+        <HeaderW navAction={"Sign In"} route={"#"}/>
 
         <section className={style.regSection}>
             <div className={style.regIllustration}></div>
@@ -68,13 +77,14 @@ function Register() {
                 <h1>Personal Information</h1>
                 <p>Let&apos;s get to Know you a little better</p>
                 <form>
-                    <TextInputField onchange={(e)=>setFormData({...formData, firstName: e.target.value})} inputLabel={"First Name"} placeholder={"Your given name"} type={"text"} />
-                    <TextInputField onchange={(e)=>setFormData({...formData, lastName: e.target.value})} inputLabel={"Last Name"} placeholder={"Your Family name"} type={"text"}/>
-                    <TextInputField onchange={(e)=>setFormData({...formData, phone_number: e.target.value})} inputLabel={"Phone Number"} placeholder={"+234 808 084 2145"} type={"text"} />
-                    <TextInputField onchange={(e)=>setFormData({...formData, email: e.target.value})} inputLabel={"Email Address"} placeholder={"example@gmail.com"} type={"email"} />
-                    <TextInputField onchange={(e)=>setFormData({...formData, password: e.target.value})} inputLabel={"Password"} placeholder={"• • • • • • • • • •"} type={"password"} />
-                    <SelectInput onchange={(e)=>setFormData({...formData, stack: e.target.value})} options={optionsArray}/>
-                    <SubmitBtn clicked={clicked} action={registerUser} actionText={"Apply NOW"} />
+                    <TextInputField value={formData?.firstName} onchange={(e)=>setFormData({...formData, firstName: e.target.value})} inputLabel={"First Name"} placeholder={"Your given name"} type={"text"} />
+                    <TextInputField value={formData?.lastName} onchange={(e)=>setFormData({...formData, lastName: e.target.value})} inputLabel={"Last Name"} placeholder={"Your Family name"} type={"text"}/>
+                    <TextInputField value={formData?.phone_number} onchange={(e)=>setFormData({...formData, phone_number: e.target.value})} inputLabel={"Phone Number"} placeholder={"+234 808 084 2145"} type={"text"} />
+                    <TextInputField value={formData?.email} onchange={(e)=>setFormData({...formData, email: e.target.value})} inputLabel={"Email Address"} placeholder={"example@gmail.com"} type={"email"} />
+                    <TextInputField value={formData?.password} onchange={(e)=>setFormData({...formData, password: e.target.value})} inputLabel={"Password"} placeholder={"• • • • • • • • • •"} type={"password"} />
+                    <SelectInput value={formData?.stack} onchange={(e)=>setFormData({...formData, stack: e.target.value})} options={optionsArray}/>
+                    {formData.stack && <SelectInput value={formData.subStack} onchange={(e)=>setFormData({...formData, subStack: e.target.value})} options={subStack[formData?.stack]}/>}
+                    <SubmitBtn clicked={clicked} action={registerUser} actionText={"Apply NOW"}  />
                 </form>
             </div>
         </section>

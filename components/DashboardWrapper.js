@@ -5,15 +5,13 @@ import DashboardHeader from "./DashboardHeader"
 import { useSelector } from 'react-redux';
 // import { ToastContainer, toast } from "react-toastify";
 
-function DashboardWrapper(props) {
+function DashboardWrapper({children, userObj}) {
     const [clicked, setClicked] = useState(false)
     const [changeWidth, setChangeWidth] = useState("");
     const [display, setDisplay] = useState(style.changeDisplay);
     const [userImageWidth, setUserImageWidth] = useState("");
 
     // const { auth } = useSelector((state) => state);
-    const auth = ""
-    const userObj = auth?.user
 
 
     const toggleDisplay = () => {
@@ -47,7 +45,7 @@ function DashboardWrapper(props) {
                 )}
             <DashboardHeader userObj={userObj} toggleDisplay={toggleDisplay} isClicked={clicked}/>
                 <main className={style.main}>
-                    {props.children}
+                    {children}
                 </main>
             </div>
         
