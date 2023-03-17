@@ -82,8 +82,8 @@ function Register() {
                     <TextInputField value={formData?.phone_number} onchange={(e)=>setFormData({...formData, phone_number: e.target.value})} inputLabel={"Phone Number"} placeholder={"+234 808 084 2145"} type={"text"} />
                     <TextInputField value={formData?.email} onchange={(e)=>setFormData({...formData, email: e.target.value})} inputLabel={"Email Address"} placeholder={"example@gmail.com"} type={"email"} />
                     <TextInputField value={formData?.password} onchange={(e)=>setFormData({...formData, password: e.target.value})} inputLabel={"Password"} placeholder={"• • • • • • • • • •"} type={"password"} />
-                    <SelectInput value={formData?.stack} onchange={(e)=>setFormData({...formData, stack: e.target.value})} options={optionsArray}/>
-                    {formData.stack && <SelectInput value={formData.subStack} onchange={(e)=>setFormData({...formData, subStack: e.target.value})} options={subStack[formData?.stack]}/>}
+                    <SelectInput label={"Preferred Stack"} value={formData?.stack} onchange={(e)=>setFormData({...formData, stack: e.target.value})} options={optionsArray}/>
+                    {formData.stack && <SelectInput label={"Choose one Sub-stack"} value={formData.subStack} onchange={(e)=>setFormData({...formData, subStack: e.target.value})} options={subStack[formData?.stack]}/>}
                     <SubmitBtn clicked={clicked} action={registerUser} actionText={"Apply NOW"}  />
                 </form>
             </div>

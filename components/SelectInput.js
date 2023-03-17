@@ -6,7 +6,7 @@ function SelectInput({label, placeholder, options, value, onchange}) {
     <div className={style.inputGroup}>
         <label>{label}</label>
         <select onChange={onchange} value={value} placeholder={placeholder}>
-            <option>Preferred Stack</option>
+            <option>{label}</option>
             {
                 options && options.map((option, index)=>{
                     return(
