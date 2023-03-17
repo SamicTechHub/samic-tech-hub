@@ -46,8 +46,10 @@ function Register() {
       .post(`${BASE_URL}/api/user/signup`, formData)
       .then((response)=>{
         setClicked(false)
-        setFormData({})
         toast.success(response.data?.message)
+        setTimeout(() => {
+          router.push("/")
+        }, 3000);
       })
       .catch((err)=>{
         toast.error(err.response?.data?.message)

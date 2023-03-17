@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Provider store={store}>
         <PersistGate persistor={persistor}>
-          <NextNProgress color='red' />
+          <NextNProgress color='black' />
           <Component {...pageProps} />
         </PersistGate>
       </Provider>
