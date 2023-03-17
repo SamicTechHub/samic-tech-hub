@@ -68,7 +68,7 @@ export default function Home() {
           <h1>Building Top <span className='emphasyBg'>Tech Talents</span> for the World</h1>
           <p>Gain the skills, experience and relationships that keep you ahead of the curve Learn tech and get hired fast - 100X Better</p>
           <div className={style.heroCTA}>
-            <button className='primaryBtn'>Become the Next Talent  →</button>
+            <button onClick={()=>router.push("/auth/register")} className='primaryBtn'>Become the Next Talent  →</button>
             <button className='secondaryBtn'>Apply As A Mentor  →</button>
           </div>
 

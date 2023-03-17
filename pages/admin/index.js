@@ -19,7 +19,6 @@ function Dashboard() {
     axios
       .get(`${BASE_URL}/api/user`)
       .then((response)=>{
-        console.log(response.data)
         setUsers(response.data?.user)
       })
       .catch((e)=>{
