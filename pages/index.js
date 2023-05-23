@@ -78,7 +78,7 @@ export default function Home() {
             <div className={style.circleOutline}></div>
             <Image className={style.scale} src={"/img/heroImg.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} objectPosition={"bottom"} />
             <div className={style.heroMessage2}>
-              <ProfileTestimonial userImage={"/img/student1.png"} message={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc. adipiscing elit. Nunc. "} name={"Zainab Moses"} />
+              <ProfileTestimonial userImage={"/img/student1.png"} message={"Samic Tech Hub offers a comprehensive curriculum that covers all aspects of web development."} name={"Zainab Moses"} />
             </div>
             <div className={style.heroMessage1}>
               <ProfileTestimonial userImage={"/img/student2.png"} message={"One of the best UX curriculum I have ever used."} name={"Eniitan Uzor"} />
@@ -94,7 +94,10 @@ export default function Home() {
           <h2>WHO WE ARE</h2>
           <div className={style.aboutDetails}>
             <h1>Shaping the Future of <span className='emphasyBg'>Work</span></h1>
-            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered all injected humour or randomised words which do not look even slightly believable but the majority have suffered all injected humour or randomised words which do not look even slightly believable. </p>
+            <p>Samic Tech Hub is a web development school that helps students learn the skills they need to build successful careers in the tech industry. Our curriculum is comprehensive and covers all aspects of web development, from HTML and CSS to JavaScript and React. We also offer a variety of support resources, including a forum, a chat room, and a mentorship program.
+              <br />
+              
+              We are proud to have helped thousands of students learn web development and launch successful careers. We are committed to providing our students with the best possible education, and we are confident that we can help you achieve your goals. </p>
           </div>
           <button className='primaryBtn'>Find Out More →</button>
         </div>
@@ -223,7 +226,7 @@ export default function Home() {
 
             <h3>&quot;The Best in town&quot;</h3>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin. Orci nullam vitae amet ullamcorper scelerisque </p>
+            <p>Samic Tech Hub gave me the skills and confidence to pursue a career in web development. The curriculum was comprehensive and well-organized, and the instructors were experienced and knowledgeable. I was able to learn at my own pace and get help when I needed it. I am now working as a web developer.</p>
 
             <div className={style.testimonialUserDetails}>
               <h5>Emeka Afolayan</h5>
@@ -243,7 +246,7 @@ export default function Home() {
 
             <h3>&quot;Instant Job Offer&quot;</h3>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin. Orci nullam vitae amet ullamcorper scelerisque </p>
+            <p>I was unemployed for months after I graduated from college. I was starting to get discouraged when I found Samic Tech Hub. I enrolled in their web development program and was offered a job through their job placement program within a month of graduating.</p>
 
             <div className={style.testimonialUserDetails}>
               <h5>Mariam Achur</h5>
@@ -263,7 +266,7 @@ export default function Home() {
 
             <h3>&quot;They made it easy&quot;</h3>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin. Orci nullam vitae amet ullamcorper scelerisque </p>
+            <p>I've always been a visual learner, so I found it difficult to learn new programming languages from books and online courses. But when I found Samic Tech Hub, I knew I had found the perfect learning platform. The interactive lessons and engaging activities made learning fun and easy, and I was able to master new concepts quickly.</p>
 
             <div className={style.testimonialUserDetails}>
               <h5>Oluwatoyin Abudu</h5>

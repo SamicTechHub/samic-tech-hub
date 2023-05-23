@@ -15,7 +15,7 @@ function Footer() {
       <div className={style.aboutNav}>
         <div className={style.aboutColumn}>
             <h3>Samic</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit nunc id purus nulla.</p>
+            <p>9, Samic Tech Hub, Beside Azeez Hotel, J&P Area, Moniya, Ibadan.</p>
             <div className={style.socials}>
             <TwitterCircleFilled /> <FacebookFilled /> <InstagramFilled /> <GithubFilled /> 
 

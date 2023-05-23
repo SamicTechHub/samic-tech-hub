@@ -143,7 +143,11 @@ function About() {
           <h2>MORE THAN JUST A COMPANY</h2>
           <div className={style.aboutDetails} style={{width: "100%"}}>
             <h1>We Are On A Mission To Nuture Africa&apos;s Greatest Talents.</h1>
-            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered all injected humour or randomised words which don&apos;t look even slightly believable but the majority have suffered all injected humour or randomised words which don&apos;t look even slightly believable. </p>
+            <p>Samic Tech Hub is on a mission to nurture Africa's greatest talents. We believe that Africa has a wealth of untapped talent, and we are committed to helping young Africans develop the skills and knowledge they need to succeed in the global economy.
+
+We do this by providing high-quality, affordable education and training in the areas of technology, entrepreneurship, and leadership. We also offer a variety of support services, such as career counseling, job placement assistance, and mentorship.
+
+Our goal is to help young Africans reach their full potential and make a positive impact on the world. We believe that by nurturing Africa's greatest talents, we can help to build a more prosperous and equitable future for all. </p>
           </div>
         </div>
         <div className={style.aboutSectionImage}>
@@ -174,8 +178,8 @@ function About() {
                 <Image src={"/img/trend.png"} alt={"Samic Tech Hub"} layout={"fill"}  />
               </div>
               <div className={style.takeLeadItemTexts}>
-                <h3>Lorem Ipsum</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ante malesuada imperdiet elementum nec. </p>
+                <h3>Excellence</h3>
+                <p>Samic Tech Hub is committed to providing high-quality education and training. We believe that excellence is essential for success. </p>
               </div>
             </div>
             <div className={style.takeLeadItem}>
@@ -183,8 +187,8 @@ function About() {
                 <Image src={"/img/development.png"} alt={"Samic Tech Hub"} layout={"fill"}  />
               </div>
               <div className={style.takeLeadItemTexts}>
-                <h3>Lorem Ipsum</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ante malesuada imperdiet elementum nec. </p>
+                <h3>Innovation</h3>
+                <p>Samic Tech Hub is always looking for new and innovative ways to teach and learn. We believe that innovation is essential for progress. </p>
               </div>
             </div>
             <div className={style.takeLeadItem}>
@@ -192,8 +196,8 @@ function About() {
                 <Image src={"/img/work.png"} alt={"Samic Tech Hub"} layout={"fill"}  />
               </div>
               <div className={style.takeLeadItemTexts}>
-                <h3>Lorem Ipsum</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ante malesuada imperdiet elementum nec. </p>
+                <h3>Collaboration</h3>
+                <p>Samic Tech Hub is a community of learners. We believe that by working together, we can achieve more than we can alone. </p>
               </div>
             </div>
             <div className={style.takeLeadItem}>
@@ -201,8 +205,8 @@ function About() {
                 <Image src={"/img/flexible.png"} alt={"Samic Tech Hub"} layout={"fill"}  />
               </div>
               <div className={style.takeLeadItemTexts}>
-                <h3>Lorem Ipsum</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ante malesuada imperdiet elementum nec. </p>
+                <h3>Impact</h3>
+                <p>We are committed to making a positive impact on the world. We believe that by investing in young Africans, we can help to build a more prosperous and equitable future for all. </p>
               </div>
             </div>
           </div>
@@ -216,8 +220,8 @@ function About() {
         </div>
         <div className={style.ourMissionText}>
           <h1>We Are On A Mission To Nuture Africa&apos;s Greatest Talents.</h1>
-          <h6>Proin faucibus nibh et sagittis a. Lacinia purus ac amet pellentesque aliquam enim.</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet pellentesque aliquam enim.</p>
+          <h6>Join us at Samic Tech Hub today!</h6>
+          <p>Samic Tech Hub is on a mission to nurture Africa's greatest talents. We believe that Africa has a wealth of untapped talent, and we are committed to helping young Africans develop the skills and knowledge they need to succeed in the global economy.</p>
         </div>
       </section>
 
