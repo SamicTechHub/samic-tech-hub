@@ -30,14 +30,15 @@ function Register() {
 
 
   const optionsArray = [
-    "Full-Stack Development", "Front-End Development", "Back-End Development", "Mobile App Development", "UI/UX Development"
+    "Full-Stack Development", "Front-End Development", "Back-End Development", "Mobile App Development", "UI/UX Development", "Digital Marketing"
   ]
   const subStack = {
     "Full-Stack Development": ["MERN Stack"],
-    "Front-End Development": ["HTML, CSS & JavaScript", "ReactJS" ],
-    "Back-End Development": ["Python", "JavaScript (NODEJS)", "PHP(Laravel)"],
-    "Mobile App Development": ["ReactNative", "Flutter", "kotlin"],
-    "UI/UX Development": ['Figma', 'AdobeXD', "Sketch"]
+    "Front-End Development": ["HTML, CSS & JavaScript", "ReactJS (NextJS)" ],
+    "Back-End Development": ["Python(Django)", "JavaScript (NODEJS)", "PHP(Laravel)"],
+    "Mobile App Development": ["ReactNative", "Flutter", "Kotlin"],
+    "UI/UX Development": ['Figma', 'AdobeXD', "Sketch"],
+    "Digital Marketing": ["Social Media Marketing", "Email Marketing", "SEO & SEM", "Web Analytics", "Web design using Wordpress"]
   }
 
   const registerUser = (e) => {
