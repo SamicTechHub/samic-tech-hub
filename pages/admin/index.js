@@ -65,7 +65,7 @@ function Dashboard() {
         <div className={style.cards}>
           <div className={style.card}>
             <h2>Total Users</h2>
-            <p>40</p>
+            <p>{users.length}</p>
           </div>
         </div>
         <div className={style.container}>
