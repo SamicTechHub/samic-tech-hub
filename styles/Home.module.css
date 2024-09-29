@@ -1,4 +1,4 @@
-.headerContainer{
+.headerContainer {
   width: 100%;
   padding: 2.5rem 7rem;
   display: flex;
@@ -9,51 +9,51 @@
   z-index: 10;
 }
 
-.headerBackground{
+.headerBackground {
   background-color: var(--grey3);
-  opacity: .99;
+  opacity: 0.99;
   backdrop-filter: blur(5.5px);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-.headerContainer .brandContainer{
+.headerContainer .brandContainer {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
-.headerContainer .brandContainer .logoContainer{
+.headerContainer .brandContainer .logoContainer {
   position: relative;
   height: 4.1rem;
   width: 4.1rem;
 }
 
-.headerContainer .brandContainer h3{
+.headerContainer .brandContainer h3 {
   font-size: 2rem;
 }
 
-.headerContainer .headerNav{
+.headerContainer .headerNav {
   display: flex;
   gap: 4.8rem;
   align-items: center;
 }
 
-.headerContainer .headerNav .navLinks{
+.headerContainer .headerNav .navLinks {
   display: flex;
   gap: 1.6rem;
 }
 
-.headerContainer .headerNav .navLinks .navLink a{
+.headerContainer .headerNav .navLinks .navLink a {
   font-size: 1.6rem;
   font-weight: 600;
 }
 
 /* Hero Section */
-.heroSectionContainer{
+.heroSectionContainer {
   padding: 15rem 0 2.5rem 11rem;
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: .9fr 1.5fr;
+  grid-template-columns: 0.9fr 1.5fr;
   justify-items: end;
   position: relative;
   background-color: var(--grey2);
@@ -61,25 +61,25 @@
   /* padd */
 }
 
-.heroSectionContainer .heroText{
+.heroSectionContainer .heroText {
   margin-top: 5rem;
 }
 
-.heroSectionContainer .heroText h1{
+.heroSectionContainer .heroText h1 {
   font-size: 5rem;
   font-weight: 600;
 }
 
-.heroSectionContainer .heroText p{
+.heroSectionContainer .heroText p {
   font-size: 1.8rem;
   line-height: 3.2rem;
   color: var(--grey);
   font-weight: 400;
   opacity: 0.8;
-  margin: .8rem 0 3.4rem;
+  margin: 0.8rem 0 3.4rem;
 }
 
-.heroSectionContainer .heroText .heroCTA{
+.heroSectionContainer .heroText .heroCTA {
   display: flex;
   gap: 1.6rem;
 }
@@ -92,7 +92,7 @@
   /* padding-top: 20rem; */
 }
 
-.heroSectionContainer .heroBanner .pryCircle{
+.heroSectionContainer .heroBanner .pryCircle {
   width: 45rem;
   height: 45rem;
   border-radius: 50%;
@@ -103,7 +103,7 @@
   /* z-index: inherit; */
 }
 
-.heroSectionContainer .heroBanner .circleOutline{
+.heroSectionContainer .heroBanner .circleOutline {
   width: 45rem;
   height: 45rem;
   border-radius: 50%;
@@ -115,54 +115,54 @@
   /* z-index: 10; */
 }
 
-.heroSectionContainer .heroBanner .scale{
+.heroSectionContainer .heroBanner .scale {
   scale: 1.2;
 }
 
-.heroSectionContainer .heroBanner .heroMessage1{
+.heroSectionContainer .heroBanner .heroMessage1 {
   position: absolute;
   bottom: 0rem;
 }
 
-.heroSectionContainer .heroBanner .heroMessage1{
+.heroSectionContainer .heroBanner .heroMessage1 {
   position: absolute;
   bottom: 0rem;
 }
 
-.heroSectionContainer .heroBanner .heroMessage2{
+.heroSectionContainer .heroBanner .heroMessage2 {
   position: absolute;
   bottom: 10rem;
   right: 8rem;
 }
 
-.aboutSection{
+.aboutSection {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 3rem;
   margin: 5rem 0 4rem 11rem;
 }
 
-.aboutSection .aboutSectionText{
+.aboutSection .aboutSectionText {
   align-self: center;
 }
 
-.aboutSection .aboutSectionText h2{
+.aboutSection .aboutSectionText h2 {
   font-size: 1.8rem;
   color: var(--priColor);
   font-weight: 600;
 }
 
-.aboutSection .aboutSectionText .aboutDetails{
+.aboutSection .aboutSectionText .aboutDetails {
   width: 60%;
 }
 
-.aboutSection .aboutSectionText .aboutDetails h1{
+.aboutSection .aboutSectionText .aboutDetails h1 {
   font-size: 4.8rem;
   font-weight: 600;
   line-height: 6rem;
 }
 
-.aboutSection .aboutSectionText .aboutDetails p{
+.aboutSection .aboutSectionText .aboutDetails p {
   font-size: 1.5rem;
   line-height: 3rem;
   font-weight: 400;
@@ -170,19 +170,19 @@
   color: var(--grey);
 }
 
-.aboutSection .aboutSectionImage{
+.aboutSection .aboutSectionImage {
   height: 70rem;
   align-self: center;
 }
 
-.aboutSection .aboutSectionImage .imageContainer{
+.aboutSection .aboutSectionImage .imageContainer {
   height: 80%;
   width: 100%;
   margin: 0 auto;
   position: relative;
 }
 
-.aboutSection .aboutSectionImage .aboutStat{
+.aboutSection .aboutSectionImage .aboutStat {
   background-color: var(--priColor);
   padding: 3rem;
   position: absolute;
@@ -194,22 +194,21 @@
   left: -5rem;
 }
 
-.aboutSection .aboutSectionImage .aboutStat .statContainer{
+.aboutSection .aboutSectionImage .aboutStat .statContainer {
   max-width: 9rem;
 }
 
-
-.aboutSection .aboutSectionImage .aboutStat .statContainer h1{
+.aboutSection .aboutSectionImage .aboutStat .statContainer h1 {
   font-size: 4rem;
 }
 
-.aboutSection .aboutSectionImage .aboutStat .statContainer p{
+.aboutSection .aboutSectionImage .aboutStat .statContainer p {
   font-weight: 300;
   font-size: 2rem;
 }
 
 /* Our Program Section */
-.ourProgramSection{
+.ourProgramSection {
   margin: 3rem 7rem 7rem;
   padding: 5rem 4rem;
   border-top: 4px solid var(--priColor);
@@ -217,39 +216,39 @@
   border-left: 2px solid var(--priColor);
   border-right: 2px solid var(--priColor);
   border-radius: 1rem;
-  background-color: #FEFEFB;
+  background-color: #fefefb;
   overflow: hidden;
   position: relative;
 }
 
-.ourProgramSection .description{
+.ourProgramSection .description {
   text-align: center;
   max-width: 52.9rem;
   margin: auto;
 }
 
-.ourProgramSection .description h2{
+.ourProgramSection .description h2 {
   font-size: 4.8rem;
   font-weight: 600;
   line-height: 6rem;
-  margin-bottom: .6rem;
+  margin-bottom: 0.6rem;
 }
 
-.ourProgramSection .description p{
+.ourProgramSection .description p {
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 3.2rem;
-  margin-bottom: .6rem;
+  margin-bottom: 0.6rem;
 }
 
-.ourProgramSection .programs{
+.ourProgramSection .programs {
   display: flex;
   gap: 2.7rem;
   justify-content: space-between;
   margin-top: 7rem;
 }
 
-.ourProgramSection .programs .program{
+.ourProgramSection .programs .program {
   padding: 5rem;
   background: black;
   border-radius: 1rem;
@@ -259,41 +258,41 @@
   z-index: 3;
 }
 
-.ourProgramSection .programs .program:nth-child(1){
+.ourProgramSection .programs .program:nth-child(1) {
   background: var(--priColor);
   color: var(--white);
 }
 
-.ourProgramSection .programs .program:nth-child(2){
+.ourProgramSection .programs .program:nth-child(2) {
   background: var(--secColor);
   color: var(--white);
 }
 
-.ourProgramSection .programs .program:nth-child(3){
+.ourProgramSection .programs .program:nth-child(3) {
   background: var(--white);
   color: black !important;
 }
 
-.ourProgramSection .programs .program .svgContainer{
+.ourProgramSection .programs .program .svgContainer {
   position: relative;
   width: 7rem;
   height: 7rem;
   margin-bottom: 3rem;
 }
 
-.ourProgramSection .programs .program h3{
+.ourProgramSection .programs .program h3 {
   font-size: 1.5rem;
   font-weight: 600;
 }
 
-.ourProgramSection .programs .program p{
+.ourProgramSection .programs .program p {
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 2.5rem;
   margin-top: 2.6rem;
 }
 
-.ourProgramSection .programs .program button{
+.ourProgramSection .programs .program button {
   padding: 1rem 0;
   outline: none;
   border: none;
@@ -304,7 +303,7 @@
 
 /* Take Lead Section */
 
-.takeLeadSection{
+.takeLeadSection {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 7rem 8rem;
@@ -315,13 +314,13 @@
 
 } */
 
-.takeLeadSection .takeLeadIntro h3{
+.takeLeadSection .takeLeadIntro h3 {
   font-size: 4.8rem;
   font-weight: 600;
   line-height: 6rem;
 }
 
-.takeLeadSection .takeLeadIntro p{
+.takeLeadSection .takeLeadIntro p {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 3.6rem;
@@ -329,18 +328,18 @@
   color: var(--grey);
 }
 
-.takeLeadSection .takeLeadItems{
+.takeLeadSection .takeLeadItems {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
 }
 
-.takeLeadSection .takeLeadItems .takeLeadItem{
+.takeLeadSection .takeLeadItems .takeLeadItem {
   display: flex;
   gap: 2rem;
 }
 
-.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemImage{
+.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemImage {
   position: relative;
   min-height: 6rem;
   max-height: 6rem;
@@ -349,35 +348,34 @@
   border-radius: 50%;
 }
 
-.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemTexts{
-  padding: 0 4rem 0 0 ;
+.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemTexts {
+  padding: 0 4rem 0 0;
 }
 
-.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemTexts h3{
+.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemTexts h3 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1.2rem;
 }
 
-.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemTexts p{
+.takeLeadSection .takeLeadItems .takeLeadItem .takeLeadItemTexts p {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.4rem;
   margin-bottom: 1.2rem;
 }
 
-
 /* Testimonial Section */
-.testimonialSection{
-  background: #F9FAFB;
+.testimonialSection {
+  background: #f9fafb;
   padding: 5rem 3rem;
 }
 
-.testimonialSection .testimonialIntro{
+.testimonialSection .testimonialIntro {
   text-align: center;
 }
 
-.testimonialSection .testimonialIntro h3{
+.testimonialSection .testimonialIntro h3 {
   font-size: 4rem;
   font-weight: 600;
   max-width: 66.2rem;
@@ -385,14 +383,14 @@
   margin: auto;
 }
 
-.testimonialSection .testimonials{
+.testimonialSection .testimonials {
   display: flex;
   gap: 3rem;
   margin: 3rem 5rem;
   justify-content: space-between;
 }
 
-.testimonialSection .testimonials .testimonial{
+.testimonialSection .testimonials .testimonial {
   background: var(--white);
   box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.08);
   border-radius: 1rem;
@@ -400,7 +398,7 @@
   max-width: 40rem;
 }
 
-.testimonialSection .testimonials .testimonial .testimonialImageContainer{
+.testimonialSection .testimonials .testimonial .testimonialImageContainer {
   position: relative;
   height: 15rem;
   border-radius: 1rem;
@@ -408,75 +406,73 @@
   width: 15rem;
 }
 
-.testimonialSection .testimonials .testimonial h3{
+.testimonialSection .testimonials .testimonial h3 {
   margin-top: 3rem;
   font-size: 2rem;
   font-weight: 600;
 }
 
-.testimonialSection .testimonials .testimonial p{
+.testimonialSection .testimonials .testimonial p {
   margin-top: 3rem;
   font-size: 1.6rem;
   color: var(--grey);
   font-weight: 400;
 }
 
-.testimonialSection .testimonials .testimonial .testimonialUserDetails{
+.testimonialSection .testimonials .testimonial .testimonialUserDetails {
   margin-top: 2rem;
 }
 
-.testimonialSection .testimonials .testimonial .testimonialUserDetails h5{
+.testimonialSection .testimonials .testimonial .testimonialUserDetails h5 {
   font-size: 1.2rem;
 }
 
-.testimonialSection .testimonials .testimonial .testimonialUserDetails p{
+.testimonialSection .testimonials .testimonial .testimonialUserDetails p {
   margin-top: 0.5rem;
   font-size: 1.2rem;
 }
 
 /* Footer Section */
 
-
-
 /* About Page Styling */
-.aboutHeroSectionContainer{
+.aboutHeroSectionContainer {
   /* padding: 15rem 0 2.5rem 11rem; */
   padding-top: 15rem;
   position: relative;
-  background-color: #12141D;
+  background-color: #12141d;
   overflow: hidden;
 }
 
-.aboutHeroSectionContainer .aboutHeroText{
+.aboutHeroSectionContainer .aboutHeroText {
   max-width: 85rem;
   text-align: center;
   margin-top: 5rem;
   margin: auto;
 }
 
-.aboutHeroSectionContainer .aboutHeroText h1{
+.aboutHeroSectionContainer .aboutHeroText h1 {
   font-weight: 700;
   font-size: 6.4rem;
   color: var(--white);
 }
 
-.aboutHeroSectionContainer .aboutHeroText p{
+.aboutHeroSectionContainer .aboutHeroText p {
   font-weight: 400;
   font-size: 2rem;
   color: var(--white);
 }
 
-.aboutHeroSectionContainer .aboutHeroImages{
+.aboutHeroSectionContainer .aboutHeroImages {
   position: relative;
 }
 
-.aboutHeroSectionContainer .aboutHeroImages .worldImage{
+.aboutHeroSectionContainer .aboutHeroImages .worldImage {
   position: relative;
   width: 100%;
   height: 53rem;
 }
 
-.aboutHeroSectionContainer .aboutHeroImages .userHeroImages{
+.aboutHeroSectionContainer .aboutHeroImages .userHeroImages {
   display: flex;
   position: absolute;
   bottom: 10rem;
@@ -485,7 +481,7 @@
   width: 100%;
 }
 
-.aboutHeroSectionContainer .aboutHeroImages .userHeroImages2{
+.aboutHeroSectionContainer .aboutHeroImages .userHeroImages2 {
   display: flex;
   position: absolute;
   bottom: 20rem;
@@ -494,7 +490,7 @@
   width: 100%;
 }
 
-.aboutHeroSectionContainer .aboutHeroImages .userHeroImages .userHeroImage{
+.aboutHeroSectionContainer .aboutHeroImages .userHeroImages .userHeroImage {
   position: relative;
   height: 5rem;
   width: 5rem;
@@ -504,7 +500,7 @@
   overflow: hidden;
 }
 
-.aboutHeroSectionContainer .aboutHeroImages .userHeroImages2 .userHeroImage{
+.aboutHeroSectionContainer .aboutHeroImages .userHeroImages2 .userHeroImage {
   position: relative;
   height: 5rem;
   width: 5rem;
@@ -514,11 +510,11 @@
   overflow: hidden;
 }
 
-.ourProgramSection .takeLeadSection{
+.ourProgramSection .takeLeadSection {
   padding: 2rem 1rem;
 }
 
-.ourProgramSection .takeLeadSection .takeLeadIntro h3{
+.ourProgramSection .takeLeadSection .takeLeadIntro h3 {
   font-size: 3rem;
   font-weight: 700;
   color: var(--priColor);
@@ -526,15 +522,15 @@
 }
 
 /* Our Mission Section */
-.ourMissionSection{
-  background-color: #FAFAFA;
+.ourMissionSection {
+  background-color: #fafafa;
   padding: 8rem;
   display: flex;
   justify-content: space-around;
   gap: 3rem;
 }
 
-.ourMissionSection .ourMissionImage{
+.ourMissionSection .ourMissionImage {
   position: relative;
   width: 55rem;
   height: 41rem;
@@ -542,109 +538,112 @@
   overflow: hidden;
 }
 
-.ourMissionSection .ourMissionText{
+.ourMissionSection .ourMissionText {
   max-width: 52rem;
 }
 
-.ourMissionSection .ourMissionText h1{
+.ourMissionSection .ourMissionText h1 {
   font-weight: 600;
   font-size: 4.8rem;
-  line-height: 6rem; 
+  line-height: 6rem;
   margin-bottom: 2rem;
 }
 
-.ourMissionSection .ourMissionText h6{
+.ourMissionSection .ourMissionText h6 {
   font-weight: 500;
   font-size: 1.8rem;
   line-height: 3rem;
   margin-bottom: 2rem;
 }
 
-.ourMissionSection .ourMissionText p{
+.ourMissionSection .ourMissionText p {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.6rem;
 }
 
-
 /* Registration Section */
-.regSection{
+.regSection {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
 }
 
-.regSection .regIllustration{
-  background-image: linear-gradient(to right, #12141D, var(--priColor));
+.regSection .regIllustration {
+  background-image: linear-gradient(to right, #12141d, var(--priColor));
   min-height: 100vh;
+
+  padding: 10rem 3rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.regSection .regFormContainer{
+.regSection .regIllustration p,
+.regSection .regIllustration li {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: white;
+}
+
+.regSection .regIllustration h3 {
+  font-size: 2rem;
+}
+
+.regSection .regFormContainer {
   padding: 10rem 6rem 0;
 }
 
-.regSection .regFormContainer p{
+.regSection .regFormContainer p {
   font-size: 1.4rem;
   font-weight: 500;
   cursor: pointer;
 }
 
-.regSection .regFormContainer h1{
+.regSection .regFormContainer h1 {
   font-size: 3.6rem;
   font-weight: 600;
   margin-top: 1rem;
 }
 
-
-
-
-
-
-
-
-
-
-
 /* Media Queries */
 
 @media screen and (max-width: 1350px) {
-  .heroSectionContainer{
+  .heroSectionContainer {
     padding: 12rem 0 2.5rem 7rem;
   }
 }
 
-
 @media screen and (max-width: 1250px) {
-  .heroSectionContainer{
+  .heroSectionContainer {
     padding: 10rem 0 2.5rem 7rem;
   }
 
-  .heroSectionContainer .heroBanner{
+  .heroSectionContainer .heroBanner {
     width: 100%;
   }
 
-  .aboutSection .aboutSectionText .aboutDetails{
+  .aboutSection .aboutSectionText .aboutDetails {
     width: 80%;
   }
 }
 
-
 @media screen and (max-width: 1200px) {
-
-  .heroSectionContainer{
+  .heroSectionContainer {
     grid-template-columns: 1fr 1.3fr;
   }
-  .heroSectionContainer .heroBanner{
+  .heroSectionContainer .heroBanner {
     width: 100%;
   }
 
-  .heroSectionContainer .heroBanner .pryCircle{
+  .heroSectionContainer .heroBanner .pryCircle {
     left: 15rem;
     top: 8rem;
     height: 40rem;
     width: 40rem;
   }
 
-  .heroSectionContainer .heroBanner .circleOutline{
+  .heroSectionContainer .heroBanner .circleOutline {
     left: 17rem;
     top: 6rem;
     height: 40rem;
@@ -657,42 +656,41 @@
 }
 
 @media screen and (max-width: 1050px) {
-
-  .heroSectionContainer{
+  .heroSectionContainer {
     grid-template-columns: 1fr 1.2fr;
   }
 
-  .heroSectionContainer .heroText h1{
+  .heroSectionContainer .heroText h1 {
     font-size: 4rem;
   }
 
-  .heroSectionContainer .heroText p{
+  .heroSectionContainer .heroText p {
     font-size: 1.5rem;
   }
 
-  .heroSectionContainer .heroBanner .pryCircle{
+  .heroSectionContainer .heroBanner .pryCircle {
     left: 15rem;
     top: 8rem;
     height: 35rem;
     width: 35rem;
   }
 
-  .heroSectionContainer .heroBanner .circleOutline{
+  .heroSectionContainer .heroBanner .circleOutline {
     left: 17rem;
     top: 6rem;
     height: 35rem;
     width: 35rem;
   }
 
-  .aboutSection .aboutSectionText h2{
+  .aboutSection .aboutSectionText h2 {
     font-size: 1.4rem;
   }
 
-  .aboutSection .aboutSectionText  .aboutDetails h1{
+  .aboutSection .aboutSectionText .aboutDetails h1 {
     font-size: 4.3rem;
   }
 
-  .aboutSection .aboutSectionText .aboutDetails p{
+  .aboutSection .aboutSectionText .aboutDetails p {
     font-size: 1.2rem;
     line-height: 2.4rem;
   }
@@ -702,60 +700,60 @@
   }
 }
 
-@media screen and (max-width: 950px){
-  .heroSectionContainer .heroBanner .scale{
+@media screen and (max-width: 950px) {
+  .heroSectionContainer .heroBanner .scale {
     scale: 1;
   }
 
-  .heroSectionContainer .heroBanner .pryCircle{
+  .heroSectionContainer .heroBanner .pryCircle {
     height: 30rem;
     top: 10rem;
     width: 30rem;
   }
 
-  .heroSectionContainer .heroBanner .circleOutline{
+  .heroSectionContainer .heroBanner .circleOutline {
     height: 30rem;
     top: 8rem;
     width: 30rem;
   }
 
-  .heroSectionContainer .heroBanner{
+  .heroSectionContainer .heroBanner {
     height: 48rem;
   }
 
-  .aboutSection .aboutSectionText .aboutDetails{
+  .aboutSection .aboutSectionText .aboutDetails {
     width: 90%;
   }
 
-  .aboutSection .aboutSectionImage .aboutStat{
+  .aboutSection .aboutSectionImage .aboutStat {
     padding: 1.5rem;
   }
 
-  .aboutSection .aboutSectionImage .aboutStat .statContainer{
+  .aboutSection .aboutSectionImage .aboutStat .statContainer {
     max-width: 7rem;
   }
 
-  .aboutSection .aboutSectionImage .aboutStat .statContainer h1{
+  .aboutSection .aboutSectionImage .aboutStat .statContainer h1 {
     font-size: 2.5rem;
   }
 
-  .aboutSection .aboutSectionImage .aboutStat .statContainer p{
+  .aboutSection .aboutSectionImage .aboutStat .statContainer p {
     font-size: 1rem;
   }
 
-  .ourProgramSection{
+  .ourProgramSection {
     margin: 3rem 2rem 5rem;
   }
 
-  .takeLeadSection{
+  .takeLeadSection {
     padding: 4rem;
   }
 
-  .testimonialSection{
+  .testimonialSection {
     padding: 3rem 1rem;
   }
 
-  .testimonialSection .testimonials{
+  .testimonialSection .testimonials {
     gap: 1.5rem;
     margin: 2rem 3rem;
   }
@@ -768,29 +766,29 @@
     bottom: 5rem;
   }
 
-  .aboutHeroSectionContainer .aboutHeroImages .userHeroImages2{
+  .aboutHeroSectionContainer .aboutHeroImages .userHeroImages2 {
     bottom: 10rem;
   }
-    
-  .ourMissionSection .ourMissionText{
+
+  .ourMissionSection .ourMissionText {
     max-width: 45rem;
   }
 
-  .ourMissionSection .ourMissionImage{
+  .ourMissionSection .ourMissionImage {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 900px){
-  .heroSectionContainer{
+@media screen and (max-width: 900px) {
+  .heroSectionContainer {
     grid-template-columns: 1fr 1fr;
   }
 
-  .heroSectionContainer .heroBanner .pryCircle{
+  .heroSectionContainer .heroBanner .pryCircle {
     left: 10rem;
   }
 
-  .heroSectionContainer .heroBanner .circleOutline{
+  .heroSectionContainer .heroBanner .circleOutline {
     left: 10rem;
   }
 
@@ -798,135 +796,133 @@
     height: 30rem;
   }
 
-  .regSection{
+  .regSection {
     grid-template-columns: 1fr 2fr;
   }
 }
 
-@media screen and (max-width: 850px){
-  .heroSectionContainer .heroBanner{
+@media screen and (max-width: 850px) {
+  .heroSectionContainer .heroBanner {
     width: 50vw;
     /* height: 100%; */
   }
 
-  .takeLeadSection{
+  .takeLeadSection {
     grid-template-columns: 1fr;
   }
 
-  .takeLeadIntro{
+  .takeLeadIntro {
     text-align: center;
   }
 
-  .ourProgramSection .programs .program{
+  .ourProgramSection .programs .program {
     padding: 2rem;
   }
 
-
-  .aboutHeroSectionContainer .aboutHeroText{
+  .aboutHeroSectionContainer .aboutHeroText {
     max-width: 80%;
   }
 
-  .aboutHeroSectionContainer .aboutHeroText h1{
+  .aboutHeroSectionContainer .aboutHeroText h1 {
     font-weight: 700;
     font-size: 6rem;
     color: var(--white);
   }
 
-  .aboutHeroSectionContainer .aboutHeroText p{
+  .aboutHeroSectionContainer .aboutHeroText p {
     font-weight: 400;
     font-size: 1.6rem;
     color: var(--white);
   }
 
-  .ourMissionSection{
+  .ourMissionSection {
     display: grid;
     grid-template-columns: 1fr;
   }
 
-  .ourMissionSection .ourMissionText{
+  .ourMissionSection .ourMissionText {
     max-width: 100%;
   }
 }
 
-@media screen and (max-width: 750px){
-  .aboutSection .aboutSectionImage .aboutStat{
+@media screen and (max-width: 750px) {
+  .aboutSection .aboutSectionImage .aboutStat {
     bottom: 2rem;
   }
 
-  .testimonialSection .testimonials{
+  .testimonialSection .testimonials {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-
-@media screen and (max-width: 650px){
-  .aboutSection .aboutSectionImage .aboutStat{
+@media screen and (max-width: 650px) {
+  .aboutSection .aboutSectionImage .aboutStat {
     display: none;
   }
 
-  .heroSectionContainer{
+  .heroSectionContainer {
     grid-template-columns: 1fr;
     padding: 11rem 2.5rem;
     text-align: center;
   }
 
-  .heroSectionContainer .heroText{
+  .heroSectionContainer .heroText {
     max-width: 50rem;
     margin: auto;
     margin-top: 3rem;
   }
 
-  .heroSectionContainer .heroText h1{
+  .heroSectionContainer .heroText h1 {
     font-weight: 700;
     font-size: 6rem;
     /* color: var(--white); */
   }
 
-  .heroSectionContainer .heroText p{
+  .heroSectionContainer .heroText p {
     font-weight: 400;
     font-size: 2rem;
   }
 
-  .heroSectionContainer .heroText .heroCTA{
+  .heroSectionContainer .heroText .heroCTA {
     justify-content: space-around;
   }
 
-  .heroSectionContainer .heroBanner{
+  .heroSectionContainer .heroBanner {
     display: none;
   }
 
-  .aboutSection{
+  .aboutSection {
     grid-template-columns: 1fr;
     margin: 5rem 3rem;
   }
 
-  .aboutSection .aboutSectionText .aboutDetails h1{
+  .aboutSection .aboutSectionText .aboutDetails h1 {
     font-weight: 700;
     font-size: 5rem;
     line-height: 7rem;
   }
 
-  .aboutSection .aboutSectionText .aboutDetails p{
+  .aboutSection .aboutSectionText .aboutDetails p {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 3rem;
   }
 
-  .ourProgramSection .programs{
+  .ourProgramSection .programs {
     flex-wrap: wrap;
     gap: 1.5rem;
   }
 
-  .ourProgramSection .programs .program{
+  .ourProgramSection .programs .program {
     width: 24rem;
   }
 
-  .headerContainer{
+  .headerContainer {
     padding: 2.5rem 4rem;
   }
 
-  .headerContainer .headerNav{
+  .headerContainer .headerNav {
     gap: 2.5rem;
   }
 
@@ -954,30 +950,29 @@
     border: 1px solid var(--white);
   }
 
-
-  .aboutHeroSectionContainer .aboutHeroText h1{
+  .aboutHeroSectionContainer .aboutHeroText h1 {
     font-size: 5rem;
     line-height: 6.5rem;
   }
 
-  .aboutHeroSectionContainer .aboutHeroText p{
+  .aboutHeroSectionContainer .aboutHeroText p {
     font-size: 1.4rem;
     line-height: 2.2rem;
     color: var(--white);
   }
 
-  .regSection{
-    grid-template-columns: .7fr 2fr;
+  .regSection {
+    grid-template-columns: 0.7fr 2fr;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .ourProgramSection .programs .program{
+  .ourProgramSection .programs .program {
     width: 100%;
     min-height: 20rem;
   }
 
-  .takeLeadSection .takeLeadItems{
+  .takeLeadSection .takeLeadItems {
     grid-template-columns: 1fr;
   }
 
@@ -987,7 +982,7 @@
     padding: 2rem 1rem;
   }
 
-  .testimonialSection .testimonials .testimonial{
+  .testimonialSection .testimonials .testimonial {
     min-width: 30rem;
   }
 
@@ -1004,52 +999,48 @@
     /* color: var(--white); */
   }
 
-  
   .aboutHeroSectionContainer .aboutHeroImages .worldImage {
     height: 25rem;
   }
 
-  .aboutSection .aboutSectionText .aboutDetails h1{
+  .aboutSection .aboutSectionText .aboutDetails h1 {
     font-size: 4rem;
     line-height: 5rem;
   }
 
-  .aboutSection .aboutSectionImage{
+  .aboutSection .aboutSectionImage {
     height: 60rem;
   }
 
-  .ourMissionSection{
+  .ourMissionSection {
     padding: 4rem;
     margin-bottom: 6rem;
   }
 
-  .regSection{
+  .regSection {
     display: flex;
     flex-direction: column;
   }
 
-  .regSection .regIllustration{
+  .regSection .regIllustration {
     min-height: 10vh;
   }
 }
 
-@media screen and (max-width: 450px){
-  .aboutSection .aboutSectionImage{
+@media screen and (max-width: 450px) {
+  .aboutSection .aboutSectionImage {
     height: 50rem;
   }
 }
 
-
-@media screen and (max-width: 400px){
-  .headerContainer{
+@media screen and (max-width: 400px) {
+  .headerContainer {
     padding: 2rem;
   }
 
-    
   .aboutHeroSectionContainer .aboutHeroImages .worldImage {
     height: 20rem;
   }
-
 
   .aboutHeroSectionContainer .aboutHeroImages .userHeroImages {
     bottom: 2rem;
@@ -1059,60 +1050,54 @@
     bottom: 5rem;
   }
 
-  
-  .aboutSection .aboutSectionImage{
+  .aboutSection .aboutSectionImage {
     height: 40rem;
   }
 }
 
-@media screen and (max-width: 360px){
-  .headerContainer{
+@media screen and (max-width: 360px) {
+  .headerContainer {
     padding: 2rem;
   }
 
-  .headerContainer .brandContainer .logoContainer{
+  .headerContainer .brandContainer .logoContainer {
     width: 3rem;
     height: 3rem;
   }
 
-  .headerContainer .brandContainer h3{
+  .headerContainer .brandContainer h3 {
     font-size: 1.5rem;
   }
 
-  .headerContainer .headerNav .navLinks{
+  .headerContainer .headerNav .navLinks {
     gap: 1rem;
   }
 
-  .headerContainer .headerNav .navLinks .navLink a{
+  .headerContainer .headerNav .navLinks .navLink a {
     font-size: 1.3rem;
     font-weight: 500;
   }
 
-  .headerContainer .headerNav .navButton button{
+  .headerContainer .headerNav .navButton button {
     padding: 1rem;
   }
 
-  
   .aboutHeroSectionContainer .aboutHeroImages .worldImage {
     height: 20rem;
   }
 
-  .aboutSection .aboutSectionImage{
+  .aboutSection .aboutSectionImage {
     height: 30rem;
   }
 
-  .ourProgramSection .takeLeadSection{
+  .ourProgramSection .takeLeadSection {
     padding: 2rem 0;
   }
 
-  .ourProgramSection .takeLeadSection .takeLeadIntro h3{
+  .ourProgramSection .takeLeadSection .takeLeadIntro h3 {
     font-size: 2rem;
   }
 }
-
-
-
-
 
 /* @media (prefers-color-scheme: dark) {
   .card,
