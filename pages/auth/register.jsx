@@ -122,7 +122,7 @@ function Register() {
           </p>
 
           <h1>Personal Information</h1>
-          <p>Let&apos;s get to Know you a little better</p>
+          <p>Let&apos;s get to Know you a little better.</p>
           <form>
             <TextInputField
               value={formData?.firstName}
