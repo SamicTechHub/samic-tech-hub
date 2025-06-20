@@ -30,6 +30,7 @@
 
 .headerContainer .brandContainer h3 {
   font-size: 2rem;
+  
 }
 
 .headerContainer .headerNav {
@@ -77,6 +78,18 @@
   font-weight: 400;
   opacity: 0.8;
   margin: 0.8rem 0 3.4rem;
+}
+
+.programs {
+  padding: 2rem 1rem;
+}
+
+.program {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  height: 100%;
 }
 
 .heroSectionContainer .heroText .heroCTA {

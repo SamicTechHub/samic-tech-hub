@@ -23,6 +23,27 @@ enum Track {
   DIGITAL_MARKETING
 }
 
+enum Expertise {
+  FULL_STACK_DEVELOPMENT
+  FRONTEND_DEVELOPMENT
+  BACKEND_DEVELOPMENT
+  UI_UX_DESIGN
+  PRODUCT_MANAGEMENT
+  DIGITAL_MARKETING
+}
+
+enum Experience {
+  ONE_THREE_YEARS
+  FOUR_TO_SIX_YEARS
+  SEVEN_TO_TEN_YEARS
+  TEN_YEARS_AND_ABOVE
+}
+
+enum Commitment {
+  ONE_HOUR
+  TWO_HOURS
+  THREE_HOURS
+}
 
 model User {
   id              Int      @id @default(autoincrement())
@@ -33,4 +54,22 @@ model User {
   password        String
   preferredTrack  Track
   createdAt       DateTime @default(now())
+}
+
+model Mentor {
+    id                Int      @id @default(autoincrement())
+    firstName         String
+    lastName          String
+    phoneNumber       String
+    emailAddress      String   @unique
+    password          String
+    currentJobTitle   String
+    companyName       String
+    experience        Experience
+    expertise         Expertise
+    linkedin          String
+    yourWhy           String
+    commitment        Commitment
+    createdAt         DateTime @default(now())
+    updatedAt         DateTime @updatedAt
 }

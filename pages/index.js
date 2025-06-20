@@ -6,12 +6,30 @@ import Footer from '../components/Footer'
 import ProfileTestimonial from '../components/ProfileTestimonial'
 import Sidebar from '../components/Sidebar'
 import style from '../styles/Home.module.css'
-import { useRouter } from 'next/router' 
+import { useRouter } from 'next/router';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import MentorRegisterModal from "../components/mentorRegisterModal"; // your modal component
+
+
 
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false)
   const router = useRouter()
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
 
   useEffect(() => {
     window.onscroll = function () {
@@ -22,6 +40,18 @@ export default function Home() {
       }
     };
   }, []);
+
+//   const style = {
+//   position: 'absolute',
+//   top: '50%',
+//   left: '50%',
+//   transform: 'translate(-50%, -50%)',
+//   width: 400,
+//   bgcolor: 'background.paper',
+//   border: '2px solid #000',
+//   boxShadow: 24,
+//   p: 4,
+// };
   return (
     <>
       <Head>
@@ -69,7 +99,8 @@ export default function Home() {
           <p>Gain the skills, experience and relationships that keep you ahead of the curve Learn tech and get hired fast - 100X Better</p>
           <div className={style.heroCTA}>
             <button onClick={()=>router.push("/auth/register")} className='primaryBtn'>Become the Next Talent  →</button>
-            <button className='secondaryBtn'>Apply As A Mentor  →</button>
+            <button onClick={()=>router.push("/auth/mentorRegister") } className='secondaryBtn'>Apply As A Mentor  →</button>
+       
           </div>
 
         </div>
@@ -99,7 +130,7 @@ export default function Home() {
               
               We are proud to have helped thousands of students learn web development and launch successful careers. We are committed to providing our students with the best possible education, and we are confident that we can help you achieve your goals. </p>
           </div>
-          <button className='primaryBtn'>Find Out More →</button>
+          <button className='primaryBtn' onClick={()=>router.push("/findOutMore")}>Find Out More →</button>
         </div>
         <div className={style.aboutSectionImage}>
           <div className={style.imageContainer}>
@@ -126,41 +157,70 @@ export default function Home() {
           <h2>Our Programs</h2>
           <p>We reduce risk through consulting & security product expertise. We are a trusted advisor for all cyber security</p>
         </div>
-
-        <div className={style.programs}>
-
-          <div className={style.program}>
-            <div className={style.svgContainer}>
-              <Image src={"/img/Vector.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"}/>
-            </div>
-            <h3>Web Designing</h3>
-            <p>This program is designed to provide you with in-depth knowledge on how to create functional websites by implementing web designs through the use of various programming languages.</p>
-
-            <button style={{color: "white"}}>Read More →</button>
-          </div>
-          <div className={style.program}>
-            <div className={style.svgContainer}>
-              <Image src={"/img/Vector.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"}/>
-            </div>
-            <h3>Digital Marketing</h3>
-            <p>This program is designed to provide you with in-depth knowledge on how to create functional websites by implementing web designs through the use of various programming languages.</p>
-
-            <button style={{color: "white"}}>Read More →</button>
-          </div>
-          <div className={style.program}>
-            <div className={style.svgContainer}>
-              <Image src={"/img/Vector2.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"}/>
-            </div>
-            <h3>UX/UI Design</h3>
-            <p>This program is designed to provide you with in-depth knowledge on how to create functional websites by implementing web designs through the use of various programming languages.</p>
-
-            <button style={{color: "#27BEAB"}}>Read More →</button>
-          </div>
-
-
+           <div className={style.programs}>
+  <Swiper
+    modules={[Autoplay, Pagination]}
+    spaceBetween={150}
+    slidesPerView={1}
+    autoplay={{ delay: 3000, disableOnInteraction: false }}
+    pagination={{ clickable: true }}
+    breakpoints={{
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }}
+  >
+    {/* Program 1 */}
+    <div className={style.programs}>
+    <SwiperSlide >
+      <div className={style.program} >
+        <div className={style.svgContainer}>
+          <Image src={"/img/Vector.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
         </div>
+        <h3>Software Development (Frontend/Backend)</h3>
+        <p>Learn how to build web applications with solid backend logic and responsive frontend interfaces using modern frameworks and tools.</p>
+      </div>
+    </SwiperSlide>
 
-      </section>
+    {/* Program 2 */}
+    <SwiperSlide>
+      <div className={style.program} style={{ backgroundColor: "#e6dc7f" }}>
+        <div className={style.svgContainer}>
+          <Image src={"/img/Vector.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
+        </div>
+        <h3>Digital Marketing</h3>
+        <p>Master the art of online marketing, content creation, and campaign strategies that drive real business growth.</p>
+      </div>
+    </SwiperSlide>
+
+    {/* Program 3 */}
+    <SwiperSlide>
+      <div className={style.program} style={{ backgroundColor: "#FFFF" }}>
+        <div className={style.svgContainer}>
+          <Image src={"/img/Vector2.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
+        </div>
+        <h3 style={{ color: 'black'}}>UX/UI Design</h3>
+        <p style={{ color: 'black'}}>Design beautiful, user-friendly interfaces and experiences that solve real problems for real users.</p>
+      </div>
+    </SwiperSlide>
+
+    {/* 🔁 Add More Programs Below */}
+    <SwiperSlide>
+      
+      <div className={style.program}>
+        <div className={style.svgContainer}>
+          <Image src={"/img/Vector.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
+        </div>
+        <h3>Product Management</h3>
+        <p>Learn how to manage digital products from ideation to execution with strategic planning and agile tools.</p>
+      </div>
+    </SwiperSlide>
+</div>
+  </Swiper>
+</div>
+        </section>
+  
+
 
       {/* Take the Lead Section */}
       <section className={style.takeLeadSection}>
