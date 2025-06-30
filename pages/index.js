@@ -6,52 +6,29 @@ import Footer from '../components/Footer'
 import ProfileTestimonial from '../components/ProfileTestimonial'
 import Sidebar from '../components/Sidebar'
 import style from '../styles/Home.module.css'
-import { useRouter } from 'next/router';
+import { useRouter, router } from 'next/router';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import HeaderF from "../components/HeaderF"
 
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import MentorRegisterModal from "../components/mentorRegisterModal"; // your modal component
+import Accordion from "../components/Accordion";
+import Courses from '../components/courses'
 
 
 
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false)
-  const router = useRouter()
-  // const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
 
-  useEffect(() => {
-    window.onscroll = function () {
-      if (window.scrollY > 30) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-  }, []);
 
-//   const style = {
-//   position: 'absolute',
-//   top: '50%',
-//   left: '50%',
-//   transform: 'translate(-50%, -50%)',
-//   width: 400,
-//   bgcolor: 'background.paper',
-//   border: '2px solid #000',
-//   boxShadow: 24,
-//   p: 4,
-// };
+
   return (
     <>
       <Head>
@@ -64,33 +41,7 @@ export default function Home() {
       
       {/* Header Section */}
 
-        <section className={ scrolled ? `${style.headerContainer} ${style.headerBackground}` : `${style.headerContainer}`}>
-          <div className={style.brandContainer}>
-            <div className={style.logoContainer}>
-              <Image src={"/img/logoGBg.png"} alt={"Samic Tech Hub"} layout={"fill"} />
-            </div>
-            <h3>Samic</h3>
-          </div>
-
-          <div className={style.headerNav}>
-            <div className={style.navLinks}>
-              <div className={style.navLink}>
-                <Link href={"/"}>
-                  <a>Home</a>
-                </Link>
-              </div>
-              <div className={style.navLink}>
-                <Link href={"/about"}>
-                  <a>About</a>
-                </Link>
-              </div>
-
-            </div>
-            <div className={style.navButton}>
-              <button onClick={()=>router.push("/auth/register")} className='primaryBtn'>Register</button>
-            </div>
-          </div>
-        </section>
+        <HeaderF />
 
       {/* Hero Section */}
       <section className={style.heroSectionContainer}>
@@ -107,7 +58,7 @@ export default function Home() {
         <div className={style.heroBanner}>
             <div className={style.pryCircle}></div>
             <div className={style.circleOutline}></div>
-            <Image className={style.scale} src={"/img/heroImg.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} objectPosition={"bottom"} />
+            <Image className={style.scale} src={"/img/heroImg.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} objectPosition={"bottom"} priority/>
             <div className={style.heroMessage2}>
               <ProfileTestimonial userImage={"/img/student1.png"} message={"Samic Tech Hub offers a comprehensive curriculum that covers all aspects of web development."} name={"Zainab Moses"} />
             </div>
@@ -150,76 +101,7 @@ export default function Home() {
       </section>
 
       {/* Our Programs */}
-      <section className={style.ourProgramSection}>
-        <Image src={"/img/Union1.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
-        <Image src={"/img/Union2.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
-        <div className={style.description}>
-          <h2>Our Programs</h2>
-          <p>We reduce risk through consulting & security product expertise. We are a trusted advisor for all cyber security</p>
-        </div>
-           <div className={style.programs}>
-  <Swiper
-    modules={[Autoplay, Pagination]}
-    spaceBetween={150}
-    slidesPerView={1}
-    autoplay={{ delay: 3000, disableOnInteraction: false }}
-    pagination={{ clickable: true }}
-    breakpoints={{
-      640: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 }
-    }}
-  >
-    {/* Program 1 */}
-    <div className={style.programs}>
-    <SwiperSlide >
-      <div className={style.program} >
-        <div className={style.svgContainer}>
-          <Image src={"/img/Vector.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
-        </div>
-        <h3>Software Development (Frontend/Backend)</h3>
-        <p>Learn how to build web applications with solid backend logic and responsive frontend interfaces using modern frameworks and tools.</p>
-      </div>
-    </SwiperSlide>
-
-    {/* Program 2 */}
-    <SwiperSlide>
-      <div className={style.program} style={{ backgroundColor: "#e6dc7f" }}>
-        <div className={style.svgContainer}>
-          <Image src={"/img/Vector.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
-        </div>
-        <h3>Digital Marketing</h3>
-        <p>Master the art of online marketing, content creation, and campaign strategies that drive real business growth.</p>
-      </div>
-    </SwiperSlide>
-
-    {/* Program 3 */}
-    <SwiperSlide>
-      <div className={style.program} style={{ backgroundColor: "#FFFF" }}>
-        <div className={style.svgContainer}>
-          <Image src={"/img/Vector2.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
-        </div>
-        <h3 style={{ color: 'black'}}>UX/UI Design</h3>
-        <p style={{ color: 'black'}}>Design beautiful, user-friendly interfaces and experiences that solve real problems for real users.</p>
-      </div>
-    </SwiperSlide>
-
-    {/* 🔁 Add More Programs Below */}
-    <SwiperSlide>
-      
-      <div className={style.program}>
-        <div className={style.svgContainer}>
-          <Image src={"/img/Vector.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
-        </div>
-        <h3>Product Management</h3>
-        <p>Learn how to manage digital products from ideation to execution with strategic planning and agile tools.</p>
-      </div>
-    </SwiperSlide>
-</div>
-  </Swiper>
-</div>
-        </section>
-  
+      <Courses />
 
 
       {/* Take the Lead Section */}
@@ -336,8 +218,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
+    {/* accordion section */} 
+      <Accordion />
       {/* Footer Section */}
       <section className={style.footerSection}>
         <Footer />

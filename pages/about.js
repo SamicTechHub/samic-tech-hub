@@ -49,7 +49,11 @@ function About() {
                 <a style={{color: "grey"}}>About</a>
               </Link>
             </div>
-
+           <div className={style.navLink}>
+              <Link href={"/tracks/frontend"}>
+              <a style={{color: "grey"}}>Training</a>
+              </Link>
+            </div>
           </div>
           <div className={style.navButton}>
             <button onClick={()=>router.push("/auth/register")} className='primaryBtn'>Register</button>

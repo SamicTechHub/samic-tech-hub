@@ -1,0 +1,155 @@
+.ourProgramSection {
+  padding: 4rem 2rem;
+  background-color: #f8fafc;
+}
+
+.courseProgramSection {
+  padding: 4rem 2rem;
+  background-color: #f8fafc;
+  margin-top: 150px;
+}
+
+.sectionTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #111827;
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.programGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.programCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 16px 16px rgba(10, 10, 10, 0.05);
+  text-align: center;
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.svgContainer {
+  margin: 0 auto 1rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.primaryBtn {
+  background-color: #27BEAB;
+  color: white;
+  padding:  0.5rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  margin-left: 2rem;
+  cursor: pointer;
+
+}
+
+.primaryBtn:hover{
+    background-color:#08e6c8 ;
+
+}
+.secondaryBtn {
+  background-color: transparent;
+  color: #111827;
+  border: 1px solid #08e6c8;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.secondaryBtn:hover{
+  background-color:#08e6c8 ;
+}
+
+.priceBtn {
+  background-color:#E6DC7F ;
+  color: black;
+  padding: 1rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: medium;
+}
+.priceBtn:hover{
+  background-color:#a59612 ;
+}
+
+.secondaryBtn {
+  background-color: transparent;
+  color: #111827;
+  border: 1px solid #08e6c8;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.secondaryBtn:hover{
+  background-color:#08e6c8 ;
+}
+
+.paymentSection {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #fff7ed;
+  border-radius: 12px;
+  text-align: center;
+}
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.paymentModal {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Update your existing button to trigger modal */
+.priceBtn {
+
+  cursor: pointer;
+}

@@ -4,7 +4,7 @@ import {
     MailFilled, PhoneFilled, GooglePlusSquareFilled, FacebookFilled, InstagramFilled, WhatsAppOutlined 
 } from "@ant-design/icons"
 import Link from 'next/link'
-import { WhatsApp } from '@material-ui/icons'
+// import { WhatsApp } from '@material-ui/icons'
 
 function Footer() {
   return (
@@ -30,9 +30,10 @@ function Footer() {
         </div>
         <div className={style.aboutColumn}>
             <h3>Programs</h3>
-            <p>Web Designing</p>
+            <p>Programming</p>
             <p>UI/UX Design</p>
             <p>Digital Marketing</p>
+            <p>Product management</p>
         </div>
         <div className={style.aboutColumn}>
             <h3>Contact</h3>

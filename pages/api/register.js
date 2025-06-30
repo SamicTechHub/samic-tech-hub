@@ -1,8 +1,10 @@
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import { transporter, mailOptions } from '../../lib/mailer';
+import { useRouter } from 'next/router';
 
 const prisma = new PrismaClient();
+const router = useRouter;
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -38,7 +40,7 @@ export default async function handler(req, res) {
       html: `<p>Hi ${firstName},</p>
       <p>Thanks for registering at Samic Tech Hub.</p>
       <p>You can proceed to pay here</p>
-      <button className='border'>Proceed to Payment</button>`,
+      <a href ="http://localhost:3000/payment" className='border p-4'>Proceed to Payment</a>`,
     });
 
       return res.status(201).json({ message: 'User registered! A mail has been sent.', user });

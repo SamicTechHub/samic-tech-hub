@@ -141,12 +141,9 @@
     font-weight: 600;
 }
 
-
-
-
-
-
-
+.submitBtn:hover{
+    background-color: #04ddc0 ;
+}
 
 
 @media screen and (max-width: 900px) {

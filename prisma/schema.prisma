@@ -54,6 +54,7 @@ model User {
   password        String
   preferredTrack  Track
   createdAt       DateTime @default(now())
+   payments  Payment[] // One-to-many relation
 }
 
 model Mentor {
@@ -72,4 +73,18 @@ model Mentor {
     commitment        Commitment
     createdAt         DateTime @default(now())
     updatedAt         DateTime @updatedAt
+}
+
+model Payment {
+  
+  id              Int      @id @default(autoincrement())
+  userId           Int
+  user             User     @relation(fields: [userId], references: [id])
+  paymentReference String   @unique
+  amountPaid      Float
+  customerName    String
+  customerEmail   String
+  paidOn          DateTime
+  createdAt       DateTime @default(now())
+   
 }
