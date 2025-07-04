@@ -2,15 +2,19 @@
 .headerContainer {
   display: flex;
   justify-content: space-between;
+  gap: 5rem;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 2.5rem 4rem;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5); 
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
   transition: all 0.3s ease;
 }
+
 
 /* Scrolled background */
 .headerBackground {
@@ -40,41 +44,53 @@
 /* Desktop nav */
 .navLinks {
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
 }
 
 .navLink a {
   text-decoration: none;
   color: #333;
-  font-weight: 500;
-  font-size: 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.navLink a:hover {
+ color:#27beab;
 }
 
 .navButton button {
   background-color: #27beab;
   color: white;
-  padding: 0.5rem 1.2rem;
+  padding: 1.5rem 1.5rem;
   border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.5rem;
   border: none;
   cursor: pointer;
+
 }
 
-/* 🔽 Hamburger styles */
+.navButton button:hover{
+  background-color: #18f0d3;
+}
+
+
+
+/* Hamburger Icon */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
+  cursor: pointer;
+  z-index: 999;
   background: none;
   border: none;
-  cursor: pointer;
-  z-index: 1100;
 }
 
 .bar {
   width: 25px;
   height: 3px;
   background-color: #333;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .bar1Open {
@@ -89,7 +105,20 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* 📱 Mobile Styles */
+/* Navigation Links Container */
+.headerNav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -99,32 +128,42 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    right: 0;
+    background-color: #000; /* Adjust as needed */
     flex-direction: column;
-    background-color: white;
-    padding: 2rem;
-    gap: 1rem;
-    display: none;
+    align-items: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
   }
 
   .navOpen {
-    display: flex;
+    max-height: 500px; /* Adjust based on content height */
+    padding: 1rem 0;
   }
 
   .navLinks {
     flex-direction: column;
-    gap: 1rem;
+    width: 100%;
   }
+
+  .navLink {
+    padding: 0.5rem 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navLink a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
 
   .navButton {
-    width: 100%;
-  }
-
-  .navButton button {
-    width: 100%;
-    font-size: 1rem;
+    display: none; /* Or adjust to show a register button inside menu */
   }
 }
+
 
 
 /* Hero Section */

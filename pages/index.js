@@ -81,7 +81,7 @@ export default function Home() {
               
               We are proud to have helped thousands of students learn web development and launch successful careers. We are committed to providing our students with the best possible education, and we are confident that we can help you achieve your goals. </p>
           </div>
-          <button className='primaryBtn' onClick={()=>router.push("/findOutMore")}>Find Out More →</button>
+          <button className='primaryBtn' onClick={()=>router.push("/about")}>Find Out More →</button>
         </div>
         <div className={style.aboutSectionImage}>
           <div className={style.imageContainer}>

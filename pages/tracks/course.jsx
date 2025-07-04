@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import style from '../../styles/course.module.css';
-import HeaderF from '../../components/HeaderF'
-
+import HeaderF from '../../components/HeaderF';
 import Link from 'next/link';
 
 const programsData = [
@@ -12,13 +11,13 @@ const programsData = [
     description:'Build responsive frontend apps and powerful backend systems using modern tools and frameworks.',
     image: '/img/Vector2.svg',
     link: '/tracks/fullStack',
-    price: '₦400,000',
+    price: '₦250,000',
   },
   {
     title: 'Digital Marketing',
     description:'Master online marketing, content creation, and campaign strategies for business growth.',
     image: '/img/Vector2.svg',
-    link: '/tracks/digital-marketing',
+    link: '/tracks/digitalMarketing',
     price: '₦100,000',
   },
   {
@@ -26,28 +25,28 @@ const programsData = [
     description:'Design user-friendly and beautiful interfaces that solve real problems.',
     image: '/img/Vector2.svg',
     link: '/tracks/uiux',
-    price: '₦200,000',
+    price: '₦150,000',
   },
   {
     title: 'Product Management',
     description:'Learn to manage digital products from idea to launch using agile methodologies.',
     image: '/img/Vector2.svg',
-    link: '/tracks/product-management',
-    price: '₦200,000',
+    link: '/tracks/productManagement',
+    price: '₦150,000',
   },
   {
     title: 'Frontend Development',
     description:'Understand core cybersecurity principles and practices to secure digital systems.',
     image: '/img/Vector2.svg',
-    link: '/tracks/cybersecurity',
-    price: '₦200,000',
+    link: '/tracks/frontend',
+    price: '₦150,000',
   },
    {
     title: 'Backend Development',
     description:'Understand core cybersecurity principles and practices to secure digital systems.',
     image: '/img/Vector2.svg',
-    link: '/tracks/cybersecurity',
-    price: '₦200,000',
+    link: '/tracks/backend',
+    price: '₦150,000',
   },
 ];
 
@@ -73,7 +72,7 @@ export default function Programs() {
       </div>
 
       {/* First Row - Always Visible */}
-      <div className={style.programGrid}>
+        <div className={`${style.programGrid} ${style.animateFadeInUp}`}>
         {initialPrograms.map((program, index) => (
           <div key={index} className={style.programCard}>
             <div className={style.svgContainer}>
@@ -106,8 +105,8 @@ export default function Programs() {
 
       {/* Second Row - Only if View More clicked */}
       {showAll && (
-        <div className={style.programGrid}>
-          {remainingPrograms.map((program, index) => (
+           <div className={`${style.programGrid} ${style.animateFadeInUp}`}>
+            {remainingPrograms.map((program, index) => (
             <div key={index} className={style.programCard}>
                <div className={style.svgContainer}>
               <Image src={program.image} alt={program.title} width={100} height={100} />

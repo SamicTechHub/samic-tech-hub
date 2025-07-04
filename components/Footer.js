@@ -19,7 +19,8 @@ function Footer() {
             <h3>Samic</h3>
             <p>9, Samic Tech Hub, Beside Azeez Hotel, J&P Area, Moniya, Ibadan.</p>
             <div className={style.socials}>
-            <a href='#'><FacebookFilled /></a> <a href='#'><InstagramFilled /></a> 
+            <a href='#'><FacebookFilled /></a>
+            <a href='#'><InstagramFilled /></a> 
             {/* <a href='#'><WhatsAppOutlined /></a> */}
             </div>
         </div>
@@ -30,14 +31,16 @@ function Footer() {
         </div>
         <div className={style.aboutColumn}>
             <h3>Programs</h3>
-            <p>Programming</p>
-            <p>UI/UX Design</p>
-            <p>Digital Marketing</p>
-            <p>Product management</p>
+            <Link href="/fullstack">Full Stack Development</Link>
+            <Link href="/frontend">Frontend Development</Link>
+            <Link href="/backend">PBackend Development</Link>
+            <Link href= "/uiux">UI/UX Design</Link>
+            <Link href= "/digitalMarketing">Digital Marketing</Link>
+            <Link href= "/productManagement">Product management</Link>
         </div>
         <div className={style.aboutColumn}>
             <h3>Contact</h3>
-            <p><PhoneFilled /> +234 801 234 5678</p>
+            <a href="tel:+2347063188981">+234 706 318 8981</a>
             <a href="mailto:Info@samictechhub.com"><GooglePlusSquareFilled /> Info@samictechhub.com</a>
         </div>
       </div>

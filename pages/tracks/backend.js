@@ -3,7 +3,7 @@ import style from '../../styles/tracks.module.css'
 import HeaderF from "../../components/HeaderF"
 import { useRouter} from 'next/router'
 import { useState } from 'react'
-import CourseGrid from '../../components/FullStackGrid';
+import CourseGrid from '../../components/BackendGrid';
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import Footer from '../../components/Footer'
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
@@ -15,16 +15,16 @@ const fullStack = () => {
   return (
 <>
     <HeaderF/>
-    <section className={style.bannerSectionContainerFs}>
+    <section className={style.bannerSectionContainerBe}>
         <h1  className={style.heading}>
-            Full Stack Web Development
+            Backend Development
         </h1>
        
        
           <div className={style.detailSection}> 
           <div className={style.details}>
             <p className={style.duration}><AccessTimeFilledIcon style={{ fontSize: '2rem', color: '#27beab' }}  /> Programme length: 6 months</p>
-            <p className={style.duration}><LocalOfferIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Application Fee: 250,000</p>
+            <p className={style.duration}><LocalOfferIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Application Fee: 150,000</p>
             <p className={style.duration}><AddLocationIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Location: Samic Tech Hub</p>
           </div>
           <div>
@@ -38,7 +38,7 @@ const fullStack = () => {
               {showPaymentModal && (
               <div className={style.modalOverlay}>
                 <div className={style.paymentModal}>
-                  <h3>Payment for Full Stack Development</h3>
+                  <h3>Payment for Backend Development</h3>
                   <p>You'll be redirected to our secure payment gateway</p>
                   <div className={style.modalButton}>
                     <button 

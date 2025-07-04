@@ -44,9 +44,9 @@ function HeaderW({
             </div>
 
           </div>
-          {/* <div className={style.navButton}>
+          <div className={style.navButton}>
             <button onClick={()=>router.push(route)} className='primaryBtn'>{navAction}</button>
-          </div> */}
+          </div>
         </div>
       </section>
   )

@@ -9,6 +9,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
   const isHome = router.pathname === "/";
+  const isAbout = router.pathname === "/about";
+
 
   useEffect(() => {
     window.onscroll = function () {
@@ -24,7 +26,7 @@ const Header = () => {
         <div className={style.logoContainer}>
           <Image src="/img/logoGBg.png" alt="Samic Tech Hub" layout="fill" />
         </div>
-        <h3>Samic</h3>
+        <h1>Samic</h1>
       </div>
 
       <button
@@ -52,8 +54,16 @@ const Header = () => {
           <div className={style.navLink}>
             <Link href="/tracks/course">Training</Link>
           </div>
+          <div className={style.navLink}>
+            <Link href="/">Contact us</Link>
+          </div>
+          <div className={style.navLink}>
+            <Link href="/auth/mentorRegister">Apply as a Mentor</Link>
+          </div>
         </div>
-        <div className={style.navButton}>
+     
+      </div>
+      <div className={style.navButton}>
           {isHome && (
             <button
               onClick={() => router.push('/auth/register')}
@@ -62,8 +72,20 @@ const Header = () => {
               Register
             </button>
           )}
-        </div>
       </div>
+
+          <div className={style.navButton}>
+          {isAbout && (
+            <button
+              onClick={() => router.push('/auth/register')}
+              className="primaryBtn"
+            >
+              Register
+            </button>
+          )}
+        </div>
+       
+    
     </section>
   );
 };
