@@ -58,7 +58,7 @@ const [formData, setFormData] = useState({});
   const registerUser = (e) => {
     e.preventDefault();
     setClicked(true);
-    console.log(formData);
+    // console.log(formData);
 
     axios
       .post(`${BASE_URL}/api/user/signup`, formData)

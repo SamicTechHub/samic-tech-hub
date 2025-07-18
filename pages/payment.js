@@ -2,15 +2,17 @@ import { useState } from "react";
 import styles from "../styles/pay.module.css"
 import  HeaderF from "../components/HeaderF";
 import Footer from "../components/Footer";
+import { useRouter } from "next/router";
 
 const Pay = () => {
+    const router = useRouter();
   const [emailAddress, setEmail] = useState("");
   const [amount, setAmount] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
   const handlePayment = async () => {
-    const res = await fetch("/api/monnify-init", {
+    const res = await fetch("/api/payment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -9,10 +9,13 @@ import TextInputField from "../../components/TextInputField";
 import SelectInput from "../../components/SelectInput";
 import { CaretLeftOutlined } from "@ant-design/icons";
 import SubmitBtn from "../../components/SubmitBtn";
+import axios from "axios";
+import { BASE_URL } from "../../lib/constants";
+
 
 function Register() {
   const router = useRouter();
-
+  const [clicked, setClicked] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -47,37 +50,60 @@ const optionsExpertiseArray = [
   { value: "PRODUCT_MANAGEMENT", label: "Product Management" },
   { value: "DIGITAL_MARKETING", label: "Digital Marketing" },
 
+     
 ];
 
 const optionsCommitmentArray = [
  { value: "ONE_HOUR", label: "1 Hour" },
  { value: "TWO_HOURS", label: "2 Hours" },
  { value: "THREE_HOURS", label: "3 Hours" },
-]
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+];
 
-    try {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
       
-      const res = await fetch("/api/mentorRegister", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+  //     const res = await fetch("/api/mentor", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(formData),
+  //     });
 
-      const data = await res.json();
+  //     const data = await res.json();
 
-      if (res.ok) {
-        toast.success("Registration successful!");
-        router.push("/about"); // ✅ Redirect to home
-      } else {
-        toast.error(data.error || "Something went wrong.");
-      }
-    } catch (err) {
-      toast.error("Error submitting form.");
-    }
-  };
+  //     if (res.ok) {
+  //       toast.success("Registration successful!");
+  //       router.push("/about"); // ✅ Redirect to home
+  //     } else {
+  //       toast.error(data.error || "Something went wrong.");
+  //     }
+  //   } catch (err) {
+  //     toast.error("Error submitting form.");
+  //   }
+  // };
+
+    
+  const registerMentor = (e) => {
+      e.preventDefault();
+      setClicked(true);
+      console.log(formData);
+  
+      axios
+        .post(`${BASE_URL}/api/mentor/register`, formData)
+        .then((response) => {
+          setClicked(false);
+          toast.success(response.data?.message);
+          setTimeout(() => {
+            router.push("/");
+          }, 3000);
+        })
+        .catch((err) => {
+          toast.error(err.response?.data?.message);
+          setClicked(false);
+        });
+    };
 
   return (
     <>
@@ -119,10 +145,10 @@ const optionsCommitmentArray = [
           <h1>Personal Information</h1>
           <p>Let&apos;s get to know you a little better.</p>
 
-          <form onSubmit={handleSubmit}>
+          <form>
             <TextInputField
               value={formData.firstName}
-              onChange={(e) =>
+              onchange={(e) =>
                 setFormData({ ...formData, firstName: e.target.value })
               }
               inputLabel="First Name"
@@ -132,7 +158,7 @@ const optionsCommitmentArray = [
 
             <TextInputField
               value={formData.lastName}
-              onChange={(e) =>
+              onchange={(e) =>
                 setFormData({ ...formData, lastName: e.target.value })
               }
               inputLabel="Last Name"
@@ -142,7 +168,7 @@ const optionsCommitmentArray = [
 
             <TextInputField
               value={formData.phoneNumber}
-              onChange={(e) =>
+              onchange={(e) =>
                 setFormData({ ...formData, phoneNumber: e.target.value })
               }
               inputLabel="Phone Number"
@@ -152,7 +178,7 @@ const optionsCommitmentArray = [
 
             <TextInputField
               value={formData.emailAddress}
-              onChange={(e) =>
+              onchange={(e) =>
                 setFormData({ ...formData, emailAddress: e.target.value })
               }
               inputLabel="Email Address"
@@ -162,7 +188,7 @@ const optionsCommitmentArray = [
 
             <TextInputField
               value={formData.password}
-              onChange={(e) =>
+              onchange={(e) =>
                 setFormData({ ...formData, password: e.target.value })
               }
               inputLabel="Password"
@@ -171,7 +197,7 @@ const optionsCommitmentArray = [
             />
              <TextInputField
               value={formData.currentJobTitle}
-              onChange={(e) =>
+              onchange={(e) =>
                 setFormData({ ...formData, currentJobTitle: e.target.value })
               }
               inputLabel="Current Job Title"
@@ -181,7 +207,7 @@ const optionsCommitmentArray = [
 
               <TextInputField
               value={formData.companyName}
-              onChange={(e) =>
+              onchange={(e) =>
                 setFormData({ ...formData, companyName: e.target.value })
               }
               inputLabel="Company Name"
@@ -192,7 +218,7 @@ const optionsCommitmentArray = [
               <SelectInput
                 label="Years of Industry Experience"
                 value={formData.experience}
-                onChange={(e) =>
+                onchange={(e) =>
                   setFormData({ ...formData,
                     experience: optionsExprienceArray.filter(
                       (option) => option.value === e.target.value
@@ -205,7 +231,7 @@ const optionsCommitmentArray = [
                 <SelectInput
                 label="Primary Expertise Area"
                 value={formData.expertise}
-                onChange={(e) =>
+                onchange={(e) =>
                   setFormData({ ...formData,
                     expertise: optionsExpertiseArray.filter(
                       (option) => option.value === e.target.value
@@ -216,7 +242,7 @@ const optionsCommitmentArray = [
               />
               <TextInputField
               value={formData.linkedin}
-              onChange={(e) =>
+              onchange={(e) =>
                 setFormData({ ...formData, linkedin: e.target.value })
               }
               inputLabel="LinkedIn Profile URL"
@@ -226,7 +252,7 @@ const optionsCommitmentArray = [
 
              <TextInputField
               value={formData.yourWhy}
-              onChange={(e) =>
+              onchange={(e) =>
                 setFormData({ ...formData, yourWhy: e.target.value })
               }
               inputLabel="Why do you want to be a mentor?"
@@ -237,7 +263,7 @@ const optionsCommitmentArray = [
              <SelectInput
                 label="Estimated Weekly/Monthly Time Commitment"
                 value={formData.commitment}
-                onChange={(e) =>
+                onchange={(e) =>
                   setFormData({ ...formData,
                     commitment: optionsCommitmentArray.filter(
                       (option) => option.value === e.target.value
@@ -250,7 +276,10 @@ const optionsCommitmentArray = [
             {/* <button type="submit" className={style.inputGroup}>
               Apply Now
             </button> */}
-            <SubmitBtn actionText={"Apply Now"} />
+            <SubmitBtn
+              clicked={clicked}
+              action={registerMentor}
+              actionText={"Apply Now"} />
           </form>
         </div>
       </section>
