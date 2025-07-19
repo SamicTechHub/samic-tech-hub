@@ -57,6 +57,7 @@
   border: 1px solid #ccc;
   border-radius: 0.75rem;
   font-size: 1.5rem;
+  margin-right: 10px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -64,6 +65,30 @@
   outline: none;
   border-color: #08e6c8;
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.checkbox{
+  
+  font-size: 20px;
+  gap:10px;
+  accent-color: #08e6c8;
+  outline: none;
+}
+.checkbox input{
+  padding: 10px;
+  margin-right: 5px;
+  
+}
+
+.paymentMethod{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checkbox:focus {
+  border-color: #08e6c8; /* your desired color */
+  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.3); /* green glow */
 }
 
 .button {
