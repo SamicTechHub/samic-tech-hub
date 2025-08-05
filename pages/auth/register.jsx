@@ -55,7 +55,7 @@ const [formData, setFormData] = useState({});
     ],
   };
 
-  const registerUser = (e) => {
+    const registerUser = (e) => {
     e.preventDefault();
     setClicked(true);
     // console.log(formData);
@@ -74,6 +74,42 @@ const [formData, setFormData] = useState({});
         setClicked(false);
       });
   };
+
+  // const registerUser = async (e) => {
+  //   e.preventDefault();
+ 
+  //   // console.log(formData);
+  //   try {   
+      
+  //     setClicked(true);
+  //     // Get CSRF token first
+  //     await axios.get(`${BASE_URL}/sanctum/csrf-cookie`, { withCredentials: true });
+
+  //     // Then make the registration request
+  //     const response = await axios.post(
+        
+  //       `${BASE_URL}/api/profile`,
+  //       formData, {
+  //         withCredentials: true,
+  //     headers: {
+  //       'Accept': 'application/json',
+  //       'Content-Type': 'application/json',
+  //     },
+      
+  //   }
+
+  //     );
+
+  //     setClicked(false);
+  //     toast.success(response.data?.message);
+  //     setTimeout(() => {
+  //       router.push("/");
+  //     }, 3000);
+  //   } catch (err) {
+  //     setClicked(false);
+  //     toast.error(err.response?.data?.message || "Something went wrong");
+  //   }
+  // };
 
   return (
     <>

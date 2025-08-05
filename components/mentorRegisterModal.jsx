@@ -3,7 +3,8 @@ import React, { useState } from "react";
 export default function MentorRegisterModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    phoneNumber: "",
+    emailAddress: "",
     expertise: "",
   });
 

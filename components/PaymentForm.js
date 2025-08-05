@@ -1,22 +1,21 @@
 import { useState } from "react";
-import styles from "../styles/pay.module.css"
-import  HeaderF from "../components/HeaderF";
-import Footer from "../components/Footer";
+import style from '../styles/cowork.module.css'
+import  HeaderF from "./HeaderF";
+import Footer from "./Footer";
 import { useRouter } from "next/router";
-import TextInputField from "../components/TextInputField";
+import TextInputField from "./TextInputField";
 import axios from 'axios';
-import SubmitBtn from "../components/SubmitBtn";
+import SubmitBtn from "./SubmitBtn";
 import { BASE_URL } from "../lib/constants";
 
 
-export default function Pay() {
+export default function PaymentForm() {
   const [formData, setFormData] = useState({
     customerName: '',
     customerEmail: '',
     amount: '',
   });
     const [clicked, setClicked] = useState(false);
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,14 +28,14 @@ export default function Pay() {
     } catch (err) {
       alert('Payment failed to initialize');
     }
+
   };
 
   return (
     <div >
-      <HeaderF />
-      <div className={styles.card}>
-        <h2 className={styles.title}>Make a Payment</h2>      
-          <form className={styles.form} onSubmit={handleSubmit}>
+      <div className={style.card}>
+        <h2 className={style.title}>Make a Payment</h2> 
+          <form className={style.form} onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Your Name"
@@ -44,7 +43,7 @@ export default function Pay() {
               value={formData?.customerName}
               onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
               required
-              className={styles.input}
+              className={style.input}
             />
         <br /><br />
         <input
@@ -54,7 +53,7 @@ export default function Pay() {
           value={formData.customerEmail}
           onChange={(e) => setFormData({ ...formData, customerEmail: e.target.value })}
           required
-          className={styles.input}
+          className={style.input}
         />
         <br /><br />
         <input
@@ -64,10 +63,10 @@ export default function Pay() {
           value={formData.amount}
           onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
           required
-          className={styles.input}
+          className={style.input}
         />
         <br /><br />
-        <div className={styles.button}>
+        <div className={style.paymentButton}>
            <SubmitBtn 
               clicked={clicked}
               actionText={"PAY NOW"}/>

@@ -21,14 +21,14 @@ function Register() {
     lastName: "",
     phoneNumber: "",
     emailAddress: "",
-    password: "",
+    // password: "",
     currentJobTitle:"",
     companyName: "",
     experience: "",
     expertise: "",
     linkedin: "",
     yourWhy: "",
-    commitment: ""
+    yourCommitment: ""
 
 
   });
@@ -60,50 +60,49 @@ const optionsCommitmentArray = [
 
 ];
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-      
-  //     const res = await fetch("/api/mentor", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(formData),
-  //     });
-
-  //     const data = await res.json();
-
-  //     if (res.ok) {
-  //       toast.success("Registration successful!");
-  //       router.push("/about"); // ✅ Redirect to home
-  //     } else {
-  //       toast.error(data.error || "Something went wrong.");
-  //     }
-  //   } catch (err) {
-  //     toast.error("Error submitting form.");
-  //   }
-  // };
-
-    
   const registerMentor = (e) => {
-      e.preventDefault();
-      setClicked(true);
-      console.log(formData);
+    e.preventDefault();
+    setClicked(true);
+    // console.log(formData);
+
+    axios
+      .post(`${BASE_URL}/api/mentor/register`, formData)
+      .then((response) => {
+        setClicked(false);
+        toast.success(response.data?.message);
+        setTimeout(() => {
+          router.push("/");
+        }, 3000);
+      })
+      .catch((err) => {
+        toast.error(err.response?.data?.message);
+        setClicked(false);
+      });
+  };
+    
+  // const registerMentor = (e) => {
+  //     e.preventDefault();
+  //     setClicked(true);
+  //     console.log(formData);
   
-      axios
-        .post(`${BASE_URL}/api/mentor/register`, formData)
-        .then((response) => {
-          setClicked(false);
-          toast.success(response.data?.message);
-          setTimeout(() => {
-            router.push("/");
-          }, 3000);
-        })
-        .catch((err) => {
-          toast.error(err.response?.data?.message);
-          setClicked(false);
-        });
-    };
+  //     axios
+  //       .post(`${BASE_URL}/api/profile`, {
+  //         'Accept': 'application/json',
+  //         'Content-type': 'application/json'
+
+  //       },formData)
+  //       .then((response) => {
+  //         setClicked(false);
+  //         toast.success(response.data?.message);
+  //         setTimeout(() => {
+  //           router.push("/");
+  //         }, 3000);
+  //       })
+  //       .catch((err) => {
+  //         toast.error(err.response?.data?.message);
+  //         setClicked(false);
+  //       });
+  //   };
 
   return (
     <>
@@ -186,7 +185,7 @@ const optionsCommitmentArray = [
               type="email"
             />
 
-            <TextInputField
+            {/* <TextInputField
               value={formData.password}
               onchange={(e) =>
                 setFormData({ ...formData, password: e.target.value })
@@ -194,7 +193,7 @@ const optionsCommitmentArray = [
               inputLabel="Password"
               placeholder="••••••••••"
               type="password"
-            />
+            /> */}
              <TextInputField
               value={formData.currentJobTitle}
               onchange={(e) =>
@@ -262,10 +261,10 @@ const optionsCommitmentArray = [
 
              <SelectInput
                 label="Estimated Weekly/Monthly Time Commitment"
-                value={formData.commitment}
+                value={formData.yourCommitment}
                 onchange={(e) =>
                   setFormData({ ...formData,
-                    commitment: optionsCommitmentArray.filter(
+                    yourCommitment: optionsCommitmentArray.filter(
                       (option) => option.value === e.target.value
                     )[0]?.value
                   })

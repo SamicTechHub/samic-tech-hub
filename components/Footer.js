@@ -5,8 +5,7 @@ import {
 } from "@ant-design/icons"
 import Link from 'next/link'
 // import { WhatsApp } from '@material-ui/icons'
-
-function Footer() {
+const Footer = () => {
   return (
     <div className={style.footerContainer}>
       {/* <div className={style.newsletter}>
@@ -51,4 +50,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default Footer;
