@@ -1,0 +1,30 @@
+.messageContainer {
+  text-align: center;
+  margin-top: 15rem; /* ~mt-10 */
+}
+
+.loadingText {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.success {
+  color: #16a34a; 
+}
+
+.failed {
+  color: #dc2626; 
+}
+
+.title {
+  font-size: 2rem; /* text-2xl */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.details {
+  color: #111827; /* Tailwind's gray-900 / black */
+  margin-top: 0.5rem;
+}

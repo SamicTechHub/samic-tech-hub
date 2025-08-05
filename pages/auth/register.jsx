@@ -20,7 +20,7 @@ import { BASE_URL } from "../../lib/constants";
 import { Toaster, toast } from "sonner";
 
 function Register() {
-  const [formData, setFormData] = useState({});
+const [formData, setFormData] = useState({});
   const [clicked, setClicked] = useState(false);
   const router = useRouter();
 
@@ -55,9 +55,10 @@ function Register() {
     ],
   };
 
-  const registerUser = (e) => {
+    const registerUser = (e) => {
     e.preventDefault();
     setClicked(true);
+    // console.log(formData);
 
     axios
       .post(`${BASE_URL}/api/user/signup`, formData)
@@ -74,6 +75,42 @@ function Register() {
       });
   };
 
+  // const registerUser = async (e) => {
+  //   e.preventDefault();
+ 
+  //   // console.log(formData);
+  //   try {   
+      
+  //     setClicked(true);
+  //     // Get CSRF token first
+  //     await axios.get(`${BASE_URL}/sanctum/csrf-cookie`, { withCredentials: true });
+
+  //     // Then make the registration request
+  //     const response = await axios.post(
+        
+  //       `${BASE_URL}/api/profile`,
+  //       formData, {
+  //         withCredentials: true,
+  //     headers: {
+  //       'Accept': 'application/json',
+  //       'Content-Type': 'application/json',
+  //     },
+      
+  //   }
+
+  //     );
+
+  //     setClicked(false);
+  //     toast.success(response.data?.message);
+  //     setTimeout(() => {
+  //       router.push("/");
+  //     }, 3000);
+  //   } catch (err) {
+  //     setClicked(false);
+  //     toast.error(err.response?.data?.message || "Something went wrong");
+  //   }
+  // };
+
   return (
     <>
       <Head>
@@ -81,7 +118,6 @@ function Register() {
         <meta name="description" content="The Hub for great Developers" />
         <link rel="icon" href="/img/logoWBg.png" />
       </Head>
-
       {/* Header Section */}
       <Toaster richColors />
 
@@ -191,6 +227,7 @@ function Register() {
               clicked={clicked}
               action={registerUser}
               actionText={"Apply NOW"}
+              
             />
           </form>
         </div>

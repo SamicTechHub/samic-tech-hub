@@ -1,0 +1,68 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 60px;
+  padding: 20px;
+  margin-top: 20px;
+}
+.courseList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.courseItem {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+  line-height: 6rem;
+}
+
+.span{
+    margin-top: 100px;
+}
+
+.gridItem {
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+.headings{
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.paragraph1{
+    font-size: 1.5rem;
+    line-height: normal;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    text-align: justify;
+    padding: 5rem
+}
+
+.paragraph2{
+    font-size: 1.5rem;
+    line-height: normal;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    text-align: justify;
+    padding: 5rem;
+    background-color: #E6DC7F;
+    border-radius: 4rem;
+
+}
+

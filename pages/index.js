@@ -6,22 +6,29 @@ import Footer from '../components/Footer'
 import ProfileTestimonial from '../components/ProfileTestimonial'
 import Sidebar from '../components/Sidebar'
 import style from '../styles/Home.module.css'
-import { useRouter } from 'next/router' 
+import { useRouter, router } from 'next/router';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import HeaderF from "../components/HeaderF"
+
+import Accordion from "../components/Accordion";
+import Courses from '../components/courses'
+
+
 
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false)
-  const router = useRouter()
 
-  useEffect(() => {
-    window.onscroll = function () {
-      if (window.scrollY > 30) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-  }, []);
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
+
+
   return (
     <>
       <Head>
@@ -34,33 +41,7 @@ export default function Home() {
       
       {/* Header Section */}
 
-        <section className={ scrolled ? `${style.headerContainer} ${style.headerBackground}` : `${style.headerContainer}`}>
-          <div className={style.brandContainer}>
-            <div className={style.logoContainer}>
-              <Image src={"/img/logoGBg.png"} alt={"Samic Tech Hub"} layout={"fill"} />
-            </div>
-            <h3>Samic</h3>
-          </div>
-
-          <div className={style.headerNav}>
-            <div className={style.navLinks}>
-              <div className={style.navLink}>
-                <Link href={"/"}>
-                  <a>Home</a>
-                </Link>
-              </div>
-              <div className={style.navLink}>
-                <Link href={"/about"}>
-                  <a>About</a>
-                </Link>
-              </div>
-
-            </div>
-            <div className={style.navButton}>
-              <button onClick={()=>router.push("/auth/register")} className='primaryBtn'>Register</button>
-            </div>
-          </div>
-        </section>
+        <HeaderF />
 
       {/* Hero Section */}
       <section className={style.heroSectionContainer}>
@@ -69,14 +50,15 @@ export default function Home() {
           <p>Gain the skills, experience and relationships that keep you ahead of the curve Learn tech and get hired fast - 100X Better</p>
           <div className={style.heroCTA}>
             <button onClick={()=>router.push("/auth/register")} className='primaryBtn'>Become the Next Talent  →</button>
-            <button className='secondaryBtn'>Apply As A Mentor  →</button>
+            <button onClick={()=>router.push("/auth/mentorRegister") } className='secondaryBtn'>Apply As A Mentor  →</button>
+       
           </div>
 
         </div>
         <div className={style.heroBanner}>
             <div className={style.pryCircle}></div>
             <div className={style.circleOutline}></div>
-            <Image className={style.scale} src={"/img/heroImg.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} objectPosition={"bottom"} />
+            <Image className={style.scale} src={"/img/heroImg.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} objectPosition={"bottom"} priority/>
             <div className={style.heroMessage2}>
               <ProfileTestimonial userImage={"/img/student1.png"} message={"Samic Tech Hub offers a comprehensive curriculum that covers all aspects of web development."} name={"Zainab Moses"} />
             </div>
@@ -99,7 +81,7 @@ export default function Home() {
               
               We are proud to have helped thousands of students learn web development and launch successful careers. We are committed to providing our students with the best possible education, and we are confident that we can help you achieve your goals. </p>
           </div>
-          <button className='primaryBtn'>Find Out More →</button>
+          <button className='primaryBtn' onClick={()=>router.push("/about")}>Find Out More →</button>
         </div>
         <div className={style.aboutSectionImage}>
           <div className={style.imageContainer}>
@@ -119,48 +101,8 @@ export default function Home() {
       </section>
 
       {/* Our Programs */}
-      <section className={style.ourProgramSection}>
-        <Image src={"/img/Union1.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
-        <Image src={"/img/Union2.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} />
-        <div className={style.description}>
-          <h2>Our Programs</h2>
-          <p>We reduce risk through consulting & security product expertise. We are a trusted advisor for all cyber security</p>
-        </div>
+      <Courses />
 
-        <div className={style.programs}>
-
-          <div className={style.program}>
-            <div className={style.svgContainer}>
-              <Image src={"/img/Vector.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"}/>
-            </div>
-            <h3>Web Designing</h3>
-            <p>This program is designed to provide you with in-depth knowledge on how to create functional websites by implementing web designs through the use of various programming languages.</p>
-
-            <button style={{color: "white"}}>Read More →</button>
-          </div>
-          <div className={style.program}>
-            <div className={style.svgContainer}>
-              <Image src={"/img/Vector.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"}/>
-            </div>
-            <h3>Digital Marketing</h3>
-            <p>This program is designed to provide you with in-depth knowledge on how to create functional websites by implementing web designs through the use of various programming languages.</p>
-
-            <button style={{color: "white"}}>Read More →</button>
-          </div>
-          <div className={style.program}>
-            <div className={style.svgContainer}>
-              <Image src={"/img/Vector2.svg"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"}/>
-            </div>
-            <h3>UX/UI Design</h3>
-            <p>This program is designed to provide you with in-depth knowledge on how to create functional websites by implementing web designs through the use of various programming languages.</p>
-
-            <button style={{color: "#27BEAB"}}>Read More →</button>
-          </div>
-
-
-        </div>
-
-      </section>
 
       {/* Take the Lead Section */}
       <section className={style.takeLeadSection}>
@@ -276,8 +218,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
+    {/* accordion section */} 
+      <Accordion />
       {/* Footer Section */}
       <section className={style.footerSection}>
         <Footer />

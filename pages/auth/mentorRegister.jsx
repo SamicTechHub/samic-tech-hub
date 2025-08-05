@@ -1,0 +1,289 @@
+
+import React, { useState } from "react";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { Toaster, toast } from "sonner";
+import style from "../../styles/Home.module.css";
+import HeaderW from "../../components/HeaderW";
+import TextInputField from "../../components/TextInputField";
+import SelectInput from "../../components/SelectInput";
+import { CaretLeftOutlined } from "@ant-design/icons";
+import SubmitBtn from "../../components/SubmitBtn";
+import axios from "axios";
+import { BASE_URL } from "../../lib/constants";
+
+
+function Register() {
+  const router = useRouter();
+  const [clicked, setClicked] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    emailAddress: "",
+    // password: "",
+    currentJobTitle:"",
+    companyName: "",
+    experience: "",
+    expertise: "",
+    linkedin: "",
+    yourWhy: "",
+    yourCommitment: ""
+
+
+  });
+
+
+
+const optionsExprienceArray =[
+ { value: "ONE_TO_THREE_YEARS", label: "1 - 3 Years" },
+ { value: "FOUR_TO_SIX_YEARS", label: "4 - 6 Years" },
+ { value: "SEVEN_TO_TEN_YEARS", label: "7 - 10 Years" },
+ { value: "TEN_YEARS_AND_ABOVE", label: "10 Years and above" },
+]
+
+const optionsExpertiseArray = [
+  { value: "FULL_STACK_DEVELOPMENT", label: "Full Stack Development" },
+  { value: "FRONTEND_DEVELOPMENT", label: "Frontend Development" },
+  { value: "BACKEND_DEVELOPMENT", label: "Backend Development" },
+  { value: "UI_UX_DESIGN", label: "UI/UX Design" },
+  { value: "PRODUCT_MANAGEMENT", label: "Product Management" },
+  { value: "DIGITAL_MARKETING", label: "Digital Marketing" },
+
+     
+];
+
+const optionsCommitmentArray = [
+ { value: "ONE_HOUR", label: "1 Hour" },
+ { value: "TWO_HOURS", label: "2 Hours" },
+ { value: "THREE_HOURS", label: "3 Hours" },
+
+];
+
+  const registerMentor = (e) => {
+    e.preventDefault();
+    setClicked(true);
+    // console.log(formData);
+
+    axios
+      .post(`${BASE_URL}/api/mentor/register`, formData)
+      .then((response) => {
+        setClicked(false);
+        toast.success(response.data?.message);
+        setTimeout(() => {
+          router.push("/");
+        }, 3000);
+      })
+      .catch((err) => {
+        toast.error(err.response?.data?.message);
+        setClicked(false);
+      });
+  };
+    
+  // const registerMentor = (e) => {
+  //     e.preventDefault();
+  //     setClicked(true);
+  //     console.log(formData);
+  
+  //     axios
+  //       .post(`${BASE_URL}/api/profile`, {
+  //         'Accept': 'application/json',
+  //         'Content-type': 'application/json'
+
+  //       },formData)
+  //       .then((response) => {
+  //         setClicked(false);
+  //         toast.success(response.data?.message);
+  //         setTimeout(() => {
+  //           router.push("/");
+  //         }, 3000);
+  //       })
+  //       .catch((err) => {
+  //         toast.error(err.response?.data?.message);
+  //         setClicked(false);
+  //       });
+  //   };
+
+  return (
+    <>
+      <Head>
+        <title>Samic Tech Hub - Register</title>
+        <meta name="description" content="The Hub for great Developers" />
+        <link rel="icon" href="/img/logoWBg.png" />
+      </Head>
+
+      <Toaster richColors />
+      {/* <HeaderW navAction="Sign In" route="#" /> */}
+
+      <section className={style.regSection}>
+        <div className={style.regIllustration}>
+          <h3>Register as a Mentor</h3>
+          <p>
+           Share your knowledge, guide future talents, and make a lasting impact."
+          </p>
+          <p>We welcome professionals from all fields to inspire and support young learners</p>
+          <ol>
+            <li>Fill in your details below to join our community of expert mentors.</li>
+              <li>Support and guide emerging talent</li>
+                 <li>Share your career experience</li>
+                     <li>Make real-world impact</li>
+
+            
+          </ol>
+          
+          <p>
+           Help shape the future — become a mentor to guide, inspire, and support rising professionals. Complete the form below to get started.
+          </p>
+        </div>
+
+        <div className={style.regFormContainer}>
+          <p onClick={() => router.push("/")}>
+            <CaretLeftOutlined /> Back
+          </p>
+
+          <h1>Personal Information</h1>
+          <p>Let&apos;s get to know you a little better.</p>
+
+          <form>
+            <TextInputField
+              value={formData.firstName}
+              onchange={(e) =>
+                setFormData({ ...formData, firstName: e.target.value })
+              }
+              inputLabel="First Name"
+              placeholder="Your given name"
+              type="text"
+            />
+
+            <TextInputField
+              value={formData.lastName}
+              onchange={(e) =>
+                setFormData({ ...formData, lastName: e.target.value })
+              }
+              inputLabel="Last Name"
+              placeholder="Your family name"
+              type="text"
+            />
+
+            <TextInputField
+              value={formData.phoneNumber}
+              onchange={(e) =>
+                setFormData({ ...formData, phoneNumber: e.target.value })
+              }
+              inputLabel="Phone Number"
+              placeholder="+234 808 084 2145"
+              type="tel"
+            />
+
+            <TextInputField
+              value={formData.emailAddress}
+              onchange={(e) =>
+                setFormData({ ...formData, emailAddress: e.target.value })
+              }
+              inputLabel="Email Address"
+              placeholder="example@gmail.com"
+              type="email"
+            />
+
+            {/* <TextInputField
+              value={formData.password}
+              onchange={(e) =>
+                setFormData({ ...formData, password: e.target.value })
+              }
+              inputLabel="Password"
+              placeholder="••••••••••"
+              type="password"
+            /> */}
+             <TextInputField
+              value={formData.currentJobTitle}
+              onchange={(e) =>
+                setFormData({ ...formData, currentJobTitle: e.target.value })
+              }
+              inputLabel="Current Job Title"
+              placeholder="Product Manager"
+              type="text"
+            />
+
+              <TextInputField
+              value={formData.companyName}
+              onchange={(e) =>
+                setFormData({ ...formData, companyName: e.target.value })
+              }
+              inputLabel="Company Name"
+              placeholder="Samic Tech Hub"
+              type="text"
+            />
+
+              <SelectInput
+                label="Years of Industry Experience"
+                value={formData.experience}
+                onchange={(e) =>
+                  setFormData({ ...formData,
+                    experience: optionsExprienceArray.filter(
+                      (option) => option.value === e.target.value
+                    )[0]?.value
+                  })
+                }
+                options={optionsExprienceArray}
+              />
+
+                <SelectInput
+                label="Primary Expertise Area"
+                value={formData.expertise}
+                onchange={(e) =>
+                  setFormData({ ...formData,
+                    expertise: optionsExpertiseArray.filter(
+                      (option) => option.value === e.target.value
+                    )[0]?.value
+                  })
+                }
+                options={optionsExpertiseArray}
+              />
+              <TextInputField
+              value={formData.linkedin}
+              onchange={(e) =>
+                setFormData({ ...formData, linkedin: e.target.value })
+              }
+              inputLabel="LinkedIn Profile URL"
+              placeholder=""
+              type="text"
+            />
+
+             <TextInputField
+              value={formData.yourWhy}
+              onchange={(e) =>
+                setFormData({ ...formData, yourWhy: e.target.value })
+              }
+              inputLabel="Why do you want to be a mentor?"
+              placeholder=""
+              type="text"
+            />
+
+             <SelectInput
+                label="Estimated Weekly/Monthly Time Commitment"
+                value={formData.yourCommitment}
+                onchange={(e) =>
+                  setFormData({ ...formData,
+                    yourCommitment: optionsCommitmentArray.filter(
+                      (option) => option.value === e.target.value
+                    )[0]?.value
+                  })
+                }
+                options={optionsCommitmentArray}
+              />
+
+            {/* <button type="submit" className={style.inputGroup}>
+              Apply Now
+            </button> */}
+            <SubmitBtn
+              clicked={clicked}
+              action={registerMentor}
+              actionText={"Apply Now"} />
+          </form>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default Register;

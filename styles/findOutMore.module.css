@@ -1,0 +1,63 @@
+.pageContainer {
+  margin-top: 80px;
+  min-height: 100vh;
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  padding: 40px 20px;
+}
+
+.heroSection {
+  background: #27beab;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.heroSection h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.heroSection p {
+  font-size: 1.7rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.sectionContent h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: black;;
+}
+
+.sectionContent p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #e6dc7f;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #d8d08c;
+}

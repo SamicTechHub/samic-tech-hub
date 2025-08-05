@@ -1,0 +1,50 @@
+.container {
+ 
+}
+.spaceContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 4.5rem;
+    overflow: hidden;
+    
+
+}
+.spaceContainer h1 {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.formDiv {
+    background-color: #e9e4e4;
+    padding: 9rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px; 
+  gap: 10px;
+}
+.input{
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;  
+}
+.button {
+  padding: 10px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
