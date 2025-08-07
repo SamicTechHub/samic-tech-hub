@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../styles/pay.module.css"
 import  HeaderF from "../components/HeaderF";
 import Footer from "../components/Footer";
@@ -10,6 +10,12 @@ import { BASE_URL } from "../lib/constants";
 
 
 export default function Pay() {
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const router = useRouter();
+const { name, email } = router.query;
+
   const [formData, setFormData] = useState({
     customerName: '',
     customerEmail: '',
@@ -17,18 +23,33 @@ export default function Pay() {
   });
     const [clicked, setClicked] = useState(false);
   
+    
+  useEffect(() => {
+    if (router.isReady) {
+      setFormData(prev => ({
+        ...prev,
+        name: name || '',
+        email: email || '',
+        // coworkspace: coworkspace || '',
+        // date: date || '',
+        // time: time || '',
+      }));
+    }
+  }, [router.isReady]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setClicked(true);
-
+    setIsSubmitting(true);
      axios
     try {
       const res = await axios.post(`${BASE_URL}/api/payment/initialize`, formData);
       window.location.href = res.data.checkoutUrl;
+        
     } catch (err) {
       alert('Payment failed to initialize');
     }
+    setIsSubmitting(false);
   };
 
   return (
@@ -70,7 +91,11 @@ export default function Pay() {
         <div className={styles.button}>
            <SubmitBtn 
               clicked={clicked}
-              actionText={"PAY NOW"}/>
+               disabled={isSubmitting}
+              
+              actionText={"PAY NOW"}
+/>
+            {isSubmitting ? 'Processing...' : 'PAY NOW'}
         </div>
        
           </form>

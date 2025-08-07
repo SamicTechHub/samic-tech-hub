@@ -4,7 +4,7 @@ import style from '../styles/cowork.module.css'
 import Image from 'next/image'
 import SettingsRemoteIcon from '@mui/icons-material/SettingsRemote';
 import Link from 'next/link';
-
+import router from 'next/router';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import WifiIcon from '@mui/icons-material/Wifi';
@@ -12,6 +12,11 @@ import HotelIcon from '@mui/icons-material/Hotel';
 import PaymentForm from '../components/paymentForm';
 import CardPlan from '../components/cardplan';
 import Footer from '../components/Footer';
+import PlanCards from '../components/planCards';
+import DoneAllIcon from '@mui/icons-material/DoneAll';
+import HotDeskPlan from '../components/HotDeskPlan';
+import PlanSelector from '../components/PlanSelector';
+
 
 const CoworkSpace = () => {
   return (
@@ -51,7 +56,7 @@ const CoworkSpace = () => {
           <p>Experience the perfect blend of comfort, functionality, and luxury while you work. Our coworking space is fully equipped with everything you need to stay productive — from fast, reliable free internet to constant electricity that keeps you powered throughout the day. Need a place to stay? We also offer affordable accommodation options for your convenience, elevating your work life has never been easier.</p>
         </div>
         <div>
-          <button onClick={()=>router.push("/auth/mentorRegister") } className={style.button}>Reserve a space  →</button>
+          <button onClick={()=>router.push("/space") } className={style.button}>Reserve a space  →</button>
           
         </div>
         </section>
@@ -107,7 +112,7 @@ const CoworkSpace = () => {
        <div className = {style.planSection}>
          <div className={style.planCards}>
           <h1>Our Plan</h1>
-            <CardPlan />
+            <PlanSelector />
           </div>
            <div>
           </div>
@@ -115,6 +120,11 @@ const CoworkSpace = () => {
        </div>
 
       </section>
+{/* 
+      <section>
+        <HotDeskPlan />
+      </section> */}
+
        <Footer />
       </div>
       

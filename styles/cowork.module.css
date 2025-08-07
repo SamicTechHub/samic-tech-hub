@@ -323,14 +323,17 @@
 }
 
 .planSection {
+  /* border: 5px solid #08e6c8; */
   position: relative;
   width: 100%;
   height: 700px; 
   overflow: hidden;
   margin-bottom: 10rem;
+  background-color: #F8F8F8;
+
 }
 
-.planSection::before {
+/* .planSection::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -341,7 +344,7 @@
   opacity: 0.2; 
   z-index: 0;
   filter: blur(1px); 
-}
+} */
 
 .planSection > * {
   position: relative;

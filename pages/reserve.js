@@ -38,7 +38,10 @@ export default function BookingForm({onCancel, plan}) {
   return (
     <div className={styles.spaceContainer}>
       
-      
+      <div>
+         <Image
+      src={"/img/workspace2.webp"} width={700} height={600} alt={"workspace photo"}  />
+      </div>
      <div className={styles.formDiv}>
        <h2>Make a Reservation for {plan}</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
