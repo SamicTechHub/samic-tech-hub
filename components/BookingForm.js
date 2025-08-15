@@ -22,7 +22,7 @@ export default function BookingForm({onCancel, plan, amount, planName}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:8081/api/spaces/reservations', {
+    const res = await fetch(`${BASE_URL}/api/spaces/reservations`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),

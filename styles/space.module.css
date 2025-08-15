@@ -6,9 +6,8 @@
     margin: auto;
     justify-content: center;
     align-items: center;
-    padding: 4.5rem;
-    overflow: hidden;
-    
+    padding: 1.5rem;
+    overflow: hidden;    
 
 }
 .spaceContainer h1 {
@@ -21,7 +20,9 @@
 }
 .formDiv {
     background-color: #e9e4e4;
-    padding: 9rem;
+    padding: 5rem;
+    border-radius: 1rem;
+    width: 500px;
 }
 .form {
   display: flex;
@@ -31,6 +32,7 @@
 }
 .input{
   padding: 10px;
+  /* max-width: 100rem; */
   border: 1px solid #08e6c8;;
   border-radius: 5px;
   outline: #08e6c8;
