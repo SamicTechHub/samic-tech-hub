@@ -6,7 +6,8 @@ import MuiAccordionSummary, { accordionSummaryClasses } from '@mui/material/Acco
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import PaymentForm from './paymentForm'; // Adjust the import if needed
+import PaymentForm from './paymentForm';
+import BookingForm from './BookingForm';
 
 // Styled Components
 const Accordion = styled((props) => (
@@ -73,7 +74,7 @@ const Backdrop = styled('div')({
 const ModalWrapper = styled('div')({
   padding: '4px',
   borderRadius: '12px',
-  width: '90%',
+  width: '100%',
   maxWidth: '600px',
   position: 'relative',
 });
@@ -93,25 +94,28 @@ const CloseButton = styled(Button)({
 });
 
 export default function CardPlan() {
-  const [expanded, setExpanded] = useState('panel1');
-  const [showModal, setShowModal] = useState(false);
+   const [expanded, setExpanded] = useState('panel1');
+  const [showForm, setShowForm] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState('');
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
-  const openPaymentForm = () => setShowModal(true);
-  const closePaymentForm = () => setShowModal(false);
+  
+  const handleReserveClick = (planName) => {
+    setSelectedPlan(planName);
+    setShowForm(true);
+  };
 
-  return (
+  
+   return (
     <div style={{ fontSize: '1.7rem' }}>
-      {showModal && (
-        <Backdrop>
-          <ModalWrapper>
-            <CloseButton onClick={closePaymentForm}>Cancel</CloseButton>
-            <PaymentForm />
-          </ModalWrapper>
-        </Backdrop>
+      {/* Render BookingForm when showForm is true */}
+      {showForm && (
+        <div style={{ marginBottom: '2rem' }}>
+          <BookingForm plan={selectedPlan} onCancel={() => setShowForm(false)} />
+        </div>
       )}
 
       <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
@@ -124,7 +128,9 @@ export default function CardPlan() {
             <br />
             <strong>Daily:</strong> ₦2,000 | <strong>Weekly:</strong> ₦10,000 | <strong>Monthly:</strong> ₦40,000
           </Typography>
-          <ReserveButton onClick={openPaymentForm}>Reserve Plan</ReserveButton>
+          <ReserveButton onClick={() => handleReserveClick('Hot Desk')}>
+            Reserve Plan
+          </ReserveButton>
         </AccordionDetails>
       </Accordion>
 
@@ -138,7 +144,9 @@ export default function CardPlan() {
             <br />
             <strong>Daily:</strong> ₦4,000 | <strong>Weekly:</strong> ₦20,000 | <strong>Monthly:</strong> ₦80,000
           </Typography>
-          <ReserveButton onClick={openPaymentForm}>Reserve Plan</ReserveButton>
+          <ReserveButton onClick={() => handleReserveClick('Dedicated Desk')}>
+            Reserve Plan
+          </ReserveButton>
         </AccordionDetails>
       </Accordion>
 
@@ -152,7 +160,9 @@ export default function CardPlan() {
             <br />
             <strong>Daily:</strong> ₦6,000 | <strong>Weekly:</strong> ₦30,000 | <strong>Monthly:</strong> ₦120,000
           </Typography>
-          <ReserveButton onClick={openPaymentForm}>Reserve Plan</ReserveButton>
+          <ReserveButton onClick={() => handleReserveClick('Private Office')}>
+            Reserve Plan
+          </ReserveButton>
         </AccordionDetails>
       </Accordion>
     </div>

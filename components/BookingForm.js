@@ -1,44 +1,75 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from '../styles/space.module.css';
 import Image from 'next/image';
+import { BASE_URL } from "../lib/constants"
+import { useRouter } from 'next/router';
 
-export default function BookingForm() {
-  const [formData, setFormData] = useState({
-    name: '', email: '', date: '', spaceId: '', notes: ''
-  });
+
+export default function BookingForm({onCancel, plan, amount, planName}) {
+ const [form, setForm] = useState({ name: '', email: '', planName:planName ||'', amount:amount ||'', date: '', time: '' });
+  const [message, setMessage] = useState('');
+  const router = useRouter();
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  useEffect(() => {
+  setForm(prev => ({ ...prev, amount: amount || '', planName:planName || '' }));
+}, [amount]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:5000/api/bookings', {
+    const res = await fetch('http://localhost:8081/api/spaces/reservations', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(form),
     });
-    if (res.ok) alert('Booking successful!');
-    else alert('Booking failed.');
-  };
 
+    if (res.ok) {
+      setForm({ name: '', email: '', amount: '', planName: '', date: '', time: '' });
+       router.push({
+        pathname: '/payment',
+        query: {
+        name: form.name,
+        email: form.email,
+        amount: form.amount,
+        planName: form.planName
+  }})
+    } else {
+      setMessage('Failed to reserve.');
+    }
+  };
   return (
     <div className={styles.spaceContainer}>
       
-      <div>
-         <Image
-      src={"/img/workspace2.webp"} width={700} height={600} alt={"workspace photo"}  />
-      </div>
+      
      <div className={styles.formDiv}>
-      <h1>Book a space</h1>
+       <h2>Make a Reservation for {plan}</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
-      <input className= {styles.input} type="text" placeholder="Name" required onChange={e => setFormData({ ...formData, name: e.target.value })} />
-      <input className= {styles.input} type="email" placeholder="Email" required onChange={e => setFormData({ ...formData, email: e.target.value })} />
-      <input className= {styles.input} type="date" required onChange={e => setFormData({ ...formData, date: e.target.value })} />
-      <input className= {styles.input} type="text" placeholder="Space ID" required onChange={e => setFormData({ ...formData, spaceId: e.target.value })} />
-      <textarea className={styles.textarea} placeholder="Notes" onChange={e => setFormData({ ...formData, notes: e.target.value })}></textarea>
-      <button className={styles.button} type="submit">Book Now</button>
-    </form>
+        <input className= {styles.input} name="name" placeholder="Your Name" value={form.name} onChange={handleChange} required />
+        <input className= {styles.input} name="email" placeholder="Email" value={form.email} onChange={handleChange} required/>
+        <input className= {styles.input} type='number' placeholder="Amount (NGN)"  name="amount"  value={form.amount} onChange={handleChange}  readOnly/>
+        <input className= {styles.input} type='text' placeholder="Plan"  name="planName"  value={form.planName} onChange={handleChange}  readOnly/>
+        <input className= {styles.input} type="date" name="date" value={form.date} onChange={handleChange} required/>
+        <input className= {styles.input} type="time" name="time" value={form.time} onChange={handleChange} required/>
+        <button type="submit" className={styles.button}>Reserve</button>
+          <button
+            type="button"
+            onClick={onCancel}
+            className={styles.cancelButton}
+          >
+          Cancel
+        </button>
+      </form>
+      {message && <p>{message}</p>}
+      
      </div>
      
     </div>
    
   );
 }
+

@@ -2,8 +2,7 @@
  
 }
 .spaceContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     margin: auto;
     justify-content: center;
     align-items: center;
@@ -32,18 +31,32 @@
 }
 .input{
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #08e6c8;;
   border-radius: 5px;
+  outline: #08e6c8;
 }
-#textarea {
+
+.textarea {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;  
+  border: 1px solid #08e6c8;;
+  border-radius: 5px; 
+  outline: #08e6c8;
+ 
 }
 .button {
   padding: 10px;
-  background-color: #0070f3;
+  background-color: #08e6c8;;
   color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cancelButton {
+  padding: 10px;
+  background-color: #e63408;;
+  color: white;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;

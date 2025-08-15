@@ -28,7 +28,7 @@ const authenticatedRoute = (Component = null, options = {}) => {
         return useEffectCleanUp
       }
       // console.log(token)
-      jwt.verify(token, process.env.NEXT_PUBLIC_JWT_SECRET, (err, decoded)=>{
+      jwt.verify({}, (err, decoded)=>{
         if(err?.name === "TokenExpiredError"){
           dispatch(clearToken())
           dispatch(logOutFalse())

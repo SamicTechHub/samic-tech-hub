@@ -8,10 +8,10 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <div className={style.footerContainer}>
-      {/* <div className={style.newsletter}>
+      <div className={style.newsletter}>
         <input placeholder='Enter Email Here to Receive Information and Updates about our Programmes' />
         <button className='primaryBtn'>Subscribe Now</button>
-      </div> */}
+      </div>
 
       <div className={style.aboutNav}>
         <div className={style.aboutColumn}>

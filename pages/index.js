@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 import HeaderF from "../components/HeaderF"
 
 import Accordion from "../components/Accordion";
-import Courses from '../components/courses'
+import Courses from '../components/Courses'
 
 
 
