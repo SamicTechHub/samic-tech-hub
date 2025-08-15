@@ -1,7 +1,7 @@
 .card {
   width: 100%;
   max-width: 350px;
-  min-height: 700px;
+  min-height: 500px;
   background-color: #fff;
   border-radius: 16px;
   box-shadow: 10px 28px 28px rgba(34, 33, 33, 0.1);
@@ -142,3 +142,51 @@
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%;
+    min-height: auto;
+    padding: 16px;
+    margin: 12px auto;
+  }
+
+  .cardHeader h2 {
+    font-size: 1.6rem;
+  }
+
+  .price {
+    font-size: 1.3rem;
+  }
+
+  .description,
+  .featureItem,
+  .idealFor,
+  .idealFor ul,
+  .idealFor li {
+    font-size: 1.2rem;
+  }
+
+  .icon {
+    font-size: 24px;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 10px 14px;
+  }
+
+  .modal {
+    padding: 16px;
+    max-width: 95%;
+  }
+
+  .modalContainer {
+    padding-top: 0.5rem;
+  }
+
+  .closeButton {
+    top: 6px;
+    right: 12px;
+    font-size: 22px;
+  }
+}

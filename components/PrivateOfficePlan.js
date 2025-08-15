@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
-import PlanCards from './planCards';
 import BookingForm from './BookingForm';
 import Modal from './Modal';
+import PlanCards from './PlanCards';
 
 const PrivateOfficePlan = ({ onclose }) => {
   const [showForm, setShowForm] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('');
+  const [selectedAmount, setSelectedAmount] = useState('')
+  const [selectedPlanName, setSelectedPlanName] = useState('');
+  
 
-  const handleReserveClick = (planTitle) => {
+  const handleReserveClick = (planTitle, price, planName) => {
     setSelectedPlan(planTitle);
     setShowForm(true);
+    setSelectedAmount(price)
+    setSelectedPlanName(planName);
+
   };
 
   const handleCloseModal = () => {
@@ -37,7 +43,7 @@ const PrivateOfficePlan = ({ onclose }) => {
             "Founders hosting collaborators",
           ]}
           buttonText="Reserve"
-          onClick={() => handleReserveClick('Weekly Private Office')}
+          onClick={() => handleReserveClick('Weekly Private Office', '40000.00', 'Private Office: weekly')}
         />
 
         <PlanCards
@@ -56,7 +62,7 @@ const PrivateOfficePlan = ({ onclose }) => {
             "Companies expanding locally",
           ]}
           buttonText="Reserve"
-          onClick={() => handleReserveClick('Monthly Private Office')}
+          onClick={() => handleReserveClick('Monthly Private Office', '150000.00', 'Private Office: Monthly')}
         />
 
         <PlanCards
@@ -74,13 +80,13 @@ const PrivateOfficePlan = ({ onclose }) => {
             "Teams of 10+ people",
           ]}
           buttonText="Contact Us"
-          onClick={() => handleReserveClick('Enterprise / Custom Office')}
+          onClick={() => handleReserveClick('Enterprise / Custom Office', ', Private Office: Custom')}
         />
       </div>
 
       {/* Booking Form in Modal */}
       <Modal isOpen={showForm} onClose={handleCloseModal}>
-        <BookingForm plan={selectedPlan} onCancel={handleCloseModal} />
+        <BookingForm plan={selectedPlan} onCancel={handleCloseModal} amount={selectedAmount} planName={selectedPlanName} />
       </Modal>
     </section>
   );

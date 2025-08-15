@@ -1,19 +1,25 @@
 import React from 'react'
-import PlanCards from './planCards';
+import PlanCards from './PlanCards';
 import { useState } from 'react';
 import BookingForm from './BookingForm';
 import Modal from './Modal';
+import { AutofpsSelectRounded } from '@mui/icons-material';
 
 
 const HotDeskPlan = ({onclose}) => {
 
     const [showForm, setShowForm] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState('');
+    const [selectedAmount, setSelectedAmount] = useState('');
+    const [selectedPlanName, setSelectedPlanName] = useState('');
 
 
-    const handleReserveClick = (planTitle) => {
+    const handleReserveClick = (planTitle, price, planName) => {
         setSelectedPlan(planTitle);
         setShowForm(true);
+        setSelectedAmount(price);
+        setSelectedPlanName(planName);
+
 
     }
 
@@ -22,7 +28,7 @@ const HotDeskPlan = ({onclose}) => {
         };
   return (
     <section>
-        <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
       <button style={{ height: '40px', backgroundColor: 'red', width: '40px', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={onclose}>X</button>
       <PlanCards
         title="Daily Access"
@@ -42,7 +48,7 @@ const HotDeskPlan = ({onclose}) => {
           "Students preparing for exams",
         ]}
           buttonText="Reserve"
-          onClick={() => handleReserveClick('Daily Access')}
+          onClick={() => handleReserveClick('Daily Access', '2000.00', 'Hot Desk: Daily Access')}
          
       />
 
@@ -64,7 +70,7 @@ const HotDeskPlan = ({onclose}) => {
           "Short-term visits",
         ]}
          buttonText="Reserve"
-          onClick={() => handleReserveClick('Weekly Access')}
+          onClick={() => handleReserveClick('Weekly Access', '10000.00', 'Hot Desk: Weekly Access')}
       />
 
       <PlanCards
@@ -86,14 +92,14 @@ const HotDeskPlan = ({onclose}) => {
         ]}
 
          buttonText="Reserve"
-          onClick={() => handleReserveClick('Monthly Access')}
+          onClick={() => handleReserveClick('Monthly Access', '40000.00', 'Hot Desk: Monthly Access')}
       />
     </div>
   
 
      {/* Booking Form in Modal */}
       <Modal isOpen={showForm} onClose={handleCloseModal}>
-        <BookingForm plan={selectedPlan} onCancel={handleCloseModal} />
+        <BookingForm plan={selectedPlan} onCancel={handleCloseModal} amount={selectedAmount} planName={selectedPlanName} />
       </Modal>
       </section>
   )
