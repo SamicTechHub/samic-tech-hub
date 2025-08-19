@@ -24,7 +24,7 @@ const fullStack = () => {
           <div className={style.detailSection}> 
           <div className={style.details}>
             <p className={style.duration}><AccessTimeFilledIcon style={{ fontSize: '2rem', color: '#27beab' }}  /> Programme length: 6 months</p>
-            <p className={style.duration}><LocalOfferIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Application Fee: 250,000</p>
+            <p className={style.duration}><LocalOfferIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Course Fee: 550,000</p>
             <p className={style.duration}><AddLocationIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Location: Samic Tech Hub</p>
           </div>
           <div>

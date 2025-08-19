@@ -25,22 +25,22 @@ const Footer = () => {
         </div>
         <div className={style.aboutColumn}>
             <h3>Company</h3>
-            <Link href="/about">Who we are</Link>
+            <Link href="/about" className={style.link} >Who we are</Link>
             
         </div>
         <div className={style.aboutColumn}>
             <h3>Programs</h3>
-            <Link href="/fullstack">Full Stack Development</Link>
-            <Link href="/frontend">Frontend Development</Link>
-            <Link href="/backend">PBackend Development</Link>
-            <Link href= "/uiux">UI/UX Design</Link>
-            <Link href= "/digitalMarketing">Digital Marketing</Link>
-            <Link href= "/productManagement">Product management</Link>
+            <Link href="/fullstack" className={style.link}>Full Stack Development</Link>
+            <Link href="/frontend"className={style.link}>Frontend Development</Link>
+            <Link href="/backend" className={style.link}>PBackend Development</Link>
+            <Link href= "/uiux" className={style.link}>UI/UX Design</Link>
+            <Link href= "/digitalMarketing" className={style.link}>Digital Marketing</Link>
+            <Link href= "/productManagement" className={style.link}>Product management</Link>
         </div>
         <div className={style.aboutColumn}>
             <h3>Contact</h3>
-            <a href="tel:+2347063188981">+234 706 318 8981</a>
-            <a href="mailto:Info@samictechhub.com"><GooglePlusSquareFilled /> Info@samictechhub.com</a>
+            <a href="tel:+2347063188981" className={style.link}>+234 706 318 8981</a>
+            <a href="mailto:Info@samictechhub.com" className={style.link}><GooglePlusSquareFilled /> Info@samictechhub.com</a>
         </div>
       </div>
         <div className={style.copyright}>
