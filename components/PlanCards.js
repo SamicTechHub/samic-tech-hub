@@ -5,14 +5,6 @@ import { useRouter } from 'next/router';
 
 
 const PlanCards = ({ title, price, description, features, idealFor, buttonText, onClick}) => {
-
-  //   const router = useRouter();
-  //   const handleReserveClick = () => {
-  //   router.push({
-  //     pathname: '/reserve',
-  //     query: { plan: title}, 
-  //   });
-  // };
     
   return (
     <div className={styles.card}>

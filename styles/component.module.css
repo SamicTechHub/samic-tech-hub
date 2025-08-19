@@ -66,9 +66,12 @@
 }
 
 .footerContainer .aboutNav .aboutColumn p{
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 2rem;
+}
+.link{
+    font: 2rem;
 }
 
 .footerContainer .aboutNav .aboutColumn .socials{

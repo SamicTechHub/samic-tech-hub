@@ -25,7 +25,7 @@ const frontend = () => {
     <div className={style.detailSection}> 
       <div className={style.details}>
         <p className={style.duration}><AccessTimeFilledIcon style={{ fontSize: '2rem', color: '#27beab' }}  /> Programme length: 6 months</p>
-        <p className={style.duration}><LocalOfferIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Application Fee: 150,000</p>
+        <p className={style.duration}><LocalOfferIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Course Fee: 300,000</p>
         <p className={style.duration}><AddLocationIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Location: Samic Tech Hub</p>
       </div>
       <div>
