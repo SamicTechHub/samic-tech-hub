@@ -16,10 +16,15 @@ import SubmitBtn from "../../components/SubmitBtn";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { BASE_URL } from "../../lib/constants";
-
+import { useDispatch } from "react-redux";
+import { addToken } from "../../redux/slices/authSlice";
 import { Toaster, toast } from "sonner";
 
 function Register() {
+
+  const dispatch = useDispatch();
+
+
 const [formData, setFormData] = useState({});
   const [clicked, setClicked] = useState(false);
   const router = useRouter();
@@ -65,6 +70,11 @@ const [formData, setFormData] = useState({});
       .then((response) => {
         setClicked(false);
         toast.success(response.data?.message);
+
+           //  Save token & mark user as registered
+        if (response.data?.token) {
+          dispatch(addToken(response.data.token));
+        }
         setTimeout(() => {
           router.push("/");
         }, 3000);

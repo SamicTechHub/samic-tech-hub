@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import SubmitBtn from "../components/SubmitBtn";
 import { BASE_URL } from "../lib/constants";
+import PaymentAuthenticatedRoute from "../components/PaymentAthenticatedRoute";
 
 export default function Pay() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,7 +65,7 @@ export default function Pay() {
             onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
             required
             className={styles.input}
-            readOnly
+            // readOnly
           />
           <br /><br />
 
@@ -75,7 +76,7 @@ export default function Pay() {
             onChange={(e) => setFormData({ ...formData, customerEmail: e.target.value })}
             required
             className={styles.input}
-            readOnly
+            // readOnly
           />
           <br /><br />
 
@@ -86,7 +87,7 @@ export default function Pay() {
             onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
             required
             className={styles.input}
-            readOnly
+            // readOnly
           />
           <br /><br />
 
@@ -102,7 +103,7 @@ export default function Pay() {
     </div>
   );
 }
-
+// export default Pay
 
 // import { useState, useEffect } from "react";
 // import styles from "../styles/pay.module.css"
