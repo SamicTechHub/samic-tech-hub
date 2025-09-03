@@ -30,18 +30,21 @@ const DeskTypeSelector = () => {
           <Image src="/img/team2.webp" alt="Hot Desk" width={700} height={500}/>
           <h3>Hot Desk</h3>
           <p>Flexible daily, weekly, and monthly shared desk options.</p>
+          <p className={styles.viewPricing}>View Pricing</p>
         </div>
 
         <div className={styles.card} onClick={() => setActivePlan('dedicated')}>
           <Image src="/img/workprivate.webp" alt="Dedicated Desk" width={700} height={500}/>
           <h3>Dedicated Desk</h3>
           <p>Your personal desk in a shared office environment.</p>
+          <p className={styles.viewPricing}>View Pricing</p>
         </div>
 
         <div className={styles.card} onClick={() => setActivePlan('private')}>
           <Image src="/img/team.webp" alt="Private Office" width={700} height={500} />
           <h3>Private Office</h3>
           <p>Private spaces for small teams or growing companies.</p>
+          <p className={styles.viewPricing}>View Pricing</p>
         </div>
       </div>
     </section>
