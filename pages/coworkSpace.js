@@ -11,6 +11,7 @@ import HotelIcon from '@mui/icons-material/Hotel';
 import Footer from '../components/Footer';
 import PlanSelector from '../components/PlanSelector';
 import { useRef} from 'react';
+import Map from '../components/GoogleMap';
 
 
 
@@ -125,10 +126,12 @@ const CoworkSpace = () => {
        </div>
 
       </section>
-{/* 
       <section>
-        <HotDeskPlan />
-      </section> */}
+        <div>
+          <h1>Our Location</h1>
+          <Map />
+        </div>
+      </section>
 
        <Footer />
       </div>
