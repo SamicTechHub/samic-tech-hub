@@ -126,12 +126,12 @@ const CoworkSpace = () => {
        </div>
 
       </section>
-      <section>
+      {/* <section>
         <div>
           <h1>Our Location</h1>
           <Map />
         </div>
-      </section>
+      </section> */}
 
        <Footer />
       </div>
