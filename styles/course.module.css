@@ -41,11 +41,25 @@
 
 .programGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* Force 3 items per row on large screens */
   gap: 2rem;
   margin-bottom: 2rem;
   font-size: 1.5rem;
 }
+
+/* ✅ Responsive behavior */
+@media (max-width: 1024px) {
+  .programGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 640px) {
+  .programGrid {
+    grid-template-columns: 1fr; /* 1 per row on small screens */
+  }
+}
+
 
 .programCard {
   background: white;
