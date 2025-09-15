@@ -5,6 +5,13 @@ import style from '../styles/course.module.css';
 import Link from 'next/link';
 
 const programsData = [
+   {
+    title: 'Cybersecurity',
+    description:'Understand core cybersecurity principles and practices to secure digital systems.',
+    image: '/img/Vector2.svg',
+    link: '/tracks/backend',
+    price: '₦300,000',
+  },
   {
     title: 'Full-stack Software Development',
     description:'Build responsive frontend apps and powerful backend systems using modern tools and frameworks.',
@@ -35,18 +42,19 @@ const programsData = [
   },
   {
     title: 'Frontend Development',
-    description:'Understand core cybersecurity principles and practices to secure digital systems.',
+    description:'Frontend is where design meets interaction — bringing ideas to life on your screen.',
     image: '/img/Vector2.svg',
     link: '/tracks/frontend',
     price: '₦300,000',
   },
    {
     title: 'Backend Development',
-    description:'Understand core cybersecurity principles and practices to secure digital systems.',
+    description:'Backend is the power behind the scenes — making everything work smoothly.',
     image: '/img/Vector2.svg',
     link: '/tracks/backend',
     price: '₦300,000',
   },
+  
 ];
 
 export default function Programs() {
