@@ -42,7 +42,7 @@
     left: 0;
     top: 0rem;
     position: fixed;
-    background: var(--deepGreen);
+    background: rgb(61, 145, 61);
     width: 250px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow-y: auto;
@@ -143,7 +143,7 @@
 }
 
 .sidemenu a.active {
-    background: var(--priColor);
+    background: rgb(172, 161, 161);
     color: #fff;
     border-radius: 4px;
     height: 45px;

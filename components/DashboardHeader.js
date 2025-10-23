@@ -52,7 +52,7 @@ function DashboardHeader({userObj, toggleDisplay, isClicked}) {
       {userObj?.username}
       <div style={{cursor: "pointer"}} className={style.header_avatar} onClick={handleClick}>
         <Image
-        src={userObj?.userImageUrl || "/img/user2.png"}
+        src={userObj?.userImageUrl || "/img/logoGBg.png"}
         alt="avatar"
         layout={"fill"}
         objectFit={"cover"}
