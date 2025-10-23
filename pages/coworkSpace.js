@@ -70,7 +70,7 @@ const CoworkSpace = () => {
       <section>
         <div className={style.sectionOne}>
           <Image 
-          src={"/img/workprivate.webp"} width={700} height={600} alt={"workspace photo"}  className={style.imageShiftDown} />
+          src={"/img/workprivate.webp"} width={700} height={600} alt={"workspace photo"} priority className={style.imageShiftDown} />
         <div className={style.offer}>
           <h1>What we offer</h1>
           <div className={style.bulletPoints}>

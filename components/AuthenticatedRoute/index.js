@@ -8,6 +8,7 @@ import { addToken, clearToken, logInRedirect, logOut, logOutFalse } from "../../
 import { generateToken } from "../../lib/generateToken";
 import { useEffectCleanUp } from "../../lib/func";
 
+
 const authenticatedRoute = (Component = null, options = {}) => {
   const AuthenticatedRoute = () => {
     const {auth} = useSelector((state) => state);
@@ -27,8 +28,8 @@ const authenticatedRoute = (Component = null, options = {}) => {
         Router.push("/admin/auth/login")
         return useEffectCleanUp
       }
-      // console.log(token)
-      jwt.verify({}, (err, decoded)=>{
+      console.log(token)
+      jwt.verify(token, process.env.NEXT_PUBLIC_JWT_SECRET, (err, decoded)=>{
         if(err?.name === "TokenExpiredError"){
           dispatch(clearToken())
           dispatch(logOutFalse())
@@ -44,6 +45,26 @@ const authenticatedRoute = (Component = null, options = {}) => {
           }
         }
       })
+  //     try {
+  //   const decoded = jwtDecode(token);
+  //   const isExpired = decoded.exp * 1000 < Date.now(); // check expiry time
+
+  //   if (isExpired) {
+  //     dispatch(clearToken());
+  //     dispatch(logOutFalse());
+  //     dispatch(logInRedirect(asPath));
+  //     Router.push("/admin/auth/login");
+  //   } else {
+  //     if (auth.isLoggedIn) {
+  //       const generatedToken = generateToken(decoded?.id);
+  //       dispatch(addToken(generatedToken));
+  //     }
+  //   }
+  // } catch (err) {
+  //   console.error("Invalid token", err);
+  //   dispatch(clearToken());
+  //   Router.push("/admin/auth/login");
+  // }
       setLoaded(true);
     }, []);
     // console.log(auth)

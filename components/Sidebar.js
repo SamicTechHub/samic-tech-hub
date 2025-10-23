@@ -52,7 +52,7 @@ function SideBar({
         <div className={style.side_user}>
           <div className={`${style.side_img} ${userImageWidth}`}>
             <Image
-              src={userObj?.userImageUrl || "/img/user3.png"}
+              src={userObj?.userImageUrl || "/img/logoWBg.png"}
               alt="avatar"
               layout={"fill"}
               objectFit={"cover"}

@@ -13,6 +13,7 @@ function Dashboard() {
   const [users, setUsers] = useState([])
   const { auth } = useSelector((state) => state);
   const userObj = auth?.user;
+  const [reservation, setReservation] = useState([]);
 
 
   useEffect(() => {
@@ -27,6 +28,20 @@ function Dashboard() {
   
 
   }, [])
+
+    useEffect(() => {
+    axios
+      .get(`${BASE_URL}/api/spaces`)
+      .then((response)=>{
+        setReservation(response.data?.reservation)
+      })
+      .catch((e)=>{
+        console.log(e)
+      })
+  
+
+  }, [])
+
 
   const deleteRegisteredUser = () => {
     // Logic to delete user
@@ -51,7 +66,17 @@ function Dashboard() {
     {title: "Plan", field: "plan", render:rowData => (rowData.plan)?.toUpperCase()},
     {title: "Stack", field: "stack"},
     {title: "Sub-stack", field: "subStack"},
-    { title: "Joined on", field: "createdAt", type: "datetime"},
+    {title: "Joined on", field: "createdAt", type: "datetime"},
+  ]
+
+   const reservationTitle = [
+    { title: '#', field: 'tableData.id',width:"2", render:rowData => rowData.tableData.id+1},
+    {title: "Name", field: "name"},
+    {title: "Email", field: "email"},
+    {title: "Amount", field: "amount"},
+    {title: "PlanName", field: "planName", render:rowData => (rowData.plan)?.toUpperCase()},
+    {title: "Date", field: "date"},
+    {title: "Joined on", field: "createdAt", type: "datetime"},
   ]
   return (
     <>
@@ -73,8 +98,24 @@ function Dashboard() {
           <Table title={"Registered Users"} tableTitle={tableTitle} tableData={users} deletePost={deleteRegisteredUser} view={viewUser} showModal={editUser} />
 
         </div>
+        <div>
+           <h2>Welcome To reservation {userObj?.username}</h2>
+        <div className={style.cards}>
+          <div className={style.card}>
+            <h2>Total Reservation</h2>
+            <p>{reservation.length}</p>
+          </div>
+        </div>
+        <div className={style.container}>
+          <h2>Reservation Table</h2>
+          <Table title={"Reservations"} reservationTitle={reservationTitle} tableData={reservation} deletePost={deleteRegisteredUser} view={viewUser} showModal={editUser} />
+
+        </div>
+        </div>
 
       </DashboardWrapper>
+
+     
     </>
   )
 }

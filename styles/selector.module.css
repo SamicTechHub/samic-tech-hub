@@ -20,6 +20,8 @@
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
   padding-bottom: 3rem;
+  color: #333;
+
 }
 
 .card:hover {
