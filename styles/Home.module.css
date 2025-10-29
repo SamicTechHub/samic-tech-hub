@@ -135,7 +135,21 @@
   color: #1c8f7a;
 }
 
+/* @media (max-width: 768px) {
 
+  .dropdownMenu {
+    position: static;
+    width: 90%;
+    margin-top: 8px;
+    box-shadow: none;
+    border-radius: 8px;
+  }
+
+  .dropdownItem {
+    text-align: center;
+    padding: 12px;
+  }
+} */
 
 /* Hamburger Icon */
 .hamburger {
@@ -221,9 +235,9 @@
   font-weight: 500;
 }
 
-  .navButton {
-    display: none; /* Or adjust to show a register button inside menu */
-  }
+  /* .navButton {
+    display: none;
+  } */ /* Or adjust to show a register button inside menu */
 }
 
 
