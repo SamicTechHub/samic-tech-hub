@@ -11,6 +11,25 @@ const Header = () => {
   const isHome = router.pathname === "/";
   const isAbout = router.pathname === "/about";
 
+  const [open, setOpen] = useState(false);
+
+  const handleRegister = () => {
+    setOpen(false);
+    router.push("/auth/register");
+  };
+
+  const handleFreeTraining = () => {
+    setOpen(false);
+    window.open("https://forms.gle/Yts4N5nocq36NyKy5", "_blank");
+  };
+  //  const handleChange = (e) => {
+  //   const value = e.target.value;
+  //   if (value === "register") {
+  //     router.push("/auth/register");
+  //   } else if (value === "freeTraining") {
+  //     window.open("https://forms.gle/Yts4N5nocq36NyKy5", "_blank");
+  //   }
+  // }
 
   useEffect(() => {
     window.onscroll = function () {
@@ -66,8 +85,33 @@ const Header = () => {
         </div>
      
       </div>
-      <div className={style.navButton}>
-          {isHome && (
+
+       <div className={style.navButton}>
+      {isHome && (
+        <div className={style.dropdownWrapper}>
+          <button
+            className={style.primaryBtn}
+            onClick={() => setOpen(!open)}
+          >
+            Register
+            <span className={style.arrow}>▾</span>
+          </button>
+
+          {open && (
+            <div className={style.dropdownMenu}>
+              <div className={style.dropdownItem} onClick={handleRegister}>
+                Register for Our Courses
+              </div>
+              <div className={style.dropdownItem} onClick={handleFreeTraining}>
+                Register for the Free Training
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+    {/* <div className={style.navButton}>
+       {isHome && (
             <button
               onClick={() => router.push('/auth/register')}
               className="primaryBtn"
@@ -75,7 +119,8 @@ const Header = () => {
               Register
             </button>
           )}
-      </div>
+    </div> */}
+      
 
           <div className={style.navButton}>
           {isAbout && (
