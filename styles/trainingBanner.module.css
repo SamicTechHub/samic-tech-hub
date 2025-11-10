@@ -45,7 +45,7 @@
 /* 🔹 Responsive: smaller but still on right */
 @media (max-width: 600px) {
   .trainingBanner {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 10px 14px;
     left: 14%;
     bottom: 60rem;
