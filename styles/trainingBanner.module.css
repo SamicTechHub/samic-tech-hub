@@ -49,9 +49,9 @@
     padding: 10px 14px;
     left: 14%;
     bottom: 60rem;
-    /* border-radius: 12px 0 0 12px;
+    border-radius: 12px 0 0 12px;
      display: inline-block;
     color: red;
-    white-space: nowrap;  */
+    white-space: nowrap; 
   }
 }
