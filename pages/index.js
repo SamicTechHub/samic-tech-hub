@@ -14,7 +14,8 @@ import 'swiper/css/pagination';
 import HeaderF from "../components/HeaderF"
 
 import Accordion from "../components/Accordion";
-import Courses from '../components/Courses'
+import Courses from '../components/Courses';
+import TrainingBanner from '../components/TrainingBanner'
 
 
 
@@ -53,6 +54,7 @@ export default function Home() {
             <button onClick={()=>router.push("/auth/mentorRegister") } className='secondaryBtn'>Apply As A Mentor  →</button>
        
           </div>
+           
 
         </div>
         <div className={style.heroBanner}>
@@ -68,7 +70,9 @@ export default function Home() {
         </div>
       </section>
       {/* Featured Section */}
-      <section></section>
+      <section>
+         <TrainingBanner />
+      </section>
 
       {/* About us Section */}
       <section className={style.aboutSection}>

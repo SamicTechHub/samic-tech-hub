@@ -1,0 +1,53 @@
+.trainingBanner {
+  position: fixed;
+  bottom: 47rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+    color: red;
+
+  /* color: #E6DC7F; */
+  padding: 16px 24px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: slideIn 1s ease-out forwards, pulse 2s infinite 2s;
+  z-index: 1000;
+  text-align: center;
+}
+
+.trainingBanner span {
+  text-decoration: underline;
+}
+
+/* Slide and fade in */
+@keyframes slideIn {
+  from {
+    transform: translateX(-50%) translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Gentle pulse */
+@keyframes pulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+@media (max-width: 600px) {
+  .trainingBanner {
+    font-size: 1rem;
+    padding: 12px 16px;
+    bottom: 15px;
+  }
+}

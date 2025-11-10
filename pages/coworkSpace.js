@@ -12,6 +12,7 @@ import Footer from '../components/Footer';
 import PlanSelector from '../components/PlanSelector';
 import { useRef} from 'react';
 import Map from '../components/GoogleMap';
+import TrainingBanner from '../components/TrainingBanner';
 
 
 
