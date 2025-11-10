@@ -120,6 +120,12 @@
   z-index: 100;
   overflow: hidden;
 }
+@media (min-width: 768px) { 
+  .dropdownMenu { 
+    min-width: 200px;
+   }
+ }
+
 
 /* Dropdown items */
 .dropdownItem {
