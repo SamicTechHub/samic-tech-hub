@@ -9,8 +9,8 @@ const programsData = [
     title: 'Cybersecurity',
     description:'Understand core cybersecurity principles and practices to secure digital systems.',
     image: '/img/Vector2.svg',
-    link: '/tracks/backend',
-    price: '₦300,000',
+    link: '/tracks/cybersecurity',
+    price: '₦400,000',
   },
   {
     title: 'Full-stack Software Development',
