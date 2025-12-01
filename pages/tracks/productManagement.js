@@ -22,7 +22,7 @@ const productManagement = () => {
        
      <div className={style.detailSection}> 
       <div className={style.details}>
-        <p className={style.duration}><AccessTimeFilledIcon style={{ fontSize: '2rem', color: '#27beab' }}  /> Programme length: 6 months</p>
+        <p className={style.duration}><AccessTimeFilledIcon style={{ fontSize: '2rem', color: '#27beab' }}  /> Programme length: 4 months</p>
         <p className={style.duration}><LocalOfferIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Course Fee: 200,000</p>
         <p className={style.duration}><AddLocationIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Location: Samic Tech Hub</p>
       </div>
