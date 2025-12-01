@@ -26,18 +26,19 @@ const CourseGrid = () => {
   ];
 
   return (
-    <div className={Styles.gridContainer}>
+     <div className={Styles.gridContainer}>
       {programs.map((program, index) => (
         <div
           key={index}
           className={Styles.gridItem}
           style={{ backgroundColor: program.color }}
         >
-        
           {program.title && 
-          <h1 className={Styles.headings}>  {
-           program.icon && <span className={Styles.span}>{program.icon}</span>}{program.title}
-          </h1>}
+            <h1 className={Styles.headings}>
+              {program.icon && <span className={Styles.span}>{program.icon}</span>}
+              {program.title}
+            </h1>
+          }
 
           {program.details && (
             <p className={Styles.paragraph1}>{program.details}</p>
@@ -45,13 +46,12 @@ const CourseGrid = () => {
 
           {program.icon2 && program.subTitle && (
             <h2 className={Styles.headings}>
-              {program.icon2 && <span className={Styles.span} >{program.icon2}</span>}
+              {program.icon2 && <span className={Styles.span}>{program.icon2}</span>}
               {program.subTitle}
             </h2>
           )}
 
           {program.subDetails && (
-             
             <p className={Styles.paragraph2}>{program.subDetails}</p>
           )}
 
@@ -59,14 +59,14 @@ const CourseGrid = () => {
             <ul className={Styles.courseList}>
               {program.courses.map((course, idx) => (
                 <li key={idx} className={Styles.courseItem}>
-                  {program.courseIcon}
-                  {`${idx + 1}. ${course}`}
+                  <div className={Styles.courseIconWrapper}>
+                    {program.courseIcon}
+                  </div>
+                  <span className={Styles.courseText}>{course}</span>
                 </li>
               ))}
             </ul>
           )}
-
-
         </div>
       ))}
     </div>
