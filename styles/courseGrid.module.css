@@ -5,22 +5,34 @@
   padding: 20px;
   margin-top: 20px;
 }
+
 .courseList {
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
+  margin: 0;
+  list-style: none;
+  list-style-position: inside;
 }
 
 .courseItem {
   display: flex;
-  align-items: center;
-  margin-top: 2rem;
-  font-size: 1.5rem;
-  font-weight: 300;
-  gap: 8px;
-  margin-bottom: 0.5rem;
-  line-height: 6rem;
+  align-items: center; /* aligns icon vertically with text */
+  gap: 0.5rem; /* space between icon and text */
+  margin-bottom: 0.75rem;
+  list-style: none;
 }
+
+.courseIconWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.courseText {
+  list-style: none;
+  font-size: 1.5rem;
+  line-height: 3.5;
+}
+
 
 .span{
     margin-top: 100px;
@@ -29,7 +41,7 @@
 .gridItem {
   padding: 20px;
   text-align: center;
-  font-weight: bold;
+  font-weight:500;
   border-radius: 12px;
   display: flex;
   flex-direction: column;

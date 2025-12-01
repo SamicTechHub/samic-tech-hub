@@ -41,7 +41,7 @@ const Cybersecurity = () => {
            {showPaymentModal && (
           <div className={style.modalOverlay}>
             <div className={style.paymentModal}>
-              <h3>Payment for: Digital Marketing</h3>
+              <h3>Payment for: Cybersecurity</h3>
               <p>You'll be redirected to our secure payment gateway</p>
               <div className={style.modalButton}>
                 <button 
