@@ -175,7 +175,7 @@ export default function Home() {
             <p>Samic Tech Hub gave me the skills and confidence to pursue a career in web development. The curriculum was comprehensive and well-organized, and the instructors were experienced and knowledgeable. I was able to learn at my own pace and get help when I needed it. I am now working as a web developer.</p>
 
             <div className={style.testimonialUserDetails}>
-              <h5>Emeka Afolayan</h5>
+              <h5>'Segun Afolayan</h5>
               <p>Freelance UX Designer</p>
             </div>
 

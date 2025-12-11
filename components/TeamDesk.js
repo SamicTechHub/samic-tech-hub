@@ -3,7 +3,7 @@ import BookingForm from './BookingForm';
 import Modal from './Modal';
 import PlanCards from './PlanCards';
 
-const PrivateOfficePlan = ({ onclose }) => {
+const TeamDesk = ({ onclose }) => {
   const [showForm, setShowForm] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('');
   const [selectedAmount, setSelectedAmount] = useState('')
@@ -28,11 +28,11 @@ const PrivateOfficePlan = ({ onclose }) => {
       <button style={{ height: '40px', backgroundColor: 'red', width: '40px', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={onclose}>X</button>
 
         <PlanCards
-          title="Weekly Private Office"
-          price="₦40,000 / week"
+          title="Weekly Team Desk"
+          price="₦60,000 / week"
           description="A secure, enclosed office for your team to collaborate and focus without distractions."
           features={[
-            "7 AM - 7 PM daily access",
+            "8 AM - 6 PM daily access",
             "Up to 4 team members",
             "High-speed internet",
           
@@ -43,18 +43,17 @@ const PrivateOfficePlan = ({ onclose }) => {
             "Founders hosting collaborators",
           ]}
           buttonText="Reserve"
-          onClick={() => handleReserveClick('Weekly Private Office', '40000.00', 'Private Office: weekly')}
+          onClick={() => handleReserveClick('Weekly Private Office', '60000.00', 'Private Office: weekly')}
         />
 
         <PlanCards
-          title="Monthly Private Office"
-          price="₦150,000 / month"
+          title="Monthly Team Desk"
+          price="₦300,000 / month"
           description="A dedicated office for your growing team, fully serviced and professionally managed."
           features={[
             "24/7 access",
             "Private office (up to 6 people)",
             "Business address use",
-            "Meeting room (6 hrs free)",
           ]}
           idealFor={[
             "Startups with regular clients",
@@ -62,7 +61,7 @@ const PrivateOfficePlan = ({ onclose }) => {
             "Companies expanding locally",
           ]}
           buttonText="Reserve"
-          onClick={() => handleReserveClick('Monthly Private Office', '150000.00', 'Private Office: Monthly')}
+          onClick={() => handleReserveClick('Monthly Private Office', '300000.00', 'Private Office: Monthly')}
         />
 
         <PlanCards
@@ -92,4 +91,4 @@ const PrivateOfficePlan = ({ onclose }) => {
   );
 };
 
-export default PrivateOfficePlan;
+export default TeamDesk;

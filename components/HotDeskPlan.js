@@ -32,36 +32,31 @@ const HotDeskPlan = ({onclose}) => {
       <button style={{ height: '40px', backgroundColor: 'red', width: '40px', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={onclose}>X</button>
       <PlanCards
         title="Daily Access"
-        price="₦2,000 / day"
+        price="₦2,500 / day"
         description="Perfect for freelancers or remote workers needing a workspace for a single day."
         features={[
           "8 AM - 6 PM access",
           "High-speed internet",
           "Ergonomic workspace",
-          "Free coffee or tea",
-          "Access to lounge areas",
           "Power outlets & charging stations",
         ]}
         idealFor={[
           "Travelers passing through town",
-          "Freelancers needing a quiet space",
-          "Students preparing for exams",
+          "Freelancers needing a quiet space"
         ]}
           buttonText="Reserve"
-          onClick={() => handleReserveClick('Daily Access', '2000.00', 'Hot Desk: Daily Access')}
+          onClick={() => handleReserveClick('Daily Access', '2500.00', 'Hot Desk: Daily Access')}
          
       />
 
       <PlanCards
         title="Weekly Access"
-        price="₦10,000 / week"
+        price="₦15,000 / week"
         description="Best for short-term projects or teams needing a week of productivity."
         features={[
-           "7-day full access",
+           "6-day full access",
           "Reserved desk option",
           "Priority internet bandwidth",
-          "5 free print/scan pages",
-          "Complimentary refreshments",
           "Networking with others",
         ]}
         idealFor={[
@@ -70,20 +65,18 @@ const HotDeskPlan = ({onclose}) => {
           "Short-term visits",
         ]}
          buttonText="Reserve"
-          onClick={() => handleReserveClick('Weekly Access', '10000.00', 'Hot Desk: Weekly Access')}
+          onClick={() => handleReserveClick('Weekly Access', '15000.00', 'Hot Desk: Weekly Access')}
       />
 
       <PlanCards
         title="Monthly Access"
-        price="₦40,000 / month"
+        price="₦50,000 / month"
         description="A full-time flexible workspace for remote workers, creatives, and startups."
         features={[
           "30-day unrestricted access",
           "Dedicated desk option",
-          "Meeting room (4 hrs free)",
           "Business address use",
           "Locker storage available",
-          "Member event access",
         ]}
         idealFor={[
           "Remote employees",
@@ -92,7 +85,7 @@ const HotDeskPlan = ({onclose}) => {
         ]}
 
          buttonText="Reserve"
-          onClick={() => handleReserveClick('Monthly Access', '40000.00', 'Hot Desk: Monthly Access')}
+          onClick={() => handleReserveClick('Monthly Access', '50000.00', 'Hot Desk: Monthly Access')}
       />
     </div>
   

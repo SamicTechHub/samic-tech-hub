@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import HotDeskPlan from './HotDeskPlan';
 import DedicatedDeskPlan from './DedicatedDeskPlan';
-import PrivateOfficePlan from './PrivateOfficePlan';
+import TeamDesk from './TeamDesk';
 import styles from '../styles/selector.module.css'; // for custom styling
 import Image from 'next/image';
 import dynamic from "next/dynamic";
@@ -20,7 +20,7 @@ const DeskTypeSelector = () => {
 
   if (activePlan === 'hotdesk') return <HotDeskPlan onclose={handleBack} />;
   if (activePlan === 'dedicated') return <DedicatedDeskPlan onclose={handleBack} />;
-  if (activePlan === 'private') return <PrivateOfficePlan onclose={handleBack} />;
+  if (activePlan === 'private') return < TeamDesk onclose={handleBack} />;
 
   return (
     <section className={styles.selectorContainer}>
@@ -42,7 +42,7 @@ const DeskTypeSelector = () => {
 
         <div className={styles.card} onClick={() => setActivePlan('private')}>
           <Image src="/img/team.webp" alt="Private Office" width={700} height={500} />
-          <h3>Private Office</h3>
+          <h3>Team Desk</h3>
           <p>Private spaces for small teams or growing companies.</p>
           <p className={styles.viewPricing}>View Pricing</p>
         </div>

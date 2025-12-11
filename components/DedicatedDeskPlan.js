@@ -32,7 +32,7 @@ const DedicatedDeskPlan = ({ onclose }) => {
           price="₦15,000 / week"
           description="Enjoy the consistency of your own desk for a week. Come in, plug in, and start working immediately."
           features={[
-            "7 AM - 7 PM daily access",
+            "8 AM - 6 PM daily access",
             "Your own personal desk",
            
           ]}
@@ -47,12 +47,11 @@ const DedicatedDeskPlan = ({ onclose }) => {
 
         <PlanCards
           title="Monthly Dedicated Desk"
-          price="₦50,000 / month"
+          price="₦60,000 / month"
           description="Your permanent spot in a shared office environment with all the amenities you need."
           features={[
             "24/7 access",
             "Personal desk & chair",
-            "Meeting room (5 hrs free)",
             "Business address use",
             "Community networking events",
           ]}
@@ -62,18 +61,17 @@ const DedicatedDeskPlan = ({ onclose }) => {
             "Freelancers building long-term routines",
           ]}
           buttonText="Reserve"
-          onClick={() => handleReserveClick('Monthly Dedicated Desk', '50000.00', 'Dedicated Desk: Monthly')}
+          onClick={() => handleReserveClick('Monthly Dedicated Desk', '60000.00', 'Dedicated Desk: Monthly')}
         />
 
         <PlanCards
           title="Quarterly Dedicated Desk"
-          price="₦135,000 / 3 months"
+          price="₦170,000 / 3 months"
           description="Lock in your productivity and save more with a quarterly commitment to your own workspace."
           features={[
             "24/7 secured access",
             "Guaranteed dedicated desk",
             "Priority meeting room booking",
-            "Access to all member events",
           ]}
           idealFor={[
             "Growing startups",
@@ -81,7 +79,7 @@ const DedicatedDeskPlan = ({ onclose }) => {
             "Freelancers scaling up",
           ]}
           buttonText="Reserve"
-          onClick={() => handleReserveClick('Quarterly Dedicated Desk', '135000.00', 'Dedicated Desk: Quarterly')}
+          onClick={() => handleReserveClick('Quarterly Dedicated Desk', '170000.00', 'Dedicated Desk: Quarterly')}
         />
       </div>
 
