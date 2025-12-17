@@ -35,7 +35,7 @@ const CoworkSpace = () => {
         <HeaderF />
       <section className={style.bannerSectionContainerFs}>
         <h1  className={style.heading}>
-            CoworkSpace
+            Coworking Space
         </h1>
       </section>
       <i className={style.headingPhrase}>A Professional Workspace design for You ...</i>
@@ -47,7 +47,7 @@ const CoworkSpace = () => {
           <div>
             
             <p className={style.iconPara}><SettingsRemoteIcon style={{ fontSize: '2rem', color: '#f39303' }} /> A Customly made space for you </p>
-            <p className={style.heading1}>Welcome to our workspace</p>
+            <p className={style.heading1}>Welcome to our workingspace</p>
             <p className={style.paragraph1}>Here, we believe in the power of collaboration,creativity, and continuous growth. Whether you're here to build, learn, innovate, or connect. This environment is designed to support your journey. Feel free to explore the tools and resources around you.</p>
           </div>
         </div>
