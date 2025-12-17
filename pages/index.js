@@ -33,9 +33,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Samic Tech Hub</title>
-        <meta name="description" content="The Hub for great Developers" />
-        <link rel="icon" href="/img/logoWBg.png" />
+        <title>Samic Tech Hub – Tech Skills Training, Co-Working Space, Software Product Studio </title>
+        <meta name="description" content="Samic Tech Hub offers tech skills training, web development programs, a modern co-working space for freelancers, startups, learners, and a software product studio where you can bring your business ideas to reality." />
+        <link rel="icon" href="/img/logoWBg.png" alt="icon" />
       </Head>
 
       {/* Mobiile Sidebar */}

@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import HeaderF from "../components/HeaderF"
 import style from '../styles/cowork.module.css'
 import Image from 'next/image'
@@ -26,6 +27,11 @@ const CoworkSpace = () => {
   return (
     
       <div> 
+        <Head>
+          <title>Samic Tech Hub – Co-Working Space </title>
+          <meta name="description" content="Samic Tech Hub offers tech skills training, web development programs, a modern co-working space for freelancers, startups, learners, and a software product studio where you can bring your business ideas to reality." />
+        </Head>
+
         <HeaderF />
       <section className={style.bannerSectionContainerFs}>
         <h1  className={style.heading}>
