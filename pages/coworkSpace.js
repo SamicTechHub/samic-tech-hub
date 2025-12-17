@@ -28,8 +28,8 @@ const CoworkSpace = () => {
     
       <div> 
         <Head>
-          <title>Samic Tech Hub – Co-Working Space </title>
-          <meta name="description" content="Samic Tech Hub offers tech skills training, web development programs, a modern co-working space for freelancers, startups, learners, and a software product studio where you can bring your business ideas to reality." />
+          <title>Samic Tech Hub – Tech Skills Training, Co-Working Space, Software Studio in Ibadan, Moniya </title>
+          <meta name="description" content="Samic Tech Hub offers tech skills training, web development programs in Ibadan, Moniya. A modern co-working space for freelancers, startups, remote workers, learners in Ibadan, Moniya. Our services also include software product studio where you can bring your business ideas to reality in Ibadan, Moniya." />
         </Head>
 
         <HeaderF />
