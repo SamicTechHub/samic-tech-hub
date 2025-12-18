@@ -3,7 +3,7 @@ import style from '../../styles/tracks.module.css'
 import HeaderF from "../../components/HeaderF"
 import { useRouter} from 'next/router'
 import { useState } from 'react'
-import CourseGrid from '../../components/ProductMgtGrid';
+import CourseGrid from '../../components/frontendGrid';
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import Footer from '../../components/Footer'
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
