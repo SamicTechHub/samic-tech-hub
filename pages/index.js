@@ -36,6 +36,7 @@ export default function Home() {
         <title>Samic Tech Hub – Tech Skills Training, Co-Working Space, Software Studio in Ibadan, Moniya </title>
         <meta name="description" content="Samic Tech Hub offers tech skills training, web development programs in Ibadan, Moniya. A modern co-working space for freelancers, startups, remote workers, learners in Ibadan, Moniya. Our services also include software product studio where you can bring your business ideas to reality in Ibadan, Moniya." />
         <link rel="icon" href="/img/logoWBg.png" alt="icon" />
+        <meta name="google-site-verification" content="8iH4pWVXAM3QoQVpbo0AUy3UqV67cVfcmI9SuwR5xOc" />
       </Head>
 
       {/* Mobiile Sidebar */}
