@@ -43,9 +43,9 @@ const Header = () => {
     >
       <div className={style.brandContainer}>
         <div className={style.logoContainer}>
-          <Image src="/img/logoGBg.png" alt="Samic Tech Hub" layout="fill" />
+          <Image src="/img/logoGBg.png" alt="Samic Tech Hub" layout="fill"/>
         </div>
-        <h1>Samic</h1>
+        <h1>Samic Tech Hub</h1>
       </div>
 
       <button

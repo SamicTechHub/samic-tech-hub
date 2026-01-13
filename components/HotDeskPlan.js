@@ -35,7 +35,7 @@ const HotDeskPlan = ({onclose}) => {
         price="₦2,500 / day"
         description="Perfect for freelancers or remote workers needing a workspace for a single day."
         features={[
-          "8 AM - 6 PM access",
+          "9 AM - 5 PM access",
           "High-speed internet",
           "Ergonomic workspace",
           "Power outlets & charging stations",

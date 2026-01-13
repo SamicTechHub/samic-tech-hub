@@ -13,7 +13,7 @@ import Footer from '../components/Footer';
 import PlanSelector from '../components/PlanSelector';
 import { useRef} from 'react';
 import Map from '../components/GoogleMap';
-import TrainingBanner from '../components/TrainingBanner';
+import CoworkspaceBanner from '../components/CoworkspaceBanner'
 
 
 
@@ -37,6 +37,9 @@ const CoworkSpace = () => {
         <h1  className={style.heading}>
             Coworking Space
         </h1>
+         <section>
+                 <CoworkspaceBanner />
+              </section>
       </section>
       <i className={style.headingPhrase}>A Professional Workspace design for You ...</i>
       <section>

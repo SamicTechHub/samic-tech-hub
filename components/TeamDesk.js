@@ -32,7 +32,7 @@ const TeamDesk = ({ onclose }) => {
           price="₦60,000 / week"
           description="A secure, enclosed office for your team to collaborate and focus without distractions."
           features={[
-            "8 AM - 6 PM daily access",
+            "9 AM - 5 PM daily access",
             "Up to 4 team members",
             "High-speed internet",
           

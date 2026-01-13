@@ -25,7 +25,7 @@ function HeaderW({
       <section className={ scrolled ? `${style.headerContainer} ${style.headerBackground}` : `${style.headerContainer}`}>
         <div className={style.brandContainer}>
           <div className={style.logoContainer}>
-            <Image src={"/img/logoGBg.png"} alt={"Samic Tech Hub"} layout={"fill"} />
+            <Image src={"/img/samiclogo22.png"} alt={"Samic Tech Hub"} layout={"fill"} />
           </div>
           <h3 style={ {color: scrolled ? "grey" : "white"}}>Samic</h3>
         </div>
