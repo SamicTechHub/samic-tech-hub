@@ -1,15 +1,24 @@
+// import * as React from 'react';
+// import { styled } from '@mui/material/styles';
+// import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+// import MuiAccordion from '@mui/material/Accordion';
+// import MuiAccordionSummary, {
+//   accordionSummaryClasses,
+// } from '@mui/material/AccordionSummary';
+// import MuiAccordionDetails from '@mui/material/AccordionDetails';
+// import Typography from '@mui/material/Typography';
+
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion from '@mui/material/Accordion';
-import MuiAccordionSummary, {
-  accordionSummaryClasses,
-} from '@mui/material/AccordionSummary';
+import MuiAccordionSummary  from '@mui/material/AccordionSummary';
+import { accordionSummaryClasses } from '@mui/joy';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 
 // Styled Accordion
-const Accordion = styled((props) => (
+const StyledAccordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
@@ -23,7 +32,7 @@ const Accordion = styled((props) => (
 }));
 
 // Styled Summary
-const AccordionSummary = styled((props) => (
+const StyledAccordionSummary = styled((props) => (
   <MuiAccordionSummary
     expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '1.5rem' }} />}
     {...props}
@@ -42,7 +51,7 @@ const AccordionSummary = styled((props) => (
 }));
 
 // Styled Details
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+const StyledAccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
   backgroundColor: '#f9f9f9',
   fontSize: '1rem',
@@ -50,7 +59,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   color: '#333',
 }));
 
-export default function CustomizedAccordions() {
+const CustomizedAccordions = () => {
   const [expanded, setExpanded] = React.useState('panel1');
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -140,24 +149,25 @@ export default function CustomizedAccordions() {
       </Typography>
 
       {faqs.map((faq) => (
-        <Accordion
+        <StyledAccordion
           key={faq.id}
           expanded={expanded === faq.id}
           onChange={handleChange(faq.id)}
         >
-          <AccordionSummary
+          <StyledAccordionSummary
             aria-controls={`${faq.id}-content`}
             id={`${faq.id}-header`}
           >
             <Typography sx={{ fontSize: '1.7rem', fontWeight: 600 }}>
               {faq.question}
             </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
+          </StyledAccordionSummary>
+          <StyledAccordionDetails>
             <Typography sx={{ fontSize: '1.5rem', fontWeight: 300 }}>{faq.answer}</Typography>
-          </AccordionDetails>
-        </Accordion>
+          </StyledAccordionDetails>
+        </StyledAccordion>
       ))}
     </div>
   );
-}
+};
+export default CustomizedAccordions;

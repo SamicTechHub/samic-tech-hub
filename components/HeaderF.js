@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Header = () => {
+const HeaderF = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
@@ -138,4 +138,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderF;

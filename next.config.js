@@ -11,21 +11,24 @@
 // module.exports = nextConfig
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+
   eslint: {
     ignoreDuringBuilds: true,
   },
-  reactStrictMode: true,
-  modularizeImports: {
-    '@mui/icons-material': {
-      transform: '@mui/icons-material/{{member}}',
-    },
-  },
-  webpack: (config, { isServer }) => {
-    // Increase file watcher limit
+
+  webpack: (config) => {
     config.watchOptions = {
       ...config.watchOptions,
       ignored: ['**/node_modules', '**/.git'],
     };
+
+      //Prevent massive icon imports
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@mui/icons-material": false,
+    };
+
     return config;
   },
 };

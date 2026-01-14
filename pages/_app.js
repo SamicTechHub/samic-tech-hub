@@ -49,13 +49,13 @@ function MyApp({ Component, pageProps }) {
                   t.src=v;s=b.getElementsByTagName(e)[0];
                   s.parentNode.insertBefore(t,s)}(window, document,'script',
                   'https://connect.facebook.net/en_US/fbevents.js');
-                  fbq('init', '4455822618075400');
+                  fbq('init', '752552244041131');
                   fbq('track', 'PageView');
                 `,
               }}
             />
 
-            <noscript><img height="1" width="1" style="display:none"
+            <noscript><img height="1" width="1" style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=4455822618075400&ev=PageView&noscript=1"
             /></noscript>
         {/* <!-- End Meta Pixel Code --> */}

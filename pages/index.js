@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import ProfileTestimonial from '../components/ProfileTestimonial'
-import Sidebar from '../components/Sidebar'
 import style from '../styles/Home.module.css'
 import { useRouter, router } from 'next/router';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,9 +11,8 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import HeaderF from "../components/HeaderF"
-
-import Accordion from "../components/Accordion";
-import Courses from '../components/Courses';
+import CustomizedAccordions from "../components/Accordion";
+import Programs from '../components/Courses';
 import TrainingBanner from '../components/TrainingBanner'
 
 
@@ -106,7 +104,7 @@ export default function Home() {
       </section>
 
       {/* Our Programs */}
-      <Courses />
+      <Programs />
 
 
       {/* Take the Lead Section */}
@@ -224,7 +222,7 @@ export default function Home() {
         </div>
       </section>
     {/* accordion section */} 
-      <Accordion />
+      {/* <CustomizedAccordions/> */}
       {/* Footer Section */}
       <section className={style.footerSection}>
         <Footer />
