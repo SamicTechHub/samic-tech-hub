@@ -1,8 +1,9 @@
 import React from 'react'
 import style from "../styles/component.module.css"
-import {
-    MailFilled, PhoneFilled, GooglePlusSquareFilled, FacebookFilled, InstagramFilled, WhatsAppOutlined 
-} from "@ant-design/icons"
+// import {
+//     MailFilled, PhoneFilled, GooglePlusSquareFilled, FacebookFilled, InstagramFilled, WhatsAppOutlined 
+// } from "@ant-design/icons"
+import { FaFacebook, FaInstagram, FaGooglePlusG } from 'react-icons/fa';
 import Link from 'next/link'
 // import { WhatsApp } from '@material-ui/icons'
 const Footer = () => {
@@ -18,8 +19,8 @@ const Footer = () => {
             <h3>Samic</h3>
             <p>9, Samic Tech Hub, Beside Azeez Hotel, J&P Area, Moniya, Ibadan.</p>
             <div className={style.socials}>
-            <a href='#'><FacebookFilled /></a>
-            <a href='#'><InstagramFilled /></a> 
+            <a href='#'><FaFacebook /></a>
+            <a href='#'><FaInstagram /></a> 
             {/* <a href='#'><WhatsAppOutlined /></a> */}
             </div>
         </div>
@@ -40,7 +41,7 @@ const Footer = () => {
         <div className={style.aboutColumn}>
             <h3>Contact</h3>
             <a href="tel:+2347063188981" className={style.link}>+234 706 318 8981</a>
-            <a href="mailto:Info@samictechhub.com" className={style.link}><GooglePlusSquareFilled /> Info@samictechhub.com</a>
+            <a href="mailto:Info@samictechhub.com" className={style.link}><FaGooglePlusG /> Info@samictechhub.com</a>
         </div>
       </div>
         <div className={style.copyright}>
