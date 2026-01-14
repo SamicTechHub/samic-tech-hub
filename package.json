@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build": "set NODE_OPTIONS=--max-old-space-size=4096 && next build"
+
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
