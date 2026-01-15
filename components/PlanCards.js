@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles/card.module.css'
-import DoneAllIcon from '@mui/icons-material/DoneAll';
+import { IoCheckmarkDone } from "react-icons/io5";
 import { useRouter } from 'next/router';
 
 
@@ -17,7 +17,7 @@ const PlanCards = ({ title, price, description, features, idealFor, buttonText, 
     <ul className={styles.features}>
         {features.map((item, index) => (
             <li key={index} className={styles.featureItem}>
-            <DoneAllIcon className={styles.icon} />
+            <IoCheckmarkDone className={styles.icon} />
             <span>{item}</span>
             </li>
         ))}
@@ -28,7 +28,7 @@ const PlanCards = ({ title, price, description, features, idealFor, buttonText, 
         <ul>
           {idealFor.map((item, index) => (
             <li key={index} className={styles.featureItem}>
-                <DoneAllIcon className={styles.icon} />
+                <IoCheckmarkDone className={styles.icon} />
                 <span>{item}</span>
             </li>
           ))}

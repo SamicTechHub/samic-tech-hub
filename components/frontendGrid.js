@@ -1,19 +1,19 @@
 
 import React from 'react';
 import Styles from '../styles/courseGrid.module.css';
-import ArticleIcon from '@mui/icons-material/Article';
-import EmojiEventsSharpIcon from '@mui/icons-material/EmojiEventsSharp';
+import { TbArticleFilled } from "react-icons/tb";
+import { GiTrophyCup } from "react-icons/gi";
 
 const CourseGrid = () => {
  const programs = [
   {
     id: 1,
-    icon: <ArticleIcon style={{ fontSize: '2rem', color: '#27beab' }} />,
+    icon: <TbArticleFilled  style={{ fontSize: '2rem', color: '#27beab' }} />,
     title: 'Programme Overview',
     details:
       'The Frontend Development program at Samic Tech Hub is designed to equip aspiring developers with the skills needed to build visually appealing, responsive, and user-friendly web interfaces. Participants will learn how to translate designs into functional websites using modern frontend tools and best practices. Throughout the program, students will gain hands-on experience building real-world projects and interactive user interfaces for web applications.',
     
-    icon2: <EmojiEventsSharpIcon style={{ fontSize: '2rem', color: '#27beab' }} />,
+    icon2: <GiTrophyCup style={{ fontSize: '3rem', color: '#27beab' }} />,
     subTitle: 'Career Benefit',
     subDetails:
       'Frontend development skills are highly sought after across industries. Graduates can pursue careers as frontend developers, UI developers, or web designers, with opportunities to work remotely or in-office while collaborating with global teams.',
@@ -24,7 +24,7 @@ const CourseGrid = () => {
   {
     id: 2,
     title: 'Course Outline',
-    courseIcon: <ArticleIcon style={{ fontSize: '2rem', color: '#27beab' }} />,
+    courseIcon: <TbArticleFilled  style={{ fontSize: '2rem', color: '#27beab' }} />,
     courses: [
       'Web Fundamentals: HTML5, CSS3, and Modern JavaScript',
       'Responsive Design & Mobile-First Development',

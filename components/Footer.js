@@ -41,7 +41,9 @@ const Footer = () => {
         <div className={style.aboutColumn}>
             <h3>Contact</h3>
             <a href="tel:+2347063188981" className={style.link}>+234 706 318 8981</a>
-            <a href="mailto:Info@samictechhub.com" className={style.link}><FaGooglePlusG /> Info@samictechhub.com</a>
+            <a href="mailto:Info@samictechhub.com" className={style.link}>
+              <FaGooglePlusG />
+               Info@samictechhub.com</a>
         </div>
       </div>
         <div className={style.copyright}>
