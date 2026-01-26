@@ -70,7 +70,7 @@ export default function Home() {
       </section>
       {/* Featured Section */}
       <section>
-         <TrainingBanner />
+         {/* <TrainingBanner /> */}
       </section>
 
       {/* About us Section */}

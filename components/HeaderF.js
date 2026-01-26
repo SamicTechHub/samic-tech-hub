@@ -73,9 +73,9 @@ const HeaderF = () => {
           <div className={style.navLink}>
             <Link href="/tracks/course">Training</Link>
           </div>
-           <div className={style.navLink}>
+           {/* <div className={style.navLink}>
             <Link href="/coworkSpace">Co-Workspace</Link>
-          </div>
+          </div> */}
           <div className={style.navLink}>
             <Link href="/">Contact us</Link>
           </div>
