@@ -22,7 +22,7 @@ const CoworkspaceBanner = () => {
   className={styles.trainingBanner}
   onClick={handleClick}
 >
-  Book our Coworking Space for as low as ₦1500{" "}
+  Book our Coworking Space for as low as ₦2000{" "}
   <span>Click here for more enquiries.</span>
 </button>
 
