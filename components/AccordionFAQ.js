@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
-import styles from "./Accordion.module.css";
+import styles from "../styles/accordionfaq.module.css";
 
 const faqs = [
   {

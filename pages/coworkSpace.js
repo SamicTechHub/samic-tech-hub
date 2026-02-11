@@ -17,6 +17,7 @@ import Footer from "../components/Footer";
 import { useRef} from 'react';
 import HeaderF from '../components/HeaderF';
 import CoworkspaceBanner from "../components/CoworkspaceBanner"
+import AccordionFAQ from '../components/AccordionFAQ';  
 // import CoworkspaceBanner from '../components/CoworkspaceBanner'
 
 
@@ -151,6 +152,9 @@ const CoworkSpace = () => {
         
        </div>
 
+      </section>
+      <section>
+        <AccordionFAQ />
       </section>
       {/* <section>
         <div>
