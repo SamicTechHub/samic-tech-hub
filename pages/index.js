@@ -59,7 +59,7 @@ export default function Home() {
         <div className={style.heroBanner}>
             <div className={style.pryCircle}></div>
             <div className={style.circleOutline}></div>
-            <Image className={style.scale} src={"/img/heroImg.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} objectPosition={"bottom"} priority/>
+            <Image className={style.scale} src={"/img/techimg.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} objectPosition={"bottom"} priority/>
             <div className={style.heroMessage2}>
               <ProfileTestimonial userImage={"/img/student1.png"} message={"Samic Tech Hub offers a comprehensive curriculum that covers all aspects of web development."} name={"Zainab Moses"} />
             </div>

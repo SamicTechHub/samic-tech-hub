@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
 import Script from "next/script";
+import global from "../styles/globals.css"
+
 
 function MyApp({ Component, pageProps }) {
   // useEffect(() => {

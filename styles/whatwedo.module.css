@@ -1,0 +1,208 @@
+ @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap");
+
+.section {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 5rem 4rem;
+  background: #F9F9F9;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 490px;
+}
+
+.imageCol {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border: none;
+}
+
+.textCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.heading {
+  font-size: clamp(2.6rem, 4vw, 2.4rem);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  color: #000000;
+  margin: 0;
+}
+
+.body {
+  font-size: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  color: #2F2F2F;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 480px;
+}
+
+.ctaBtn {
+  display: inline-block;
+  background: #0bbfad;
+  color: #fff;
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  font-family: 'Nunito', sans-serif;
+  width: fit-content;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.ctaBtn:hover {
+  background: #09a898;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .illustration {
+    max-width: 280px;
+  }
+}
+
+/* ── Responsive: mobile phones 375px–414px ── */
+@media (min-width: 375px) and (max-width: 414px) {
+  .section {
+    padding: 28px 16px;
+  }
+ 
+  /* Header stacks tightly */
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+ 
+  .eyebrow {
+    font-size: 10px;
+  }
+ 
+  .heading {
+    font-size: 24px;
+  }
+ 
+  .headerDesc {
+    font-size: 13px;
+    max-width: 100%;
+    line-height: 1.6;
+    padding-top: 0;
+  }
+ 
+  /* Space blocks stack vertically */
+  .spaces {
+    gap: 32px;
+  }
+ 
+  .spaceBlock {
+    height: auto;
+    flex-direction: column;
+    overflow: visible;
+    border-radius: 14px;
+  }
+ 
+  .bgImage {
+    width: 100%;
+    height: 185px;
+    border-radius: 14px;
+    flex-shrink: 0;
+  }
+ 
+  .badgeTopLeft,
+  .badgeTopRight {
+    font-size: 11px;
+    padding: 5px 11px;
+    top: 12px;
+  }
+ 
+  .badgeTopLeft {
+    left: 12px;
+  }
+ 
+  .badgeTopRight {
+    right: 12px;
+  }
+ 
+  .card {
+    position: relative;
+    top: auto;
+    left: auto !important;
+    right: auto !important;
+    transform: none;
+    width: calc(100% - 24px); /* leave a small margin on both sides */
+    margin: -28px auto 0;
+    padding: 18px 18px 16px;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
+    box-sizing: border-box;
+    z-index: 3;
+    gap: 6px;
+  }
+ 
+  /* Override any left/right floating from imageLeft / imageRight */
+  .imageRight .card,
+  .imageLeft .card {
+    right: auto;
+    left: auto;
+  }
+ 
+  /* Card text sizing */
+  .cardCapacity {
+    font-size: 11px;
+    gap: 5px;
+  }
+  .whatWeDoBtn {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+ 
+  .cardCapacity svg {
+    width: 14px;
+    height: 14px;
+  }
+ 
+  .cardTitle {
+    font-size: 16px;
+  }
+ 
+  .cardDesc {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+ 
+  .cardAvailability {
+    font-size: 12px;
+  }
+ 
+  /* Book button: full width on mobile */
+  .bookBtn {
+    align-self: stretch;
+    text-align: center;
+    padding: 11px 16px;
+    font-size: 13px;
+    border-radius: 8px;
+    margin-top: 6px;
+  }
+}
