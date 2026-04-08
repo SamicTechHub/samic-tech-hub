@@ -17,7 +17,7 @@ const Footer = () => {
       <div className={style.aboutNav}>
         <div className={style.aboutColumn}>
             <h3>Samic</h3>
-            <p>9, Samic Tech Hub, Beside Azeez Hotel, J&P Area, Moniya, Ibadan.</p>
+            <p>N0 2, Samic Tech Hub, Opposite Azeez Restaurant, Bitemore Junction J&P, Moniya, Ibadan.</p>
             <div className={style.socials}>
             <a href='#'><FaFacebook /></a>
             <a href='#'><FaInstagram /></a> 
@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
         <div className={style.aboutColumn}>
             <h3>Contact</h3>
-            <a href="tel:+2347063188981" className={style.link}>+234 706 318 8981</a>
+            <a href="tel:+2347063188981" className={style.link}>+234 906 284 3490</a>
             <a href="mailto:Info@samictechhub.com" className={style.link}>
               <FaGooglePlusG />
                Info@samictechhub.com</a>
