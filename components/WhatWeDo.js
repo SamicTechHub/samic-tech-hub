@@ -31,9 +31,11 @@ export default function WhatWeDo() {
             this environment is designed to support your journey.
           </p>
 
-          <Button onClick={() => setShowPlans(true)}>
-            Book Now
-          </Button>
+          <div className={styles.buttonContainer}>
+            <Button onClick={() => setShowPlans(true)}>
+              BOOK A SPACE
+            </Button>
+          </div>
         </div>
       </section>
 

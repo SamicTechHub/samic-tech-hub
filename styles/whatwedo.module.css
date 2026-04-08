@@ -6,7 +6,7 @@
   gap: 4rem;
   padding: 5rem 4rem;
   background: #F9F9F9;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   height: 490px;
 }
@@ -84,6 +84,10 @@
 
 .backBtn:hover {
   background: #000000;
+}
+.buttonContainer {
+  display: inline-flex;
+  
 }
 
 @media (max-width: 768px) {
