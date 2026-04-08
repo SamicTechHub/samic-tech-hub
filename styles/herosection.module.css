@@ -14,11 +14,11 @@
 
 .heroImage {
   width: 100%;
-  height: 340px;
+  height: 300px;
   overflow: hidden;
-   background-image:url('/img/cowork1.png');
+   background:url('/img/cowork1.png');
   background-size: cover;
-  background-position: center;
+  background-position: center 10%;
 }
 
 .img {
@@ -32,10 +32,10 @@
 }
 
 .coworkingBanner {
-  /* background: linear-gradient(135deg, #e8faf8 0%, #f0fffe 100%); */
-  background-image: url('/img/background.png');
+  background: url('/img/Background.png');
   text-align: center;
-  padding: 3.5rem 2rem 4rem;
+  /* padding: 3.5rem 2rem 4rem; */
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,7 +116,10 @@
 .backBtn:hover {
   background: #000000;
 }
-@media (max-width: 375px) and (max-height: 667px) {
+@media (max-width: 765px) {
+  .coworkingBanner{
+    padding: 2rem;
+  }
   /* .tagline {
     font-size: 4rem;
     letter-spacing: 0.15em;

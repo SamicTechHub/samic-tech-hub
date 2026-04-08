@@ -23,7 +23,7 @@ export default function HeroSection() {
         </h1>
         <p className={styles.subtext}>
           A vibrant space at Samic Tech Hub designed for productivity, collaboration,
-          innovation, and comfort — everything you need to get your best work done!
+          innovation, and comfort. Everything you need to get your best work done!
         </p>
          {/* <Button onClick={() => window.location.href = '/book'}>Click Me</Button> */}
               <Button onClick={() => setShowPlans(true)} >Book Now</Button>
