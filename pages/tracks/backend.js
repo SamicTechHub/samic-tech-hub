@@ -4,7 +4,6 @@ import HeaderF from "../../components/HeaderF"
 import { useRouter} from 'next/router'
 import { useState } from 'react'
 import CourseGrid from '../../components/BackendGrid';
-import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import Footer from '../../components/Footer'
 import { IoIosTime } from "react-icons/io";
 import { IoMdPricetag } from "react-icons/io";

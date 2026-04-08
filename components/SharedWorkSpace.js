@@ -4,7 +4,6 @@ import { useState } from 'react';
 import BookingForm from './BookingForm';
 import Modal from './Modal';
 import style from '../styles/card.module.css';
-import { AutofpsSelectRounded } from '@mui/icons-material';
 import Image from 'next/image';
 
 
