@@ -46,8 +46,7 @@ export default function ContactSection() {
             <div className={styles.contactInfo}>
               <span className={styles.contactLabel}>LOCATION</span>
               <p className={styles.contactText}>
-                No 2, Samic Tech Hub, Beside Azeez Hotel, J&P Area, Moniya,
-                Ibadan.
+                No. 2, Samic Tech Hub, Opposite Azeez Restaurant, Bitemore Junction J&P, Moniya, Ibadan.
               </p>
               <button
                 className={styles.linkButton}
@@ -119,7 +118,7 @@ export default function ContactSection() {
 
               {/* Facebook */}
               <a
-                href="https://facebook.com/samic_techhub"
+                href="https://www.facebook.com/share/1GCZQvcR1Z/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}

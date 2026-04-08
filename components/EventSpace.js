@@ -7,7 +7,7 @@ import style from '../styles/card.module.css';
 import Image from 'next/image';
 
 
-const SharedWorkSpace = ({onclose}) => {
+const EventSpace = ({onclose}) => {
 
     const [showForm, setShowForm] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState('');
@@ -30,12 +30,12 @@ const SharedWorkSpace = ({onclose}) => {
   return (
     <>
       <h2 style={{ textAlign: 'center', marginBottom: '24px', fontSize: '2rem', color: '#000000' }}>Premium Package</h2>
-      <div className={style.planGridprivate}>
+      <div className={style.planGridevent}>
       {/* <button style={{ height: '40px', backgroundColor: 'red', width: '40px', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={onclose}>X</button> */}
       <PlanCards
         icon={<Image src="/img/Symbol.png" alt="Symbol" width={50} height={50} />}
         title="Daily"
-        description="NGN50,000"
+        description="NGN500,000"
         features={[
           "24/7 Power Supply",
           "Fast Speed internet",
@@ -47,7 +47,7 @@ const SharedWorkSpace = ({onclose}) => {
          
         ]}
           buttonText="Book Now"
-          onClick={() => handleReserveClick('Daily Access', '50000.00', 'Conference Space')}
+          onClick={() => handleReserveClick('Daily Access', '500000.00', 'Event Space')}
          
       />
       </div>
@@ -63,4 +63,4 @@ const SharedWorkSpace = ({onclose}) => {
   )
 }
 
-export default SharedWorkSpace
+export default EventSpace

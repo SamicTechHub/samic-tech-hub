@@ -7,6 +7,8 @@ import PrivateWorkSpace from './PrivateWorkSpace';
 import { useState } from 'react'
 import { useRouter } from 'next/router';
 import { Share } from 'lucide-react';
+import ContentSpace from './ContentSpace';
+import EventSpace from './EventSpace';
 // import styles from './OurSpaces.module.css';
 
 // Replace these with your actual plan components
@@ -38,12 +40,21 @@ export default function OurSpaces() {
       </div>
     );
   }
-  if (activePlan === 'teamdesk') {
+  if (activePlan === 'content') {
+    // return <PrivateOfficePlan onclose={handleBack} />;
+    return (
+      <div className={styles.planWrapper}>
+        <button className={styles.backBtn} onClick={handleBack}>← Back</button>
+        <p style={{ color: '#fff' }}><ContentSpace onclose={handleBack} /></p>
+      </div>
+    );
+  }
+  if (activePlan === 'event') {
     // return <TeamDesk onclose={handleBack} />;
     return (
       <div className={styles.planWrapper}>
         <button className={styles.backBtn} onClick={handleBack}>← Back</button>
-        <p style={{ color: '#fff' }}>TeamDesk component goes here</p>
+        <p style={{ color: '#fff' }}><EventSpace onclose={handleBack} /></p>
       </div>
     );
   }
@@ -146,7 +157,9 @@ export default function OurSpaces() {
                 
             <button
               className={styles.bookBtn}
-              onClick={(e) => { e.stopPropagation(); router.push('https://wa.me/+2349062843490')}}
+              // onClick={(e) => { e.stopPropagation(); router.push('https://wa.me/+2349062843490')}}
+              onClick={(e) => { e.stopPropagation(); setActivePlan('private'); }}
+
             >
               Book Now
             </button>
@@ -190,7 +203,9 @@ export default function OurSpaces() {
                 
             <button
               className={styles.bookBtn}
-              onClick={(e) => { e.stopPropagation(); router.push('https://wa.me/+2349062843490')}}
+              // onClick={(e) => { e.stopPropagation(); router.push('https://wa.me/+2349062843490')}}
+              onClick={(e) => { e.stopPropagation(); setActivePlan('content'); }}
+
             >
               Book Now
             </button>
@@ -232,7 +247,9 @@ export default function OurSpaces() {
               <p>Contact Us</p>
             <button
               className={styles.bookBtn}
-              onClick={(e) => { e.stopPropagation(); router.push('https://wa.me/+2349062843490')}}
+              // onClick={(e) => { e.stopPropagation(); router.push('https://wa.me/+2349062843490')}}
+              onClick={(e) => { e.stopPropagation(); setActivePlan('event'); }}
+
             >
               Book Now
             </button>

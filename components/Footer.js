@@ -17,7 +17,7 @@ const Footer = () => {
       <div className={style.aboutNav}>
         <div className={style.aboutColumn}>
             <h3>Samic</h3>
-            <p>N0 2, Samic Tech Hub, Opposite Azeez Restaurant, Bitemore Junction J&P, Moniya, Ibadan.</p>
+            <p>No. 2, Samic Tech Hub, Opposite Azeez Restaurant, Bitemore Junction J&P, Moniya, Ibadan.</p>
             <div className={style.socials}>
             <a href='#'><FaFacebook /></a>
             <a href='#'><FaInstagram /></a> 
