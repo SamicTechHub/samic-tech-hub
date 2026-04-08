@@ -71,6 +71,9 @@ const HeaderF = () => {
             <Link href="/about">About</Link>
           </div>
           <div className={style.navLink}>
+            <Link href="blog.samictechhub.com">Blog</Link>
+          </div>
+          <div className={style.navLink}>
             <Link href="/tracks/course">Training</Link>
           </div>
            <div className={style.navLink}>
