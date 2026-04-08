@@ -2,7 +2,7 @@ import Head from 'next/head';
 import HeaderF from '../components/HeaderF';
 import HeroSection from '../components/HeroSection';
 import FeaturesSection from '../components/FeaturesSection';
-import WhatWeDo from '../components/WhatweDo';
+import WhatWeDo from '../components/WhatWeDo';
 import OurSpaces from '../components/OurSpaces';
 import Patronage from '../components/Patronage';
 import Connect from '../components/Connect';
