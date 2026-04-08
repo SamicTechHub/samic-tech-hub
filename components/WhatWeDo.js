@@ -42,7 +42,7 @@ export default function WhatWeDo() {
  
       {showPlans && (
         <div
-          className={styles.overlay}
+          className={styles.planWrapper}
           onClick={() => setShowPlans(false)}
         >
           <div

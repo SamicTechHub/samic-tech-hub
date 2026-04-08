@@ -29,7 +29,7 @@ export default function HeroSection() {
               <Button onClick={() => setShowPlans(true)} >Book Now</Button>
       </div>
       {showPlans && (
-            <div className={styles.overlay} onClick={() => setShowPlans(false)}>
+            <div className={styles.planWrapper} onClick={() => setShowPlans(false)}>
               <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <button className={styles.backBtn} onClick={() => setShowPlans(false)}>← Back</button>
                 <SharedWorkSpace /> 

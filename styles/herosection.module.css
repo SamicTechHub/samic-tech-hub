@@ -3,6 +3,14 @@
 .wrapper {
   width: 100%;
 }
+.planWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 48px;
+  background: url('/img/Section.png');
+}
 
 .heroImage {
   width: 100%;
