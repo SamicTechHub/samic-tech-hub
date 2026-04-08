@@ -13,11 +13,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Samic Tech Hub – Productive Co-working Space in Ibadan</title>
-        <meta
-          name="description"
-          content="A vibrant co-working space in Ibadan, Moniya designed for productivity, collaboration, and innovation."
-        />
+        <title>Samic Tech Hub – Tech Skills Training, Co-Working Space, Software Studio in Ibadan, Moniya </title>
+        <meta name="description" content="Samic Tech Hub offers tech skills training, web development programs in Ibadan, Moniya. A modern co-working space for freelancers, startups, remote workers, learners in Ibadan, Moniya. Our services also include software product studio where you can bring your business ideas to reality in Ibadan, Moniya." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

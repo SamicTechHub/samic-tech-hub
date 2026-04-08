@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "reduxjs-toolkit-persist/integration/react";
 import { store, persistor } from "../redux/store/store";
@@ -8,6 +8,7 @@ import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
 import Script from "next/script";
 import global from "../styles/globals.css"
+import Loader from "../components/Loader";
 
 
 function MyApp({ Component, pageProps }) {
@@ -22,6 +23,12 @@ function MyApp({ Component, pageProps }) {
 
    // Track page changes
     const router = useRouter();
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000); 
+    return () => clearTimeout(timer);
+  }, []);
 
 
   useEffect(() => {
@@ -29,6 +36,7 @@ function MyApp({ Component, pageProps }) {
       if (window.fbq) {
         window.fbq("track", "PageView");
       }
+    
     };
 
     router.events.on("routeChangeComplete", handleRouteChange);
@@ -37,6 +45,9 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
+   if (loading) return <Loader />; 
+
 
   return (
     <>
