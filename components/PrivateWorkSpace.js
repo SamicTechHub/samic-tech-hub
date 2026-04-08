@@ -28,7 +28,7 @@ const PrivateWorkSpace = ({ onclose }) => {
 
         <PlanCards
           title="Daily"
-          price="₦10,000 / day"
+          description="₦10,000 / day"
           features={[
             "24/7 Power Supply",
             "Fast Speed internet",
@@ -45,7 +45,7 @@ const PrivateWorkSpace = ({ onclose }) => {
 
         <PlanCards
           title="Weekly"
-          price="₦60,000 / week"
+          description="₦60,000 / week"
           features={[
             "24/7 Power Supply",
             "Fast Speed internet",
@@ -62,7 +62,7 @@ const PrivateWorkSpace = ({ onclose }) => {
 
         <PlanCards
           title="Monthly"
-          price="₦300,000 / month"
+          description="₦300,000 / month"
           features={[
             "24/7 Power Supply",
             "Fast Speed internet",

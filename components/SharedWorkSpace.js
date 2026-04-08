@@ -28,7 +28,7 @@ const SharedWorkSpace = ({onclose}) => {
             setShowForm(false);
         };
   return (
-    <section>
+    <>
       <h2 style={{ textAlign: 'center', marginBottom: '24px', fontSize: '2rem', color: '#000000' }}>Premium Package</h2>
       <div className={style.planGrid}>
       {/* <button style={{ height: '40px', backgroundColor: 'red', width: '40px', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={onclose}>X</button> */}
@@ -87,8 +87,7 @@ const SharedWorkSpace = ({onclose}) => {
          buttonText="Book Now"
           onClick={() => handleReserveClick('Monthly Access', '50000.00', 'Premium: Monthly Access')}
       />
-    </div>
-  
+      </div>
 
      {/* Booking Form in Modal */}
       <Modal isOpen={showForm} onClose={handleCloseModal}>
@@ -97,22 +96,20 @@ const SharedWorkSpace = ({onclose}) => {
         <br />
         <br />
         
-        <div>
       <h2 style={{ textAlign: 'center', marginBottom: '24px', fontSize: '2rem', color: '#000000' }}>Standard Package</h2>
       <div className={style.planGrid}>
       {/* <button style={{ height: '40px', backgroundColor: 'red', width: '40px', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={onclose}>X</button> */}
       
-      
       <PlanCards
-        icon={<Image src="/img/Symbol.png" alt="Symbol" width={50} height={50} />}      
+        icon={<Image src="/img/Symbol.png" alt="Symbol" width={50} height={50} />}
         title="Daily"
-        price="NGN2,000"
-        // description="Perfect for freelancers or remote workers needing a workspace for a single day."
+        description="NGN2,000"
         features={[
-          "9 AM - 5 PM access",
-          "High-speed internet",
-          "Ergonomic workspace",
-          "Power outlets & charging stations",
+          "24/7 Power Supply",
+          "Fast Speed internet",
+          "Access 9am - 5pm",
+          "Premium Set-up",
+          "Fan"
         ]}
         idealFor={[
          
@@ -122,34 +119,36 @@ const SharedWorkSpace = ({onclose}) => {
          
       />
 
-      <PlanCards
-      icon={<Image src="/img/Symbol3.png" alt="Symbol" width={50} height={50} />}
+        <PlanCards
+        icon={<Image src="/img/Symbol.png" alt="Symbol" width={50} height={50} />}
         title="Weekly"
-        price="NGN10,000"
-        // description="Best for short-term projects or teams needing a week of productivity."
+        description="NGN10,000"
         features={[
-           "6-day full access",
-          "Reserved desk option",
-          "Priority internet bandwidth",
-          "Networking with others",
+          "24/7 Power Supply",
+          "Fast Speed internet",
+          "Access 9am - 5pm",
+          "Premium Set-up",
+          "Fan"
         ]}
         idealFor={[
-          
+         
         ]}
-         buttonText="Book Now"
+          buttonText="Book Now"
           onClick={() => handleReserveClick('Weekly Access', '10000.00', 'Standard: Weekly Access')}
+         
       />
 
       <PlanCards
         icon={<Image src="/img/Symbol2.png" alt="Symbol" width={50} height={50} />}
         title="Monthly"
-        price="NGN40,000"
+        description="NGN40,000"
         // description="A full-time flexible workspace for remote workers, creatives, and startups."
         features={[
-          "30-day unrestricted access",
-          "Dedicated desk option",
-          "Business address use",
-          "Locker storage available",
+          "24/7 Power Supply",
+          "Fast Speed internet",
+          "Access 9am - 5pm",
+          "Premium Set-up",
+          "Fan"
         ]}
         idealFor={[
           
@@ -158,15 +157,14 @@ const SharedWorkSpace = ({onclose}) => {
          buttonText="Book Now"
           onClick={() => handleReserveClick('Monthly Access', '40000.00', 'Standard: Monthly Access')}
       />
-    </div>
-  
+      </div>
 
      {/* Booking Form in Modal */}
       <Modal isOpen={showForm} onClose={handleCloseModal}>
         <BookingForm plan={selectedPlan} onCancel={handleCloseModal} amount={selectedAmount} planName={selectedPlanName} />
       </Modal>
-        </div>
-      </section>
+    
+  </>
       
   )
 }

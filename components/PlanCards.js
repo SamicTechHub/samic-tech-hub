@@ -26,7 +26,6 @@ const PlanCards = ({ icon,title, price, description, features, idealFor, buttonT
     </ul>
 
       <div className={styles.idealFor}>
-        <strong>Ideal For:</strong>
         <ul>
           {idealFor.map((item, index) => (
             <li key={index} className={styles.featureItem}>
