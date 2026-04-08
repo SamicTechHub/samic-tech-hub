@@ -45,7 +45,7 @@ const additionalFeatures = [
 
 export default function FeaturesSection() {
   return (
-    <section className={styles.section}>
+    <section className={styles.featureSection}>
       <div className={styles.sectionHeader}>
         <h2 className={styles.heading}>More Than Just A Workspace</h2>
         <div className={styles.divider}>

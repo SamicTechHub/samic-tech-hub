@@ -336,6 +336,7 @@
 @media (max-width: 480px) {
   .section {
     padding: 56px 16px;
+    margin-top: -70px;
   }
 
   .title {

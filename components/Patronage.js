@@ -48,7 +48,7 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className={styles.section}>
+    <section className={styles.patronageSection}>
       <div className={styles.sectionHeader}>
         <h2 className={styles.heading}>Don't Believe Us,<span className={styles.span}> Hear from Our Patrons</span></h2>
         <p className={styles.para} >Real stories from real people who've found their productivity home at Samic Co-working space.</p>
