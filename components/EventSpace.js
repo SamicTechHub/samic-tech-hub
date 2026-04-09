@@ -16,6 +16,15 @@ const EventSpace = ({onclose}) => {
 
 
     const handleReserveClick = (planTitle, price, planName) => {
+         // TikTok tracking
+          if (window.ttq) {
+              window.ttq.track('Purchase', {
+                  content_name: planTitle,
+                  value: price,
+                  description: planName
+              });
+          }
+
         setSelectedPlan(planTitle);
         setShowForm(true);
         setSelectedAmount(price);

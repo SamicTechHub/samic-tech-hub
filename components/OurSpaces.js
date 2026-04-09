@@ -12,54 +12,49 @@ import EventSpace from './EventSpace';
 import Button from './Button';
 // import styles from './OurSpaces.module.css';
 
-// Replace these with your actual plan components
-// import SharedSpacePlan from './SharedSpacePlan';
-// import PrivateOfficePlan from './PrivateOfficePlan';
-// import TeamDesk from './TeamDesk';
-
 export default function OurSpaces() {
   const [activePlan, setActivePlan] = useState(null);
   const router = useRouter();
   const handleBack = () => setActivePlan(null);
   const [showPlans, setShowPlans] = useState(false);
 
-  // Render active plan modals
-  if (activePlan === 'sharespace') {
-    //  <SharedWorkSpace onclose={handleBack} />;
-    return (
-      <div className={styles.planWrapper}>
-        <button className={styles.backBtn} onClick={handleBack}>← Back</button>
-        <p style={{ color: '#fff' }}><SharedWorkSpace onclose={handleBack} /></p>
-      </div>
-    );
-  }
-  if (activePlan === 'private') {
-    // return <PrivateOfficePlan onclose={handleBack} />;
-    return (
-      <div className={styles.planWrapper}>
-        <button className={styles.backBtn} onClick={handleBack}>← Back</button>
-        <p style={{ color: '#fff' }}><PrivateWorkSpace onclose={handleBack} /></p>
-      </div>
-    );
-  }
-  if (activePlan === 'content') {
-    // return <PrivateOfficePlan onclose={handleBack} />;
-    return (
-      <div className={styles.planWrapper}>
-        <button className={styles.backBtn} onClick={handleBack}>← Back</button>
-        <p style={{ color: '#fff' }}><ContentSpace onclose={handleBack} /></p>
-      </div>
-    );
-  }
-  if (activePlan === 'event') {
-    // return <TeamDesk onclose={handleBack} />;
-    return (
-      <div className={styles.planWrapper}>
-        <button className={styles.backBtn} onClick={handleBack}>← Back</button>
-        <p style={{ color: '#fff' }}><EventSpace onclose={handleBack} /></p>
-      </div>
-    );
-  }
+  // // Render active plan modals
+  // if (activePlan === 'sharespace') {
+  //   //  <SharedWorkSpace onclose={handleBack} />;
+  //   return (
+  //     <div className={styles.planWrapper}>
+  //       <button className={styles.backBtn} onClick={handleBack}>← Back</button>
+  //       <p style={{ color: '#fff' }}><SharedWorkSpace onclose={handleBack} /></p>
+  //     </div>
+  //   );
+  // }
+  // if (activePlan === 'private') {
+  //   // return <PrivateOfficePlan onclose={handleBack} />;
+  //   return (
+  //     <div className={styles.planWrapper}>
+  //       <button className={styles.backBtn} onClick={handleBack}>← Back</button>
+  //       <p style={{ color: '#fff' }}><PrivateWorkSpace onclose={handleBack} /></p>
+  //     </div>
+  //   );
+  // }
+  // if (activePlan === 'content') {
+  //   // return <PrivateOfficePlan onclose={handleBack} />;
+  //   return (
+  //     <div className={styles.planWrapper}>
+  //       <button className={styles.backBtn} onClick={handleBack}>← Back</button>
+  //       <p style={{ color: '#fff' }}><ContentSpace onclose={handleBack} /></p>
+  //     </div>
+  //   );
+  // }
+  // if (activePlan === 'event') {
+  //   // return <TeamDesk onclose={handleBack} />;
+  //   return (
+  //     <div className={styles.planWrapper}>
+  //       <button className={styles.backBtn} onClick={handleBack}>← Back</button>
+  //       <p style={{ color: '#fff' }}><EventSpace onclose={handleBack} /></p>
+  //     </div>
+  //   );
+  // }
 
   return (
     <section className={styles.section}>
