@@ -16,12 +16,20 @@ const SharedWorkSpace = ({onclose}) => {
 
 
     const handleReserveClick = (planTitle, price, planName) => {
+       // 🔥 TikTok tracking
+    if (window.ttq) {
+        window.ttq.track('Contact', {
+            content_name: planTitle,
+            value: price,
+            description: planName
+        });
+    }
+
         setSelectedPlan(planTitle);
         setShowForm(true);
         setSelectedAmount(price);
         setSelectedPlanName(planName);
          // Scroll to top when modal opens
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     }
 

@@ -111,7 +111,7 @@ export default function OurSpaces() {
               and reliable internet for focus and collaboration.
             </p>
             <p className={styles.cardAvailability}>
-              <strong>Available:</strong> Mon – Fri (9am – 5pm)
+              <strong>Available:</strong> Mon – Sat (9am – 5pm)
             </p>
               <hr className={styles.hr}/>
               <Button onClick={() => setShowPlans(true)} >Book Now</Button>
@@ -155,7 +155,7 @@ export default function OurSpaces() {
               seating and fast internet.
             </p>
             <p className={styles.cardAvailability}>
-              <strong>Available:</strong> Mon – Fri (9am – 5pm)
+              <strong>Available:</strong> Mon – Sat (9am – 5pm)
             </p>
               <hr className={styles.hr}/>
 
@@ -206,7 +206,7 @@ export default function OurSpaces() {
 
             </p>
             <p className={styles.cardAvailability}>
-              <strong>Available:</strong> Mon – Fri (9am – 5pm)
+              <strong>Available:</strong> Mon – Sat (9am – 5pm)
             </p>
             <hr className={styles.hr}/>
             <div className={styles.price}>
@@ -253,7 +253,7 @@ export default function OurSpaces() {
               A versatile Event Space perfect for celebrations, gatherings, and experiences that leave lasting memories.
             </p>
             <p className={styles.cardAvailability}>
-              <strong>Available:</strong> Mon – Fri (9am – 5pm)
+              <strong>Available:</strong> Mon – Sat (9am – 5pm)
             </p>
             <hr className={styles.hr}/>
               

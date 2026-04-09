@@ -2,10 +2,7 @@
  
 }
 .spaceContainer {
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
+   margin-left: 250px;
     padding: 1.5rem;
     overflow: hidden;    
 
@@ -25,6 +22,7 @@
     padding: 5rem;
     border-radius: 1rem;
     width: 500px;
+    
 }
 .form {
   display: flex;
@@ -64,4 +62,14 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .spaceContainer {
+    margin-left: 50px;
+    padding: 1rem;
+  }
+  .formDiv {
+    padding: 2rem;
+    width: 100%;
+  } 
 }

@@ -18,7 +18,15 @@
   overflow: hidden;
    background:url('/img/cowork1.png');
   background-size: cover;
-  background-position: center 10%;
+  background-position: center 5%;
+}
+.heroImagemobile {
+  display: none;
+  padding: 5rem;
+  margin: 5rem;
+}
+.heroImageM{
+
 }
 
 .img {
@@ -34,6 +42,7 @@
 .coworkingBanner {
   background: url('/img/Background.png');
   text-align: center;
+
   /* padding: 3.5rem 2rem 4rem; */
   
   display: flex;
@@ -117,8 +126,39 @@
   background: #000000;
 }
 @media (max-width: 765px) {
+  .wrapper{
+    margin-top: 7rem;
+  }
   .coworkingBanner{
-    padding: 2rem;
+    min-height: 90vh;
+  }
+  .heroImage {
+    display: none;
+  }
+  .heading {
+    margin-top: 2rem;
+    font-size: 3.5rem;
+    max-width: 100%;
+  }
+  .subtext {
+    font-size: 2rem;
+    max-width: 100%;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+  }
+  .heroImagemobile {
+    display: inline-block;
+     width: 100%;
+    height: auto;
+    margin-top: -10px;
+  }
+  .heroImageM {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
   }
   /* .tagline {
     font-size: 4rem;
