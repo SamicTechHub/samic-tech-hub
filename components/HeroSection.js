@@ -12,9 +12,7 @@ export default function HeroSection() {
 
   return (
     <section className={styles.wrapper}>
-      <div className={styles.heroImage}>
-        
-      </div>
+      <div className={styles.heroImage}></div>
 
       <div className={styles.coworkingBanner}>
         <p className={styles.tagline}>SAMIC TECH HUB COWORKING SPACE</p>

@@ -20,8 +20,6 @@ const SharedWorkSpace = ({onclose}) => {
         setShowForm(true);
         setSelectedAmount(price);
         setSelectedPlanName(planName);
-
-
     }
 
      const handleCloseModal = () => {
@@ -29,7 +27,7 @@ const SharedWorkSpace = ({onclose}) => {
         };
   return (
     <>
-      <h2 style={{ textAlign: 'center', marginBottom: '24px', fontSize: '2rem', color: '#000000' }}>Premium Package</h2>
+      <h2 style={{ textAlign: 'center', marginBottom: '24px', fontSize: '2rem', color: '#000000' }}>Conference Space</h2>
       <div className={style.planGridprivate}>
       {/* <button style={{ height: '40px', backgroundColor: 'red', width: '40px', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={onclose}>X</button> */}
       <PlanCards

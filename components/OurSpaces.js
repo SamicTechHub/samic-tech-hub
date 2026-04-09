@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 import { Share } from 'lucide-react';
 import ContentSpace from './ContentSpace';
 import EventSpace from './EventSpace';
+import Button from './Button';
 // import styles from './OurSpaces.module.css';
 
 // Replace these with your actual plan components
@@ -20,6 +21,7 @@ export default function OurSpaces() {
   const [activePlan, setActivePlan] = useState(null);
   const router = useRouter();
   const handleBack = () => setActivePlan(null);
+  const [showPlans, setShowPlans] = useState(false);
 
   // Render active plan modals
   if (activePlan === 'sharespace') {
@@ -77,13 +79,14 @@ export default function OurSpaces() {
       {/* Space Cards */}
       <div className={styles.spaces}>
 
-        <div
+        <div>
+          <div
           className={`${styles.spaceBlock} ${styles.imageRight}`}
-          onClick={() => setActivePlan('sharespace')}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => e.key === 'Enter' && setActivePlan('sharespace')}
-          aria-label="Open Shared Space plan"
+          // onClick={() => setActivePlan('sharespace')}
+          // role="button"
+          // tabIndex={0}
+          // onKeyDown={(e) => e.key === 'Enter' && setActivePlan('sharespace')}
+          // aria-label="Open Shared Space plan"
         >
           <div
             className={styles.bgImage}
@@ -111,18 +114,22 @@ export default function OurSpaces() {
               <strong>Available:</strong> Mon – Fri (9am – 5pm)
             </p>
               <hr className={styles.hr}/>
-
-            <button
-              className={styles.bookBtn}
-              onClick={(e) => { e.stopPropagation(); setActivePlan('sharespace'); }}
-            >
-              Book Now
-            </button>
+              <Button onClick={() => setShowPlans(true)} >Book Now</Button>
           </div>
+        </div>
+         {showPlans && (
+                    <div className={styles.planWrapper} onClick={() => setShowPlans(false)}>
+                      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+                        <button className={styles.backBtn} onClick={() => setShowPlans(false)}>← Back</button>
+                        <SharedWorkSpace /> 
+                      </div>
+                    </div>
+              )}
         </div>
 
         {/* conference space — image left, card right-overlapping */}
-        <div
+        <div>
+          <div
           className={`${styles.spaceBlock} ${styles.imageLeft}`}
          
         >
@@ -155,20 +162,24 @@ export default function OurSpaces() {
             <div className={styles.price}>
               <p>₦50,000/Day</p>
                 
-            <button
-              className={styles.bookBtn}
-              // onClick={(e) => { e.stopPropagation(); router.push('https://wa.me/+2349062843490')}}
-              onClick={(e) => { e.stopPropagation(); setActivePlan('private'); }}
+              <Button onClick={() => setShowPlans(true)} >Book Now</Button>
 
-            >
-              Book Now
-            </button>
             </div>
           </div>
         </div>
+         {showPlans && (
+                    <div className={styles.planWrapper} onClick={() => setShowPlans(false)}>
+                      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+                        <button className={styles.backBtn} onClick={() => setShowPlans(false)}>← Back</button>
+                        <PrivateWorkSpace /> 
+                      </div>
+                    </div>
+              )}
+        </div>
 
           {/* Content Space — image right, card left-overlapping */}
-        <div
+        <div>
+          <div
           className={`${styles.spaceBlock} ${styles.imageRight}`}
          
         >
@@ -201,21 +212,24 @@ export default function OurSpaces() {
             <div className={styles.price}>
               <p>₦5,000/Hour</p>
                 
-            <button
-              className={styles.bookBtn}
-              // onClick={(e) => { e.stopPropagation(); router.push('https://wa.me/+2349062843490')}}
-              onClick={(e) => { e.stopPropagation(); setActivePlan('content'); }}
-
-            >
-              Book Now
-            </button>
+            <Button onClick={() => setShowPlans(true)} >Book Now</Button>
             </div>
           
           </div>
         </div>
+         {showPlans && (
+                    <div className={styles.planWrapper} onClick={() => setShowPlans(false)}>
+                      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+                        <button className={styles.backBtn} onClick={() => setShowPlans(false)}>← Back</button>
+                        <ContentSpace /> 
+                      </div>
+                    </div>
+              )}
+          </div>
 
           {/* eventspace — image left, card right-overlapping */}
-        <div
+        <div>
+          <div
           className={`${styles.spaceBlock} ${styles.imageLeft}`}
           
         >
@@ -245,143 +259,22 @@ export default function OurSpaces() {
               
             <div className={styles.price}>
               <p>Contact Us</p>
-            <button
-              className={styles.bookBtn}
-              // onClick={(e) => { e.stopPropagation(); router.push('https://wa.me/+2349062843490')}}
-              onClick={(e) => { e.stopPropagation(); setActivePlan('event'); }}
-
-            >
-              Book Now
-            </button>
+           <Button onClick={() => setShowPlans(true)} >Book Now</Button>
            
             </div>
           </div>
         </div>
-
-         
-        {/* <div
-          className={`${styles.spaceBlock} ${styles.imageRight}`}
-          onClick={() => setActivePlan('sharespace')}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => e.key === 'Enter' && setActivePlan('sharespace')}
-          aria-label="Open Shared Space plan"
-        >
-          <div
-            className={styles.bgImage}
-            style={{ backgroundImage: "url('/img/coworkhoto5.png')" }}
-          >
-            <span className={styles.badgeTopLeft}>Event Space</span>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.cardCapacity}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-              20 persons
-            </div>
-            <h3 className={styles.cardTitle}>Event Space</h3>
-            <p className={styles.cardDesc}>
-              A versatile Event Space perfect for celebrations, gatherings, and experiences that leave lasting memories.
-            </p>
-            <p className={styles.cardAvailability}>
-              <strong>Available:</strong> Mon – Fri (9am – 5pm)
-            </p>
-            <hr className={styles.hr}/>
-              <div className={styles.price}>
-              <p>Contact Us</p>
-            <button
-              className={styles.bookBtn}
-              onClick={(e) => { e.stopPropagation(); setActivePlan('sharespace'); }}
-            >
-              Book Now
-            </button>
-            </div>
-          </div>
-        </div> */}
+        
+        {showPlans && (
+                    <div className={styles.planWrapper} onClick={() => setShowPlans(false)}>
+                      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+                        <button className={styles.backBtn} onClick={() => setShowPlans(false)}>← Back</button>
+                        <EventSpace /> 
+                      </div>
+                    </div>
+              )}
+        </div>
       </div>
     </section>
   );
 }
-
-// const spaces = [
-//   {
-//     id: 'shared',
-//     label: 'Shared Space',
-//     labelPosition: 'top-left',
-//     image: '/img/workphoto1.png',
-//     capacity: '20 persons',
-//     title: 'Shared Space',
-//     description:
-//       'An open, collaborative environment with comfortable seating and reliable internet for focus and collaboration.',
-//     availability: 'Mon – Fri (9am – 5pm)',
-//   },
-//   {
-//     id: 'private',
-//     label: 'Private Office',
-//     labelPosition: 'top-right',
-//     image: '/images/private-office.jpg',
-//     capacity: '8 persons',
-//     title: 'Private Office',
-//     description:
-//       'A quiet room for individuals or small teams who need a private, dedicated space for focused work.',
-//     availability: 'Mon – Fri (9am – 5pm)',
-//   },
-// ];
-
-// export default function OurSpaces() {
-//   return (
-//     <section className={styles.section}>
-//       <div className={styles.sectionHeader}>
-//         <div className={styles.left}>
-//           <p className={styles.tagline}>OUR SPACES</p>
-//           <h2 className={styles.heading}>Take a Look Inside</h2>
-//         </div>
-//         <p className={styles.subtext}>
-//           Whether you&apos;re looking for a quiet spot to work, a professional
-//           setting for a meeting, or a venue for your next seminar, we have
-//           the perfect space for you.
-//         </p>
-//       </div>
-
-//       <div className={styles.spacesList}>
-//         {spaces.map((space) => (
-//           <div key={space.id} className={styles.spaceCard}>
-//             <div
-//                 className={styles.imageWrapper}
-//                 style={{ backgroundImage: `url(${space.image})` }}
-//               >
-//               <span
-//                 className={`${styles.badge} ${
-//                   space.labelPosition === 'top-right' ? styles.badgeRight : styles.badgeLeft
-//                 }`}
-//               >
-//                 {space.label}
-//               </span>
-//             </div>
-
-//             <div
-//               className={`${styles.infoCard} ${
-//                 space.labelPosition === 'top-right' ? styles.infoLeft : styles.infoRight
-//               }`}
-//             >
-//               <p className={styles.capacity}>
-//                 <span className={styles.capacityIcon}>👥</span> {space.capacity}
-//               </p>
-//               <h3 className={styles.spaceTitle}>{space.title}</h3>
-//               <p className={styles.spaceDesc}>{space.description}</p>
-//               <p className={styles.availability}>
-//                 <strong>Available:</strong> {space.availability}
-//               </p>
-//               <Link href="/book" className={styles.bookBtn}>Book Now</Link>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }

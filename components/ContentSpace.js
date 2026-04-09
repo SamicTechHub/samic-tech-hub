@@ -1,6 +1,6 @@
 import React from 'react'
 import PlanCards from './PlanCards';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BookingForm from './BookingForm';
 import Modal from './Modal';
 import style from '../styles/card.module.css';
@@ -20,16 +20,18 @@ const ContentSpace = ({onclose}) => {
         setShowForm(true);
         setSelectedAmount(price);
         setSelectedPlanName(planName);
+    
+        // Scroll to top when modal opens
+        window.scrollTo({ top: 0, behavior: 'smooth' });
 
-
-    }
+        }
 
      const handleCloseModal = () => {
             setShowForm(false);
         };
   return (
     <>
-      <h2 style={{ textAlign: 'center', marginBottom: '24px', fontSize: '2rem', color: '#000000' }}>Premium Package</h2>
+      <h2 style={{ textAlign: 'center', marginBottom: '24px', fontSize: '2rem', color: '#000000' }}>Content Space</h2>
       <div className={style.planGridcontent}>
       {/* <button style={{ height: '40px', backgroundColor: 'red', width: '40px', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={onclose}>X</button> */}
       <PlanCards
