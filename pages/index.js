@@ -14,6 +14,7 @@ import HeaderF from "../components/HeaderF"
 import CustomizedAccordions from "../components/Accordion";
 import Programs from '../components/Courses';
 import TrainingBanner from '../components/TrainingBanner'
+import Script from 'next/script'; 
 
 
 

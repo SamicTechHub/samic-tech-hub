@@ -9,18 +9,18 @@ import Image from 'next/image'
 export default function HeroSection() {
 
   const [showPlans, setShowPlans] = useState(false);
-   useEffect(() => {
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject = t;
-      var ttq = w[t] = w[t] || [];
-      ttq.methods = ["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
-      ttq.setAndDefer = function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}; 
-      for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+  //  useEffect(() => {
+  //   !function (w, d, t) {
+  //     w.TiktokAnalyticsObject = t;
+  //     var ttq = w[t] = w[t] || [];
+  //     ttq.methods = ["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+  //     ttq.setAndDefer = function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}; 
+  //     for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
 
-      ttq.load('D7BPU8JC77U3K3SH65BG'); 
-      ttq.page();
-    }(window, document, 'ttq');
-  }, []);
+  //     ttq.load('D7BPU8JC77U3K3SH65BG'); 
+  //     ttq.page();
+  //   }(window, document, 'ttq');
+  // }, []);
 
   return (
     <section className={styles.wrapper}>
