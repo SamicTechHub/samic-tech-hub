@@ -61,10 +61,10 @@ const SharedWorkSpace = ({onclose}) => {
          
       />
 
-      {/* <PlanCards
+      <PlanCards
         icon={<Image src="/img/Symbol3.png" alt="Symbol" width={50} height={50} />}
         title="Weekly"
-         description="NGN12,500"
+         description="NGN20,000"
         features={[
           "24/7 Power Supply",
           "Fast Speed internet",
@@ -76,8 +76,8 @@ const SharedWorkSpace = ({onclose}) => {
           
         ]}
          buttonText="Book Now"
-          onClick={() => handleReserveClick('Weekly Access', '15000.00', 'Premium: Weekly Access')}
-      /> */}
+          onClick={() => handleReserveClick('Weekly Access', '20000.00', 'Premium: Weekly Access')}
+      />
 
       <PlanCards
       icon={<Image src="/img/Symbol2.png" alt="Symbol" width={50} height={50} />}
@@ -129,10 +129,10 @@ const SharedWorkSpace = ({onclose}) => {
          
       />
 
-        {/* <PlanCards
+        <PlanCards
         icon={<Image src="/img/Symbol.png" alt="Symbol" width={50} height={50} />}
         title="Weekly"
-        description="NGN10,000"
+        description="NGN15,000"
         features={[
           "24/7 Power Supply",
           "Fast Speed internet",
@@ -144,9 +144,9 @@ const SharedWorkSpace = ({onclose}) => {
          
         ]}
           buttonText="Book Now"
-          onClick={() => handleReserveClick('Weekly Access', '10000.00', 'Standard: Weekly Access')}
+          onClick={() => handleReserveClick('Weekly Access', '15000.00', 'Standard: Weekly Access')}
          
-      /> */}
+      />
 
       <PlanCards
         icon={<Image src="/img/Symbol2.png" alt="Symbol" width={50} height={50} />}
