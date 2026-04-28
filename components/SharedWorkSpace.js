@@ -113,7 +113,7 @@ const SharedWorkSpace = ({onclose}) => {
       <PlanCards
         icon={<Image src="/img/Symbol.png" alt="Symbol" width={50} height={50} />}
         title="Daily"
-        description="NGN5,000"
+        description="NGN3,500"
         features={[
           "24/7 Power Supply",
           "Fast Speed internet",
@@ -125,7 +125,7 @@ const SharedWorkSpace = ({onclose}) => {
          
         ]}
           buttonText="Book Now"
-          onClick={() => handleReserveClick('Daily Access', '5000.00', 'Standard: Daily Access')}
+          onClick={() => handleReserveClick('Daily Access', '3500.00', 'Standard: Daily Access')}
          
       />
 
