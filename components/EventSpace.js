@@ -58,7 +58,7 @@ const EventSpace = ({onclose}) => {
          
         ]}
           buttonText="Contact us"
-          onClick={() => handleReserveClick('Daily Access', '--.--', 'Event Space')}
+          onClick={() => handleReserveClick('Daily Access', '0.00', 'Event Space')}
          
       />
       </div>
