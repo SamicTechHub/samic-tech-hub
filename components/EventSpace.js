@@ -45,7 +45,8 @@ const EventSpace = ({onclose}) => {
       <PlanCards
         icon={<Image src="/img/Symbol.png" alt="Symbol" width={50} height={50} />}
         title="Daily"
-        // description="NGN500,000"
+        description="000"
+        // description="Contact us"
         features={[
           "24/7 Power Supply",
           "Fast Speed internet",
@@ -57,7 +58,7 @@ const EventSpace = ({onclose}) => {
          
         ]}
           buttonText="Contact us"
-          onClick={() => handleReserveClick('Daily Access', 'Event Space')}
+          onClick={() => handleReserveClick('Daily Access', '000', 'Event Space')}
          
       />
       </div>
