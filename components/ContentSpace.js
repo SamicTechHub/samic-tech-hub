@@ -24,7 +24,15 @@ const ContentSpace = ({onclose}) => {
             description: planName
         });
     }
-
+            // Meta Pixel
+        if (window.fbq) {
+            window.fbq('track', 'Lead', {
+                content_name: planTitle,
+                value: price,
+                description: planName,
+                currency: 'NGN'
+            });
+        }
         setSelectedPlan(planTitle);
         setShowForm(true);
         setSelectedAmount(price);
