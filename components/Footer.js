@@ -19,8 +19,8 @@ const Footer = () => {
             <h3>Samic</h3>
             <p>No. 2, Samic Tech Hub, Opposite Azeez Restaurant, Bitemore Junction J&P, Moniya, Ibadan.</p>
             <div className={style.socials}>
-            <a href='#'><FaFacebook /></a>
-            <a href='#'><FaInstagram /></a> 
+            <a href='https://www.facebook.com/share/1D1nM2Pr7X/' target='_blank' rel='noopener noreferrer'><FaFacebook /></a>
+            <a href='https://www.instagram.com/samic_techhub?igsh=MW1yZmExZzloZ2hzZw==' target='_blank' rel='noopener noreferrer'><FaInstagram /></a> 
             {/* <a href='#'><WhatsAppOutlined /></a> */}
             </div>
         </div>

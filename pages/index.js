@@ -38,7 +38,7 @@ export default function Home() {
         <meta name="google-site-verification" content="8iH4pWVXAM3QoQVpbo0AUy3UqV67cVfcmI9SuwR5xOc" />
       </Head>
 
-      {/* Mobiile Sidebar */}
+      {/* Mobile Sidebar */}
       
       {/* Header Section */}
 
