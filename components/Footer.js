@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
         <div className={style.aboutColumn}>
             <h3>Programs</h3>
-            <Link href="/tracks/fullstack" className={style.link}>Full Stack Development</Link>
+            <Link href="/tracks/fullStack" className={style.link}>Full Stack Development</Link>
             <Link href="/tracks/frontend"className={style.link}>Frontend Development</Link>
             <Link href="/tracks/backend" className={style.link}>Backend Development</Link>
             <Link href= "/tracks/uiux" className={style.link}>UI/UX Design</Link>
