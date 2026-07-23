@@ -31,12 +31,12 @@ const Footer = () => {
         </div>
         <div className={style.aboutColumn}>
             <h3>Programs</h3>
-            <Link href="/fullstack" className={style.link}>Full Stack Development</Link>
-            <Link href="/frontend"className={style.link}>Frontend Development</Link>
-            <Link href="/backend" className={style.link}>PBackend Development</Link>
-            <Link href= "/uiux" className={style.link}>UI/UX Design</Link>
-            <Link href= "/digitalMarketing" className={style.link}>Digital Marketing</Link>
-            <Link href= "/productManagement" className={style.link}>Product management</Link>
+            <Link href="/tracks/fullstack" className={style.link}>Full Stack Development</Link>
+            <Link href="/tracks/frontend"className={style.link}>Frontend Development</Link>
+            <Link href="/tracks/backend" className={style.link}>Backend Development</Link>
+            <Link href= "/tracks/uiux" className={style.link}>UI/UX Design</Link>
+            <Link href= "/tracks/digitalMarketing" className={style.link}>Digital Marketing</Link>
+            <Link href= "/tracks/productManagement" className={style.link}>Product management</Link>
         </div>
         <div className={style.aboutColumn}>
             <h3>Contact</h3>
