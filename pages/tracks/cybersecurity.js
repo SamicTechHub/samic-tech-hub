@@ -15,7 +15,7 @@ const Cybersecurity = () => {
   return (
 <>
     <HeaderF/>
-    <section className={style.bannerSectionContainer}>
+    <section className={style.bannerSectionContainerCy}>
         <h1  className={style.heading}>
             Cybersecurity
         </h1>
