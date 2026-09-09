@@ -4,10 +4,11 @@ import HeaderF from "../../components/HeaderF"
 import { useRouter} from 'next/router'
 import { useState } from 'react'
 import CourseGrid from '../../components/BackendGrid';
-import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import Footer from '../../components/Footer'
-import LocalOfferIcon from '@mui/icons-material/LocalOffer';
-import AddLocationIcon from '@mui/icons-material/AddLocation';
+import { IoIosTime } from "react-icons/io";
+import { IoMdPricetag } from "react-icons/io";
+import { IoLocationSharp } from "react-icons/io5";
+
 
 const fullStack = () => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
@@ -23,9 +24,15 @@ const fullStack = () => {
        
           <div className={style.detailSection}> 
           <div className={style.details}>
-            <p className={style.duration}><AccessTimeFilledIcon style={{ fontSize: '2rem', color: '#27beab' }}  /> Programme length: 4 months</p>
-            <p className={style.duration}><LocalOfferIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Course Fee: 300,000</p>
-            <p className={style.duration}><AddLocationIcon style={{ fontSize: '2rem', color: '#27beab'}} /> Location: Samic Tech Hub</p>
+            <p className={style.duration}>
+              <IoIosTime style={{ fontSize: '2rem', color: '#27beab' }}  />
+               Programme length: 4 months</p>
+            <p className={style.duration}>
+              <IoMdPricetag style={{ fontSize: '2rem', color: '#27beab'}} />
+               Course Fee: 300,000</p>
+            <p className={style.duration}>
+              <IoLocationSharp style={{ fontSize: '2rem', color: '#27beab'}} />
+             Location: Samic Tech Hub</p>
           </div>
           <div>
             <button 

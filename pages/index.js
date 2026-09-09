@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Footer from '../components/Footer'
 import ProfileTestimonial from '../components/ProfileTestimonial'
-import Sidebar from '../components/Sidebar'
 import style from '../styles/Home.module.css'
 import { useRouter, router } from 'next/router';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,11 +11,11 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import HeaderF from "../components/HeaderF"
-
-import Accordion from "../components/Accordion";
-import Courses from '../components/Courses';
+import CustomizedAccordions from "../components/Accordion";
+import Programs from '../components/Courses';
 import TrainingBanner from '../components/TrainingBanner'
-
+import Script from 'next/script'; 
+import VideoTestimonial from "../components/VideoTestimonial";
 
 
 
@@ -39,7 +38,7 @@ export default function Home() {
         <meta name="google-site-verification" content="8iH4pWVXAM3QoQVpbo0AUy3UqV67cVfcmI9SuwR5xOc" />
       </Head>
 
-      {/* Mobiile Sidebar */}
+      {/* Mobile Sidebar */}
       
       {/* Header Section */}
 
@@ -61,7 +60,7 @@ export default function Home() {
         <div className={style.heroBanner}>
             <div className={style.pryCircle}></div>
             <div className={style.circleOutline}></div>
-            <Image className={style.scale} src={"/img/heroImg.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} objectPosition={"bottom"} priority/>
+            <Image className={style.scale} src={"/img/techimg.png"} alt={"Samic Tech Hub"} layout={"fill"} objectFit={"contain"} objectPosition={"bottom"} priority/>
             <div className={style.heroMessage2}>
               <ProfileTestimonial userImage={"/img/student1.png"} message={"Samic Tech Hub offers a comprehensive curriculum that covers all aspects of web development."} name={"Zainab Moses"} />
             </div>
@@ -72,7 +71,7 @@ export default function Home() {
       </section>
       {/* Featured Section */}
       <section>
-         <TrainingBanner />
+         {/* <TrainingBanner /> */}
       </section>
 
       {/* About us Section */}
@@ -106,7 +105,7 @@ export default function Home() {
       </section>
 
       {/* Our Programs */}
-      <Courses />
+      <Programs />
 
 
       {/* Take the Lead Section */}
@@ -164,7 +163,7 @@ export default function Home() {
           <div className={style.testimonial} >
             <div className={style.testimonialImageContainer}>
               <Image 
-                src={"/img/testimonial1.png"}
+                src={"/img/rahman.jpeg"}
                 alt={"Samic Tech Hub"}
                 layout={"fill"}
                 objectFit={"cover"}
@@ -173,38 +172,18 @@ export default function Home() {
 
             <h3>&quot;The Best in town&quot;</h3>
 
-            <p>Samic Tech Hub gave me the skills and confidence to pursue a career in web development. The curriculum was comprehensive and well-organized, and the instructors were experienced and knowledgeable. I was able to learn at my own pace and get help when I needed it. I am now working as a web developer.</p>
+            <p>Samic Tech Hub gave me the skills and confidence to pursue a career in frontend Development. The curriculum was comprehensive and well-organized, and the instructors were experienced and knowledgeable. I was able to learn at my own pace and get help when I needed it.</p>
 
             <div className={style.testimonialUserDetails}>
-              <h5>'Segun Afolayan</h5>
-              <p>Freelance UX Designer</p>
+              <h5>Oladejo Abdulrahman</h5>
+              <p>Frontend Developer</p>
             </div>
 
           </div>
           <div className={style.testimonial} >
             <div className={style.testimonialImageContainer}>
               <Image 
-                src={"/img/testimonial2.png"}
-                alt={"Samic Tech Hub"}
-                layout={"fill"}
-                objectFit={"cover"}
-              />
-            </div>
-
-            <h3>&quot;Instant Job Offer&quot;</h3>
-
-            <p>I was unemployed for months after I graduated from college. I was starting to get discouraged when I found Samic Tech Hub. I enrolled in their web development program and was offered a job through their job placement program within a month of graduating.</p>
-
-            <div className={style.testimonialUserDetails}>
-              <h5>Mariam Achur</h5>
-              <p>Digital Marketer, NotMini</p>
-            </div>
-
-          </div>
-          <div className={style.testimonial} >
-            <div className={style.testimonialImageContainer}>
-              <Image 
-                src={"/img/testimonial3.png"}
+                src={"/img/rahmanhabeeb.jpeg"}
                 alt={"Samic Tech Hub"}
                 layout={"fill"}
                 objectFit={"cover"}
@@ -213,18 +192,44 @@ export default function Home() {
 
             <h3>&quot;They made it easy&quot;</h3>
 
-            <p>I've always been a visual learner, so I found it difficult to learn new programming languages from books and online courses. But when I found Samic Tech Hub, I knew I had found the perfect learning platform. The interactive lessons and engaging activities made learning fun and easy, and I was able to master new concepts quickly.</p>
+            <p> Learning UI/UX design has helped me understand how to create designs that are both beautiful and user-friendly. The practical exercises improved my design thinking and gave me confidence in creating meaningful digital experiences.</p>
 
             <div className={style.testimonialUserDetails}>
-              <h5>Oluwatoyin Abudu</h5>
-              <p>Front End Designer, ButterStack</p>
+              <h5>Adeyanju Abdulrahman</h5>
+              <p>UI/UX Designer</p>
             </div>
 
           </div>
+          <div className={style.testimonial} >
+            <div className={style.testimonialImageContainer}>
+              <Image 
+                src={"/img/ridwan.jpeg"}
+                alt={"Samic Tech Hub"}
+                layout={"fill"}
+                objectFit={"cover"}
+              />
+            </div>
+
+            <h3>&quot;Learning Experience&quot;</h3>
+
+            <p>Learning frontend development has been an amazing experience. I gained practical skills in HTML, CSS, JavaScript, and React, and I now feel confident building responsive and interactive websites.
+</p>
+
+            <div className={style.testimonialUserDetails}>
+              <h5>Adekanmbi Ridwan</h5>
+              <p>Frontend Developer</p>
+            </div>
+
+          </div>
+          
         </div>
       </section>
+      {/* Video testimonial section */}
+      <div>
+      <VideoTestimonial />
+      </div>
     {/* accordion section */} 
-      <Accordion />
+      {/* <CustomizedAccordions/> */}
       {/* Footer Section */}
       <section className={style.footerSection}>
         <Footer />

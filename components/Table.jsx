@@ -57,7 +57,7 @@ export default function Table({
     ViewColumn: forwardRef((props, ref) => <ViewColumnIcon {...props} ref={ref} />),
   };
 
-  // Router
+   // Router
   const router = useRouter();
   
 
@@ -102,3 +102,5 @@ export default function Table({
     </div>
   );
 }
+
+

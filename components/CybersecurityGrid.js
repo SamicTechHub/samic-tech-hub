@@ -1,16 +1,16 @@
 import React from 'react';
 import Styles from '../styles/courseGrid.module.css';
-import ArticleIcon from '@mui/icons-material/Article';
-import EmojiEventsSharpIcon from '@mui/icons-material/EmojiEventsSharp';
+import { TbArticleFilled } from "react-icons/tb";
+import { GiTrophyCup } from "react-icons/gi";
 
 const CourseGrid = () => {
   const programs = [
     {
       id: 1,
-      icon: <ArticleIcon style={{ fontSize: '2rem', color: '#27beab' }} />,
+      icon: <TbArticleFilled style={{ fontSize: '2rem', color: '#27beab' }} />,
       title: 'Programme Overview',
       details: 'This program introduces you to the world of cybersecurity, teaching you how to identify vulnerabilities, prevent attacks, and secure digital systems. you’ll  gain hands-on experience with security tools, network defense strategies, and risk management practices, preparing you to protect data and systems in real-world scenarios.',
-      icon2: <EmojiEventsSharpIcon style={{ fontSize: '2rem', color: '#27beab' }} />,
+      icon2: <GiTrophyCup style={{ fontSize: '3rem', color: '#27beab' }} />,
       subTitle: 'Career Benefit',
       subDetails: 'Upon completion, you’ll  be ready to pursue roles such as cybersecurity analyst, network security engineer, or information security specialist. Whether working with an organization or as a consultant, you’ll  have the expertise to protect systems, manage risks, and ensure the safety of digital assets.',
       color: '#FAFCFC',
@@ -18,7 +18,7 @@ const CourseGrid = () => {
     {
       id: 2,
       title: 'Course Outline',
-      courseIcon: <ArticleIcon style={{ fontSize: '2rem', color: '#27beab' }} />,
+      courseIcon: <TbArticleFilled style={{ fontSize: '2rem', color: '#27beab' }} />,
       courses: [
         "Cybersecurity Fundamentals: Threats, vulnerabilities, and security principles",
         "Network Security: Firewalls, VPNs, intrusion detection and prevention systems",
