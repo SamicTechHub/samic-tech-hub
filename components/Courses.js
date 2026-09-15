@@ -20,6 +20,13 @@ const programsData = [
     price: '₦550,000',
   },
   {
+    title: 'Data Analysis',
+    description:'Learn to analyze and visualize data to make informed business decisions.',
+    image: '/img/Vector2.svg',
+    link: '#',
+    price: '₦200,000',
+  },
+  {
     title: 'Digital Marketing',
     description:'Master online marketing, content creation, and campaign strategies for business growth.',
     image: '/img/Vector2.svg',
