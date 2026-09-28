@@ -5,7 +5,8 @@ import style from '../styles/course.module.css';
 import Link from 'next/link';
 
 const programsData = [
-   {
+  
+  {
     title: 'Cybersecurity',
     description:'Understand core cybersecurity principles and practices to secure digital systems.',
     image: '/img/Vector2.svg',
@@ -40,6 +41,20 @@ const programsData = [
     link: '/tracks/uiux',
     price: '₦200,000',
   },
+  {
+      title: 'Data Science',
+      description:'Learn to extract insights from data and make data-driven decisions.',
+      image: '/img/Vector2.svg',
+      link: '#',
+      price: '₦250,000',
+    },
+    {
+      title: 'Artificial Intelligence',
+      description:'Dive into AI concepts, machine learning, and neural networks to build intelligent systems.',
+      image: '/img/Vector2.svg',
+      link: '#',
+      price: '₦400,000',
+    },
   {
     title: 'Product Management',
     description:'Learn to manage digital products from idea to launch using agile methodologies.',
