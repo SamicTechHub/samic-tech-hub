@@ -1,8 +1,9 @@
 // DeskTypeSelector.jsx
 import React, { useState } from 'react';
-import HotDeskPlan from './HotDeskPlan';
+import SharedWorkSpace from './SharedWorkSpace'
+import SharedWorkspace from './SharedWorkSpace';
 import DedicatedDeskPlan from './DedicatedDeskPlan';
-import TeamDesk from './TeamDesk';
+import PrivateWorkSpace from './PrivateWorkSpace';
 import styles from '../styles/selector.module.css'; // for custom styling
 import Image from 'next/image';
 import dynamic from "next/dynamic";
@@ -18,17 +19,17 @@ const DeskTypeSelector = () => {
 // const DedicatedDeskPlan = dynamic(() => import('./DedicatedDeskPlan'));
 // const PrivateOfficePlan = dynamic(() => import('./PrivateOfficePlan'));
 
-  if (activePlan === 'hotdesk') return <HotDeskPlan onclose={handleBack} />;
+  if (activePlan === 'shared-workspace') return <SharedWorkSpace onclose={handleBack} />;
   if (activePlan === 'dedicated') return <DedicatedDeskPlan onclose={handleBack} />;
-  if (activePlan === 'private') return < TeamDesk onclose={handleBack} />;
+  if (activePlan === 'private-workspace') return <PrivateWorkSpace onclose={handleBack} />;
 
   return (
     <section className={styles.selectorContainer}>
      
       <div className={styles.cardGrid}>
-        <div className={styles.card} onClick={() => setActivePlan('hotdesk')}>
+        <div className={styles.card} onClick={() => setActivePlan('shared-workspace')}>
           <Image src="/img/team2.webp" alt="Hot Desk" width={700} height={500}/>
-          <h3>Hot Desk</h3>
+          <h3>Shared Woorkspace</h3>
           <p>Flexible daily, weekly, and monthly shared desk options.</p>
           <p className={styles.viewPricing}>View Pricing</p>
         </div>
@@ -40,9 +41,9 @@ const DeskTypeSelector = () => {
           <p className={styles.viewPricing}>View Pricing</p>
         </div>
 
-        <div className={styles.card} onClick={() => setActivePlan('private')}>
+        <div className={styles.card} onClick={() => setActivePlan('private-workspace')}>
           <Image src="/img/team.webp" alt="Private Office" width={700} height={500} />
-          <h3>Team Desk</h3>
+          <h3>Private Workspace</h3>
           <p>Private spaces for small teams or growing companies.</p>
           <p className={styles.viewPricing}>View Pricing</p>
         </div>

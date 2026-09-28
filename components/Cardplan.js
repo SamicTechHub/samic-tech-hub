@@ -6,7 +6,6 @@ import MuiAccordionSummary, { accordionSummaryClasses } from '@mui/material/Acco
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import PaymentForm from './paymentForm';
 import BookingForm from './BookingForm';
 
 // Styled Components

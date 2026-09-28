@@ -1,7 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import styles from "../styles/trainingBanner.module.css"
-import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 
 const TrainingBanner = () => {
       const [showBanner, setShowBanner] = useState(false);

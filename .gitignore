@@ -39,3 +39,5 @@ next-env.d.ts
 /prisma
 /lib/mailer.js
 node_modules
+pages/admin/auth/monnifyLogin.jsx
+styles/MonnifyAdminDashboard.module.css

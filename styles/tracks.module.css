@@ -1,7 +1,7 @@
 .bannerSectionContainer {
    background-image: 
     linear-gradient(to bottom, rgba(129, 122, 118, 0) 60%, rgba(63, 61, 61, 0.9) 100%),
-    url('/img/banner1.webp');
+    url('/img/digitalMarket.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,7 +20,7 @@
 .bannerSectionContainerCy {
    background-image: 
     linear-gradient(to bottom, rgba(129, 122, 118, 0) 60%, rgba(63, 61, 61, 0.9) 100%),
-    url('/img/banner1.webp');
+    url('/img/cyber.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@
 .bannerSectionContainerFs {
    background-image: 
     linear-gradient(to bottom, rgba(129, 122, 118, 0) 60%, rgba(63, 61, 61, 0.9) 100%),
-    url('/img/fulstk.webp');
+    url('/img/fullstack.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -57,7 +57,7 @@
 .bannerSectionContainerFe {
    background-image: 
     linear-gradient(to bottom, rgba(129, 122, 118, 0) 60%, rgba(63, 61, 61, 0.9) 100%),
-    url('/img/frontend2.webp');
+    url('/img/frontend.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

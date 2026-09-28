@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Key, Eye, EyeOff, Save, RotateCcw, AlertCircle, CheckCircle, Shield, TestTube, LogOut, Lock, User } from 'lucide-react';
+import styles from '../../../styles/MonnifyAdminDashboard.module.css'
 
 export default function MonnifyAdminDashboard() {
   // Auth state
@@ -29,6 +30,8 @@ export default function MonnifyAdminDashboard() {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const API_URL = 'http://localhost:8081';
+
 
   useEffect(() => {
     checkAuth();
@@ -45,7 +48,7 @@ export default function MonnifyAdminDashboard() {
     if (!storedToken) return;
 
     try {
-      const response = await fetch('http://localhost:8081/api/auth/verify', {
+      const response = await fetch(`${BASE_URL}/api/auth/verify`, {
         headers: {
           'Authorization': `Bearer ${storedToken}`
         }
@@ -70,7 +73,7 @@ export default function MonnifyAdminDashboard() {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:8081/api/auth/login', {
+      const response = await fetch(`${BASE_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +101,7 @@ export default function MonnifyAdminDashboard() {
 
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:8081/api/auth/logout', {
+      await fetch(`${BASE_URL}/api/auth/logout`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -133,7 +136,7 @@ export default function MonnifyAdminDashboard() {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:8081/api/auth/change-password', {
+      const response = await fetch(`${BASE_URL}/api/auth/change-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -162,7 +165,7 @@ export default function MonnifyAdminDashboard() {
 
   const fetchConfig = async () => {
     try {
-      const response = await fetch('http://localhost:8081/api/monnify/config', {
+      const response = await fetch(`${BASE_URL}/api/monnify/config`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -190,7 +193,7 @@ export default function MonnifyAdminDashboard() {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:8081/api/monnify/config', {
+      const response = await fetch(`${BASE_URL}/api/monnify/config`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -229,7 +232,7 @@ export default function MonnifyAdminDashboard() {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:8081/api/monnify/config', {
+      const response = await fetch(`${BASE_URL}/api/monnify/config`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -261,7 +264,7 @@ export default function MonnifyAdminDashboard() {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:8081/api/monnify/test-connection', {
+      const response = await fetch(`${BASE_URL}/api/monnify/test-connection`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -285,190 +288,163 @@ export default function MonnifyAdminDashboard() {
   // Login Screen
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-6">
-        <div className="w-full max-w-md">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center">
-                <Shield className="w-8 h-8 text-white" />
+      <div className={styles.loginContainer}>
+        <div className={styles.loginBox}>
+          <div className={styles.loginIconWrapper}>
+            <div className={styles.loginIcon}>
+              <Shield size={32} />
+            </div>
+          </div>
+          
+          <h1 className={styles.loginTitle}>Admin Login</h1>
+          <p className={styles.loginSubtitle}>Sign in to access Monnify dashboard</p>
+
+          {message.text && (
+            <div className={`${styles.alert} ${message.type === 'success' ? styles.alertSuccess : styles.alertError}`}>
+              {message.type === 'success' ? <CheckCircle size={20} /> : <AlertCircle size={20} />}
+              <span>{message.text}</span>
+            </div>
+          )}
+
+          <form onSubmit={handleLogin} className={styles.loginForm}>
+            <div className={styles.formGroup}>
+              <label className={styles.label}>Username</label>
+              <div className={styles.inputWrapper}>
+                <User size={20} className={styles.inputIcon} />
+                <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="Enter your username"
+                  className={styles.input}
+                  required
+                />
               </div>
             </div>
-            
-            <h1 className="text-2xl font-bold text-center text-slate-900 mb-2">Admin Login</h1>
-            <p className="text-center text-slate-600 mb-8">Sign in to access Monnify dashboard</p>
 
-            {message.text && (
-              <div className={`rounded-lg p-4 mb-6 flex items-center gap-3 ${
-                message.type === 'success' 
-                  ? 'bg-green-50 border border-green-200' 
-                  : 'bg-red-50 border border-red-200'
-              }`}>
-                {message.type === 'success' ? (
-                  <CheckCircle className="w-5 h-5 text-green-600" />
-                ) : (
-                  <AlertCircle className="w-5 h-5 text-red-600" />
-                )}
-                <span className={message.type === 'success' ? 'text-green-800' : 'text-red-800'}>
-                  {message.text}
-                </span>
+            <div className={styles.formGroup}>
+              <label className={styles.label}>Password</label>
+              <div className={styles.inputWrapper}>
+                <Lock size={20} className={styles.inputIcon} />
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                  className={styles.input}
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className={styles.inputIconRight}
+                >
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
               </div>
-            )}
-
-            <form onSubmit={handleLogin} className="space-y-5">
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Username
-                </label>
-                <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                  <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    placeholder="Enter your username"
-                    className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">
-                  Password
-                </label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                  <input
-                    type={showPassword ? 'text' : 'password'}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter your password"
-                    className="w-full pl-10 pr-12 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    required
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
-                  >
-                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                  </button>
-                </div>
-              </div>
-
-              <button
-                type="submit"
-                disabled={authLoading}
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {authLoading ? 'Signing in...' : 'Sign In'}
-              </button>
-            </form>
-
-            <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
-              <p className="text-xs text-amber-800">
-                <strong>Default credentials:</strong> admin / admin123<br />
-                Change the password immediately after first login.
-              </p>
             </div>
+
+            <button
+              type="submit"
+              disabled={authLoading}
+              className={styles.btnPrimary}
+            >
+              {authLoading ? 'Signing in...' : 'Sign In'}
+            </button>
+          </form>
+
+          <div className={styles.loginNote}>
+            <p><strong>Default credentials:</strong> admin / admin123<br />
+            Change the password immediately after first login.</p>
           </div>
         </div>
       </div>
     );
   }
 
-  // Main Dashboard (only shown when authenticated)
+  // Main Dashboard
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
-      <div className="max-w-4xl mx-auto">
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
         {/* Header */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-                <Key className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-slate-900">Monnify Admin Dashboard</h1>
-                <p className="text-slate-600 text-sm">Manage your encrypted Monnify API configuration</p>
-              </div>
+        <div className={styles.header}>
+          <div className={styles.headerLeft}>
+            <div className={styles.headerIcon}>
+              <Key size={24} />
             </div>
-            <div className="flex items-center gap-3">
-              {isEncrypted && (
-                <div className="flex items-center gap-2 bg-green-50 px-3 py-2 rounded-lg">
-                  <Shield className="w-5 h-5 text-green-600" />
-                  <span className="text-sm font-medium text-green-800">AES-256 Encrypted</span>
-                </div>
-              )}
-              <div className="flex items-center gap-2 bg-slate-100 px-3 py-2 rounded-lg">
-                <User className="w-4 h-4 text-slate-600" />
-                <span className="text-sm font-medium text-slate-700">{currentUser?.username}</span>
-              </div>
-              <button
-                onClick={() => setShowChangePassword(!showChangePassword)}
-                className="p-2 text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
-                title="Change Password"
-              >
-                <Lock className="w-5 h-5" />
-              </button>
-              <button
-                onClick={handleLogout}
-                className="flex items-center gap-2 px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-              >
-                <LogOut className="w-5 h-5" />
-                <span className="text-sm font-medium">Logout</span>
-              </button>
+            <div>
+              <h1 className={styles.headerTitle}>Monnify Admin Dashboard</h1>
+              <p className={styles.headerSubtitle}>Manage your encrypted Monnify API configuration</p>
             </div>
+          </div>
+          <div className={styles.headerRight}>
+            {isEncrypted && (
+              <div className={styles.badgeEncrypted}>
+                <Shield size={20} />
+                <span>AES-256 Encrypted</span>
+              </div>
+            )}
+            <div className={styles.badgeUser}>
+              <User size={16} />
+              <span>{currentUser?.username}</span>
+            </div>
+            <button
+              onClick={() => setShowChangePassword(!showChangePassword)}
+              className={styles.btnIcon}
+              title="Change Password"
+            >
+              <Lock size={20} />
+            </button>
+            <button onClick={handleLogout} className={styles.btnLogout}>
+              <LogOut size={20} />
+              <span>Logout</span>
+            </button>
           </div>
         </div>
 
         {/* Change Password Section */}
         {showChangePassword && (
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-            <h3 className="text-lg font-semibold text-slate-900 mb-4">Change Password</h3>
-            <form onSubmit={handleChangePassword} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Current Password</label>
+          <div className={styles.card}>
+            <h3 className={styles.cardTitle}>Change Password</h3>
+            <form onSubmit={handleChangePassword} className={styles.passwordForm}>
+              <div className={styles.formGroup}>
+                <label className={styles.label}>Current Password</label>
                 <input
                   type="password"
                   value={currentPassword}
                   onChange={(e) => setCurrentPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  className={styles.input}
                   required
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">New Password</label>
+              <div className={styles.formGroup}>
+                <label className={styles.label}>New Password</label>
                 <input
                   type="password"
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  className={styles.input}
                   required
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-2">Confirm New Password</label>
+              <div className={styles.formGroup}>
+                <label className={styles.label}>Confirm New Password</label>
                 <input
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  className={styles.input}
                   required
                 />
               </div>
-              <div className="flex gap-3">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
-                >
+              <div className={styles.buttonGroup}>
+                <button type="submit" disabled={loading} className={styles.btnPrimary}>
                   {loading ? 'Changing...' : 'Change Password'}
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowChangePassword(false)}
-                  className="px-6 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50"
+                  className={styles.btnSecondary}
                 >
                   Cancel
                 </button>
@@ -479,130 +455,116 @@ export default function MonnifyAdminDashboard() {
 
         {/* Status Banner */}
         {isConfigured && (
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-            <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-              <div className="flex-1">
-                <span className="text-green-800 font-medium block">Monnify is configured and ready to use</span>
-                {lastUpdated && (
-                  <span className="text-green-700 text-sm">Last updated: {new Date(lastUpdated).toLocaleString()}</span>
-                )}
-              </div>
-              <button
-                onClick={handleTestConnection}
-                disabled={testingConnection}
-                className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-colors disabled:opacity-50"
-              >
-                <TestTube className="w-4 h-4" />
-                {testingConnection ? 'Testing...' : 'Test Connection'}
-              </button>
+          <div className={styles.statusBanner}>
+            <CheckCircle size={20} />
+            <div className={styles.statusContent}>
+              <span className={styles.statusTitle}>Monnify is configured and ready to use</span>
+              {lastUpdated && (
+                <span className={styles.statusSubtitle}>
+                  Last updated: {new Date(lastUpdated).toLocaleString()}
+                </span>
+              )}
             </div>
+            <button
+              onClick={handleTestConnection}
+              disabled={testingConnection}
+              className={styles.btnTest}
+            >
+              <TestTube size={16} />
+              {testingConnection ? 'Testing...' : 'Test Connection'}
+            </button>
           </div>
         )}
 
         {/* Message Alert */}
         {message.text && (
-          <div className={`rounded-lg p-4 mb-6 flex items-center gap-3 ${
-            message.type === 'success' 
-              ? 'bg-green-50 border border-green-200' 
-              : 'bg-red-50 border border-red-200'
-          }`}>
-            {message.type === 'success' ? (
-              <CheckCircle className="w-5 h-5 text-green-600" />
-            ) : (
-              <AlertCircle className="w-5 h-5 text-red-600" />
-            )}
-            <span className={message.type === 'success' ? 'text-green-800' : 'text-red-800'}>
-              {message.text}
-            </span>
+          <div className={`${styles.alert} ${message.type === 'success' ? styles.alertSuccess : styles.alertError}`}>
+            {message.type === 'success' ? <CheckCircle size={20} /> : <AlertCircle size={20} />}
+            <span>{message.text}</span>
           </div>
         )}
 
         {/* Configuration Form */}
-        <div className="bg-white rounded-lg shadow-sm p-6">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-semibold text-slate-900">API Configuration</h2>
+        <div className={styles.card}>
+          <div className={styles.cardHeader}>
+            <h2 className={styles.cardTitle}>API Configuration</h2>
             {isEncrypted && (
-              <span className="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
-                Credentials stored encrypted
-              </span>
+              <span className={styles.badgeSmall}>Credentials stored encrypted</span>
             )}
           </div>
           
-          <div className="space-y-6">
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
-                API Key {isConfigured && <span className="text-green-600">(Currently set)</span>}
+          <div className={styles.form}>
+            <div className={styles.formGroup}>
+              <label className={styles.label}>
+                API Key {isConfigured && <span className={styles.labelSuccess}>(Currently set)</span>}
               </label>
-              <div className="relative">
+              <div className={styles.inputWrapper}>
                 <input
                   type={showApiKey ? 'text' : 'password'}
                   value={apiKey}
                   onChange={(e) => setApiKey(e.target.value)}
                   placeholder={isConfigured ? 'Enter new API Key to update' : 'Enter your Monnify API Key'}
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-12"
+                  className={styles.input}
                 />
                 <button
                   type="button"
                   onClick={() => setShowApiKey(!showApiKey)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  className={styles.inputIconRight}
                 >
-                  {showApiKey ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  {showApiKey ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
-                Secret Key {isConfigured && <span className="text-green-600">(Currently set)</span>}
+            <div className={styles.formGroup}>
+              <label className={styles.label}>
+                Secret Key {isConfigured && <span className={styles.labelSuccess}>(Currently set)</span>}
               </label>
-              <div className="relative">
+              <div className={styles.inputWrapper}>
                 <input
                   type={showSecretKey ? 'text' : 'password'}
                   value={secretKey}
                   onChange={(e) => setSecretKey(e.target.value)}
                   placeholder={isConfigured ? 'Enter new Secret Key to update' : 'Enter your Monnify Secret Key'}
-                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-12"
+                  className={styles.input}
                 />
                 <button
                   type="button"
                   onClick={() => setShowSecretKey(!showSecretKey)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  className={styles.inputIconRight}
                 >
-                  {showSecretKey ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  {showSecretKey ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
-                Contract Code
-              </label>
+            <div className={styles.formGroup}>
+              <label className={styles.label}>Contract Code</label>
               <input
                 type="text"
                 value={contractCode}
                 onChange={(e) => setContractCode(e.target.value)}
                 placeholder="Enter your Monnify Contract Code"
-                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className={styles.input}
               />
             </div>
 
-            <div className="flex gap-4 pt-4">
+            <div className={styles.buttonGroup}>
               <button
                 onClick={handleSave}
                 disabled={loading}
-                className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className={styles.btnPrimary}
               >
-                <Save className="w-5 h-5" />
+                <Save size={20} />
                 {loading ? 'Saving...' : isConfigured ? 'Update Configuration' : 'Save Configuration'}
               </button>
               
               <button
                 onClick={handleReset}
                 disabled={loading || !isConfigured}
-                className="px-6 py-3 rounded-lg font-medium border border-red-300 text-red-600 hover:bg-red-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className={styles.btnDanger}
               >
-                <RotateCcw className="w-5 h-5" />
+                <RotateCcw size={20} />
                 Reset All
               </button>
             </div>
@@ -610,30 +572,16 @@ export default function MonnifyAdminDashboard() {
         </div>
 
         {/* Security Info */}
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-6 mt-6">
-          <div className="flex gap-4">
-            <Shield className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
-            <div>
-              <h3 className="font-semibold text-blue-900 mb-2">Security Features</h3>
-              <ul className="space-y-2 text-sm text-blue-800">
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span>Admin authentication required to access dashboard</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span>All API keys encrypted with AES-256-GCM encryption</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span>Session-based authentication with automatic timeout</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span>Passwords hashed with PBKDF2 (100,000 iterations)</span>
-                </li>
-              </ul>
-            </div>
+        <div className={styles.infoCard}>
+          <Shield size={24} className={styles.infoIcon} />
+          <div>
+            <h3 className={styles.infoTitle}>Security Features</h3>
+            <ul className={styles.infoList}>
+              <li>Admin authentication required to access dashboard</li>
+              <li>All API keys encrypted with AES-256-GCM encryption</li>
+              <li>Session-based authentication with automatic timeout</li>
+              <li>Passwords hashed with PBKDF2 (100,000 iterations)</li>
+            </ul>
           </div>
         </div>
       </div>

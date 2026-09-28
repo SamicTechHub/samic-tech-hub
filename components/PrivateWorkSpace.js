@@ -1,0 +1,83 @@
+import React from 'react'
+import PlanCards from './PlanCards';
+import { useState } from 'react';
+import BookingForm from './BookingForm';
+import Modal from './Modal';
+import style from '../styles/card.module.css';
+import Image from 'next/image';
+
+
+const SharedWorkSpace = ({onclose}) => {
+
+    const [showForm, setShowForm] = useState(false);
+    const [selectedPlan, setSelectedPlan] = useState('');
+    const [selectedAmount, setSelectedAmount] = useState('');
+    const [selectedPlanName, setSelectedPlanName] = useState('');
+
+
+    const handleReserveClick = (planTitle, price, planName) => {
+         // TikTok tracking
+          if (window.ttq) {
+              window.ttq.track('Purchase', {
+                  content_name: planTitle,
+                  value: price,
+                  description: planName
+              });
+          }
+
+          // Meta Pixel
+          if (window.fbq) {
+              window.fbq('track', 'Lead', {
+                  content_name: planTitle,
+                  value: price,
+                  description: planName,
+                  currency: 'NGN'
+              });
+          }
+
+        setSelectedPlan(planTitle);
+        setShowForm(true);
+        setSelectedAmount(price);
+        setSelectedPlanName(planName);
+    }
+
+     const handleCloseModal = () => {
+            setShowForm(false);
+        };
+  return (
+    <>
+      <h2 style={{ textAlign: 'center', marginBottom: '24px', fontSize: '2rem', color: '#000000' }}>Conference Space</h2>
+      <div className={style.planGridprivate}>
+      {/* <button style={{ height: '40px', backgroundColor: 'red', width: '40px', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }} onClick={onclose}>X</button> */}
+      <PlanCards
+        icon={<Image src="/img/Symbol.png" alt="Symbol" width={50} height={50} />}
+        title="Daily"
+        description="NGN50,000"
+        features={[
+          "24/7 Power Supply",
+          "Fast Speed internet",
+          "Access 9am - 5pm",
+          "Premium Set-up",
+          "A/C"
+        ]}
+        idealFor={[
+         
+        ]}
+          buttonText="Book Now"
+          onClick={() => handleReserveClick('Daily Access', '50000.00', 'Conference Space')}
+         
+      />
+      </div>
+
+     {/* Booking Form in Modal */}
+      <Modal isOpen={showForm} onClose={handleCloseModal}>
+        <BookingForm plan={selectedPlan} onCancel={handleCloseModal} amount={selectedAmount} planName={selectedPlanName} />
+      </Modal>
+     
+    
+  </>
+      
+  )
+}
+
+export default SharedWorkSpace

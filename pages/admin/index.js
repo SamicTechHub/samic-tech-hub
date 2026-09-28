@@ -121,3 +121,4 @@ function Dashboard() {
 }
 
 export default authenticatedRoute(Dashboard)
+

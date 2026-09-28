@@ -32,7 +32,7 @@ const DedicatedDeskPlan = ({ onclose }) => {
           price="₦15,000 / week"
           description="Enjoy the consistency of your own desk for a week. Come in, plug in, and start working immediately."
           features={[
-            "8 AM - 6 PM daily access",
+            "9 AM - 5 PM daily access",
             "Your own personal desk",
            
           ]}

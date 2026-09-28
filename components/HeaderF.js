@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Header = () => {
+const HeaderF = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
@@ -43,9 +43,9 @@ const Header = () => {
     >
       <div className={style.brandContainer}>
         <div className={style.logoContainer}>
-          <Image src="/img/logoGBg.png" alt="Samic Tech Hub" layout="fill" />
+          <Image src="/img/samictechlogo.png" alt="Samic Tech Hub" layout="fill"/>
         </div>
-        <h1>Samic</h1>
+        <h1>Samic Tech Hub</h1>
       </div>
 
       <button
@@ -71,10 +71,13 @@ const Header = () => {
             <Link href="/about">About</Link>
           </div>
           <div className={style.navLink}>
+            <Link href="https://blog.samictechhub.com/">Blog</Link>
+          </div>
+          <div className={style.navLink}>
             <Link href="/tracks/course">Training</Link>
           </div>
            <div className={style.navLink}>
-            <Link href="/coworkSpace">Co-Workspace</Link>
+            <Link href="/coworkingSpace">Co-Workspace</Link>
           </div>
           <div className={style.navLink}>
             <Link href="/">Contact us</Link>
@@ -138,4 +141,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderF;

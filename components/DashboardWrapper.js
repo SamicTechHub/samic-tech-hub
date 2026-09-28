@@ -43,7 +43,7 @@ function DashboardWrapper({children, userObj}) {
                 ) : (
                 ""
                 )}
-            <DashboardHeader userObj={userObj} toggleDisplay={toggleDisplay} isClicked={clicked}/>
+            {/* <DashboardHeader userObj={userObj} toggleDisplay={toggleDisplay} isClicked={clicked}/> */}
                 <main className={style.main}>
                     {children}
                 </main>

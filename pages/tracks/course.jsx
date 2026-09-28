@@ -6,6 +6,7 @@ import HeaderF from '../../components/HeaderF';
 import Link from 'next/link';
 
 const programsData = [
+
    {
     title: 'Cybersecurity',
     description:'Understand core cybersecurity principles and practices to secure digital systems.',
@@ -21,6 +22,13 @@ const programsData = [
     price: '₦550,000',
   },
   {
+    title: 'Data Analysis',
+    description:'Learn to analyze and visualize data to make informed business decisions.',
+    image: '/img/Vector2.svg',
+    link: '#',
+    price: '₦200,000',
+  },
+  {
     title: 'Digital Marketing',
     description:'Master online marketing, content creation, and campaign strategies for business growth.',
     image: '/img/Vector2.svg',
@@ -34,6 +42,20 @@ const programsData = [
     link: '/tracks/uiux',
     price: '₦200,000',
   },
+  {
+      title: 'Data Science',
+      description:'Learn to extract insights from data and make data-driven decisions.',
+      image: '/img/Vector2.svg',
+      link: '#',
+      price: '₦250,000',
+    },
+    {
+      title: 'Artificial Intelligence',
+      description:'Dive into AI concepts, machine learning, and neural networks to build intelligent systems.',
+      image: '/img/Vector2.svg',
+      link: '#',
+      price: '₦400,000',
+    },
   {
     title: 'Product Management',
     description:'Learn to manage digital products from idea to launch using agile methodologies.',
